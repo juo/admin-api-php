@@ -1,0 +1,36 @@
+speakeasyVersion: 1.637.3
+sources:
+    Juo-OAS:
+        sourceNamespace: fastify-swagger
+        sourceRevisionDigest: sha256:9f31fa7f805ccbbc979ea7d70ea034204f6192b464bb495fe78f94e568e5da45
+        sourceBlobDigest: sha256:8b5ce2260ca59133d0eeb2389d7d5b7331d0c1effae32032b059d858cf8c6a3a
+        tags:
+            - latest
+targets:
+    juo:
+        source: Juo-OAS
+        sourceNamespace: fastify-swagger
+        sourceRevisionDigest: sha256:9f31fa7f805ccbbc979ea7d70ea034204f6192b464bb495fe78f94e568e5da45
+        sourceBlobDigest: sha256:8b5ce2260ca59133d0eeb2389d7d5b7331d0c1effae32032b059d858cf8c6a3a
+        codeSamplesNamespace: juo-oas-php-code-samples
+        codeSamplesRevisionDigest: sha256:d2e8f2a8e141c785f5d8a6f2e6c63b52a1a30546234c1e1968a18b036ac9186c
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Juo-OAS:
+            inputs:
+                - location: registry.speakeasyapi.dev/juo/admin-api-8af/fastify-swagger:main
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas
+    targets:
+        juo:
+            target: php
+            source: Juo-OAS
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas-php-code-samples
+                labelOverride:
+                    fixedValue: Php (SDK)
+                blocking: false

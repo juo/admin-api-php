@@ -1,0 +1,15 @@
+# GetSubscriptionsResponseBody
+
+Default Response
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `resource`                                                                                 | [Operations\GetSubscriptionsResource](../../Models/Operations/GetSubscriptionsResource.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `hasNextPage`                                                                              | *bool*                                                                                     | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `hasPrevPage`                                                                              | *bool*                                                                                     | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `endCursor`                                                                                | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `startCursor`                                                                              | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `data`                                                                                     | array<[Components\Subscription](../../Models/Components/Subscription.md)>                  | :heavy_check_mark:                                                                         | N/A                                                                                        |

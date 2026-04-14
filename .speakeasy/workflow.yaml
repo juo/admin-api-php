@@ -1,0 +1,19 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Juo-OAS:
+        inputs:
+            - location: registry.speakeasyapi.dev/juo/admin-api-8af/fastify-swagger:main
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas
+targets:
+    juo:
+        target: php
+        source: Juo-OAS
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas-php-code-samples
+            labelOverride:
+                fixedValue: Php (SDK)
+            blocking: false

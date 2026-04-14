@@ -1,0 +1,744 @@
+lockVersion: 2.0.0
+id: 90b4b86f-cc6b-4de1-8512-a640a41a5db4
+management:
+  docChecksum: d57c8d8e70b5c0f87f70c716f5847d93
+  docVersion: 8.15.0
+  speakeasyVersion: 1.637.3
+  generationVersion: 2.727.9
+  releaseVersion: 0.0.1
+  configChecksum: 08441d236506abc0427673e0250febdc
+features:
+  php:
+    constsAndDefaults: 0.2.0
+    core: 3.9.0
+    flattening: 2.81.1
+    globalSecurity: 2.81.9
+    globalSecurityFlattening: 0.1.2
+    globalServerURLs: 2.82.2
+    globals: 2.82.2
+    groups: 2.81.3
+    methodArguments: 0.1.0
+    nameOverrides: 2.81.2
+    nullables: 1.0.1
+    pagination: 0.1.4
+    responseFormat: 0.1.0
+    unions: 0.1.5
+generatedFiles:
+  - .gitattributes
+  - USAGE.md
+  - composer.json
+  - docs/Models/Components/Action.md
+  - docs/Models/Components/Actor.md
+  - docs/Models/Components/Address.md
+  - docs/Models/Components/BillingPolicy.md
+  - docs/Models/Components/BillingPolicyAnchor.md
+  - docs/Models/Components/BillingPolicyIntervalDay.md
+  - docs/Models/Components/BillingPolicyIntervalMonth.md
+  - docs/Models/Components/BillingPolicyIntervalUnion.md
+  - docs/Models/Components/BillingPolicyIntervalWeek.md
+  - docs/Models/Components/BillingPolicyIntervalYear.md
+  - docs/Models/Components/BillingPolicyTypeMonthday.md
+  - docs/Models/Components/BillingPolicyTypeUnion.md
+  - docs/Models/Components/BillingPolicyTypeWeekday.md
+  - docs/Models/Components/BillingPolicyTypeYearday.md
+  - docs/Models/Components/CustomAttribute.md
+  - docs/Models/Components/Customer.md
+  - docs/Models/Components/CustomerPaymentMethod.md
+  - docs/Models/Components/CustomerPaymentMethodCustomer.md
+  - docs/Models/Components/CustomerResource.md
+  - docs/Models/Components/DeliveryAddress.md
+  - docs/Models/Components/DeliveryMethod.md
+  - docs/Models/Components/DeliveryPolicy.md
+  - docs/Models/Components/DeliveryPolicyAnchor.md
+  - docs/Models/Components/DeliveryPolicyIntervalDay.md
+  - docs/Models/Components/DeliveryPolicyIntervalMonth.md
+  - docs/Models/Components/DeliveryPolicyIntervalUnion.md
+  - docs/Models/Components/DeliveryPolicyIntervalWeek.md
+  - docs/Models/Components/DeliveryPolicyIntervalYear.md
+  - docs/Models/Components/DeliveryPolicyTypeMonthday.md
+  - docs/Models/Components/DeliveryPolicyTypeUnion.md
+  - docs/Models/Components/DeliveryPolicyTypeWeekday.md
+  - docs/Models/Components/DeliveryPolicyTypeYearday.md
+  - docs/Models/Components/EntitledItems1.md
+  - docs/Models/Components/EntitledItems2.md
+  - docs/Models/Components/EntitledItemsUnion.md
+  - docs/Models/Components/Instrument.md
+  - docs/Models/Components/InstrumentBacs.md
+  - docs/Models/Components/InstrumentBlik.md
+  - docs/Models/Components/InstrumentCreditCard.md
+  - docs/Models/Components/InstrumentMbway.md
+  - docs/Models/Components/InstrumentPaypal.md
+  - docs/Models/Components/InstrumentSepaDirectDebit.md
+  - docs/Models/Components/InstrumentShopPay.md
+  - docs/Models/Components/Matcher.md
+  - docs/Models/Components/PaymentMethod.md
+  - docs/Models/Components/Product.md
+  - docs/Models/Components/ProductImage.md
+  - docs/Models/Components/ProductVariant.md
+  - docs/Models/Components/ProductVariantImage.md
+  - docs/Models/Components/ProductVariantProduct.md
+  - docs/Models/Components/ScheduleAdjustment.md
+  - docs/Models/Components/ScheduleAdjustmentResource.md
+  - docs/Models/Components/ScheduleAdjustmentType.md
+  - docs/Models/Components/ScheduleOrder.md
+  - docs/Models/Components/ScheduleOrderDiscount.md
+  - docs/Models/Components/ScheduleOrderDiscountTargetUnion.md
+  - docs/Models/Components/ScheduleOrderDiscountTypeFixedAmount.md
+  - docs/Models/Components/ScheduleOrderDiscountTypePercentage.md
+  - docs/Models/Components/ScheduleOrderDiscountValueFixedAmount.md
+  - docs/Models/Components/ScheduleOrderDiscountValuePercentage.md
+  - docs/Models/Components/ScheduleOrderDiscountValueUnion.md
+  - docs/Models/Components/ScheduleOrderItem.md
+  - docs/Models/Components/ScheduleOrderItemProduct.md
+  - docs/Models/Components/ScheduleOrderItemVariant.md
+  - docs/Models/Components/Security.md
+  - docs/Models/Components/Selector.md
+  - docs/Models/Components/SelectorAll.md
+  - docs/Models/Components/SelectorSome.md
+  - docs/Models/Components/Status.md
+  - docs/Models/Components/Subscription.md
+  - docs/Models/Components/SubscriptionCustomer.md
+  - docs/Models/Components/SubscriptionDiscount.md
+  - docs/Models/Components/SubscriptionDiscountResource.md
+  - docs/Models/Components/SubscriptionDiscountTargetLine.md
+  - docs/Models/Components/SubscriptionDiscountTargetShipping.md
+  - docs/Models/Components/SubscriptionDiscountTargetUnion.md
+  - docs/Models/Components/SubscriptionDiscountTypeFixedAmount.md
+  - docs/Models/Components/SubscriptionDiscountTypePercentage.md
+  - docs/Models/Components/SubscriptionDiscountValueFixedAmount.md
+  - docs/Models/Components/SubscriptionDiscountValuePercentage.md
+  - docs/Models/Components/SubscriptionDiscountValueUnion.md
+  - docs/Models/Components/SubscriptionItem.md
+  - docs/Models/Components/SubscriptionItemProduct.md
+  - docs/Models/Components/SubscriptionItemResource.md
+  - docs/Models/Components/SubscriptionItemUnion.md
+  - docs/Models/Components/SubscriptionItemVariant.md
+  - docs/Models/Components/SubscriptionResource.md
+  - docs/Models/Components/SubscriptionType.md
+  - docs/Models/Components/SubscriptionUnion.md
+  - docs/Models/Components/TargetLineEnum.md
+  - docs/Models/Components/TargetShippingEnum.md
+  - docs/Models/Components/TypeAll.md
+  - docs/Models/Components/TypeBacs.md
+  - docs/Models/Components/TypeBlik.md
+  - docs/Models/Components/TypeCreditCard.md
+  - docs/Models/Components/TypeLine.md
+  - docs/Models/Components/TypeMbway.md
+  - docs/Models/Components/TypePaypal.md
+  - docs/Models/Components/TypeSepaDirectDebit.md
+  - docs/Models/Components/TypeShipping.md
+  - docs/Models/Components/TypeShopPay.md
+  - docs/Models/Components/TypeSome.md
+  - docs/Models/Operations/Action.md
+  - docs/Models/Operations/ActionChangeDate.md
+  - docs/Models/Operations/ActionInput1.md
+  - docs/Models/Operations/ActionInput2.md
+  - docs/Models/Operations/ActionInput3.md
+  - docs/Models/Operations/ActionInput4.md
+  - docs/Models/Operations/ActionInput5.md
+  - docs/Models/Operations/ActionSkipOrder.md
+  - docs/Models/Operations/ActionUpdatePaymentMethod.md
+  - docs/Models/Operations/ActionUpdateProducts.md
+  - docs/Models/Operations/ActionUpdateShipping.md
+  - docs/Models/Operations/Address.md
+  - docs/Models/Operations/BillingPolicy.md
+  - docs/Models/Operations/BillingPolicyAnchor.md
+  - docs/Models/Operations/BillingPolicyIntervalDay.md
+  - docs/Models/Operations/BillingPolicyIntervalMonth.md
+  - docs/Models/Operations/BillingPolicyIntervalUnion.md
+  - docs/Models/Operations/BillingPolicyIntervalWeek.md
+  - docs/Models/Operations/BillingPolicyIntervalYear.md
+  - docs/Models/Operations/BillingPolicyTypeMonthday.md
+  - docs/Models/Operations/BillingPolicyTypeUnion.md
+  - docs/Models/Operations/BillingPolicyTypeWeekday.md
+  - docs/Models/Operations/BillingPolicyTypeYearday.md
+  - docs/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdRequest.md
+  - docs/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResource.md
+  - docs/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResponse.md
+  - docs/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResponseBody.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdRequest.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponseBody.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdRequest.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResource.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResponse.md
+  - docs/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody.md
+  - docs/Models/Operations/DeliveryAddress.md
+  - docs/Models/Operations/DeliveryMethod.md
+  - docs/Models/Operations/DeliveryPolicy.md
+  - docs/Models/Operations/DeliveryPolicyAnchor.md
+  - docs/Models/Operations/DeliveryPolicyIntervalDay.md
+  - docs/Models/Operations/DeliveryPolicyIntervalMonth.md
+  - docs/Models/Operations/DeliveryPolicyIntervalUnion.md
+  - docs/Models/Operations/DeliveryPolicyIntervalWeek.md
+  - docs/Models/Operations/DeliveryPolicyIntervalYear.md
+  - docs/Models/Operations/DeliveryPolicyTypeMonthday.md
+  - docs/Models/Operations/DeliveryPolicyTypeUnion.md
+  - docs/Models/Operations/DeliveryPolicyTypeWeekday.md
+  - docs/Models/Operations/DeliveryPolicyTypeYearday.md
+  - docs/Models/Operations/Expand.md
+  - docs/Models/Operations/GetCustomersRequest.md
+  - docs/Models/Operations/GetCustomersResource.md
+  - docs/Models/Operations/GetCustomersResponse.md
+  - docs/Models/Operations/GetCustomersResponseBody.md
+  - docs/Models/Operations/GetSchedulesAdjustmentsRequest.md
+  - docs/Models/Operations/GetSchedulesAdjustmentsResource.md
+  - docs/Models/Operations/GetSchedulesAdjustmentsResponse.md
+  - docs/Models/Operations/GetSchedulesAdjustmentsResponseBody.md
+  - docs/Models/Operations/GetSchedulesRequest.md
+  - docs/Models/Operations/GetSchedulesResponse.md
+  - docs/Models/Operations/GetSchedulesResponseBody.md
+  - docs/Models/Operations/GetSubscriptionsRequest.md
+  - docs/Models/Operations/GetSubscriptionsResource.md
+  - docs/Models/Operations/GetSubscriptionsResponse.md
+  - docs/Models/Operations/GetSubscriptionsResponseBody.md
+  - docs/Models/Operations/Line.md
+  - docs/Models/Operations/Matcher.md
+  - docs/Models/Operations/MatcherCycle.md
+  - docs/Models/Operations/MatcherCycleAndDate.md
+  - docs/Models/Operations/MatcherDate.md
+  - docs/Models/Operations/MatcherInput1.md
+  - docs/Models/Operations/MatcherInput2.md
+  - docs/Models/Operations/MatcherInput3.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequest.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorUnion.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetUnion.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeAll.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypePercentage.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueUnion.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdRequest.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdResponse.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdRequest.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdRequestBody.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdResponse.md
+  - docs/Models/Operations/PatchSubscriptionsSubscriptionIdType.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsInterval.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsIntervalDay.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsIntervalMonth.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsIntervalUnion.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsIntervalWeek.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsIntervalYear.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsRequest.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsRequestBody.md
+  - docs/Models/Operations/PostSchedulesAdjustmentsResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdCancelRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdCancelRequestBody.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdCancelResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsRequestBody.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsSelectorAll.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsSelectorSome.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsSelectorUnion.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTargetLine.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTargetShipping.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTargetUnion.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeAll.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeLine.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypePercentage.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeShipping.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeSome.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsValuePercentage.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsValueUnion.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdItemsRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdItemsRequestBody.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdItemsResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdPauseRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdPauseResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdReactivateRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdReactivateResponse.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdResumeRequest.md
+  - docs/Models/Operations/PostSubscriptionsSubscriptionIdResumeResponse.md
+  - docs/Models/Operations/RequestBody1.md
+  - docs/Models/Operations/RequestBody2.md
+  - docs/Models/Operations/TypeChangeDate.md
+  - docs/Models/Operations/TypeCycle.md
+  - docs/Models/Operations/TypeCycleAndDate.md
+  - docs/Models/Operations/TypeDate.md
+  - docs/Models/Operations/TypeSkipOrder.md
+  - docs/Models/Operations/TypeUpdatePaymentMethod.md
+  - docs/Models/Operations/TypeUpdateProducts.md
+  - docs/Models/Operations/TypeUpdateShipping.md
+  - docs/sdks/customers/README.md
+  - docs/sdks/discounts/README.md
+  - docs/sdks/items/README.md
+  - docs/sdks/schedules/README.md
+  - docs/sdks/subscriptions/README.md
+  - phpstan.neon
+  - phpunit.xml
+  - pint.json
+  - rector.php
+  - src/Customers.php
+  - src/Discounts.php
+  - src/Hooks/AfterErrorContext.php
+  - src/Hooks/AfterErrorHook.php
+  - src/Hooks/AfterSuccessContext.php
+  - src/Hooks/AfterSuccessHook.php
+  - src/Hooks/BeforeRequestContext.php
+  - src/Hooks/BeforeRequestHook.php
+  - src/Hooks/Credentials.php
+  - src/Hooks/ErrorResponseContext.php
+  - src/Hooks/FailEarlyException.php
+  - src/Hooks/HookContext.php
+  - src/Hooks/Hooks.php
+  - src/Hooks/SDKHooks.php
+  - src/Hooks/SDKInitHook.php
+  - src/Hooks/Session.php
+  - src/Hooks/TokenResponse.php
+  - src/Items.php
+  - src/Juo.php
+  - src/JuoBuilder.php
+  - src/Models/Components/Action.php
+  - src/Models/Components/Actor.php
+  - src/Models/Components/Address.php
+  - src/Models/Components/BillingPolicy.php
+  - src/Models/Components/BillingPolicyAnchor.php
+  - src/Models/Components/BillingPolicyIntervalDay.php
+  - src/Models/Components/BillingPolicyIntervalMonth.php
+  - src/Models/Components/BillingPolicyIntervalWeek.php
+  - src/Models/Components/BillingPolicyIntervalYear.php
+  - src/Models/Components/BillingPolicyTypeMonthday.php
+  - src/Models/Components/BillingPolicyTypeWeekday.php
+  - src/Models/Components/BillingPolicyTypeYearday.php
+  - src/Models/Components/CustomAttribute.php
+  - src/Models/Components/Customer.php
+  - src/Models/Components/CustomerPaymentMethod.php
+  - src/Models/Components/CustomerResource.php
+  - src/Models/Components/DeliveryAddress.php
+  - src/Models/Components/DeliveryMethod.php
+  - src/Models/Components/DeliveryPolicy.php
+  - src/Models/Components/DeliveryPolicyAnchor.php
+  - src/Models/Components/DeliveryPolicyIntervalDay.php
+  - src/Models/Components/DeliveryPolicyIntervalMonth.php
+  - src/Models/Components/DeliveryPolicyIntervalWeek.php
+  - src/Models/Components/DeliveryPolicyIntervalYear.php
+  - src/Models/Components/DeliveryPolicyTypeMonthday.php
+  - src/Models/Components/DeliveryPolicyTypeWeekday.php
+  - src/Models/Components/DeliveryPolicyTypeYearday.php
+  - src/Models/Components/EntitledItems1.php
+  - src/Models/Components/EntitledItems2.php
+  - src/Models/Components/InstrumentBacs.php
+  - src/Models/Components/InstrumentBlik.php
+  - src/Models/Components/InstrumentCreditCard.php
+  - src/Models/Components/InstrumentMbway.php
+  - src/Models/Components/InstrumentPaypal.php
+  - src/Models/Components/InstrumentSepaDirectDebit.php
+  - src/Models/Components/InstrumentShopPay.php
+  - src/Models/Components/Matcher.php
+  - src/Models/Components/Product.php
+  - src/Models/Components/ProductImage.php
+  - src/Models/Components/ProductVariant.php
+  - src/Models/Components/ProductVariantImage.php
+  - src/Models/Components/ScheduleAdjustment.php
+  - src/Models/Components/ScheduleAdjustmentResource.php
+  - src/Models/Components/ScheduleAdjustmentType.php
+  - src/Models/Components/ScheduleOrder.php
+  - src/Models/Components/ScheduleOrderDiscount.php
+  - src/Models/Components/ScheduleOrderDiscountTypeFixedAmount.php
+  - src/Models/Components/ScheduleOrderDiscountTypePercentage.php
+  - src/Models/Components/ScheduleOrderDiscountValueFixedAmount.php
+  - src/Models/Components/ScheduleOrderDiscountValuePercentage.php
+  - src/Models/Components/ScheduleOrderItem.php
+  - src/Models/Components/Security.php
+  - src/Models/Components/SelectorAll.php
+  - src/Models/Components/SelectorSome.php
+  - src/Models/Components/Status.php
+  - src/Models/Components/Subscription.php
+  - src/Models/Components/SubscriptionDiscount.php
+  - src/Models/Components/SubscriptionDiscountResource.php
+  - src/Models/Components/SubscriptionDiscountTargetLine.php
+  - src/Models/Components/SubscriptionDiscountTargetShipping.php
+  - src/Models/Components/SubscriptionDiscountTypeFixedAmount.php
+  - src/Models/Components/SubscriptionDiscountTypePercentage.php
+  - src/Models/Components/SubscriptionDiscountValueFixedAmount.php
+  - src/Models/Components/SubscriptionDiscountValuePercentage.php
+  - src/Models/Components/SubscriptionItem.php
+  - src/Models/Components/SubscriptionItemResource.php
+  - src/Models/Components/SubscriptionResource.php
+  - src/Models/Components/SubscriptionType.php
+  - src/Models/Components/TargetLineEnum.php
+  - src/Models/Components/TargetShippingEnum.php
+  - src/Models/Components/TypeAll.php
+  - src/Models/Components/TypeBacs.php
+  - src/Models/Components/TypeBlik.php
+  - src/Models/Components/TypeCreditCard.php
+  - src/Models/Components/TypeLine.php
+  - src/Models/Components/TypeMbway.php
+  - src/Models/Components/TypePaypal.php
+  - src/Models/Components/TypeSepaDirectDebit.php
+  - src/Models/Components/TypeShipping.php
+  - src/Models/Components/TypeShopPay.php
+  - src/Models/Components/TypeSome.php
+  - src/Models/Errors/APIException.php
+  - src/Models/Operations/ActionChangeDate.php
+  - src/Models/Operations/ActionInput1.php
+  - src/Models/Operations/ActionInput2.php
+  - src/Models/Operations/ActionInput3.php
+  - src/Models/Operations/ActionInput4.php
+  - src/Models/Operations/ActionInput5.php
+  - src/Models/Operations/ActionSkipOrder.php
+  - src/Models/Operations/ActionUpdatePaymentMethod.php
+  - src/Models/Operations/ActionUpdateProducts.php
+  - src/Models/Operations/ActionUpdateShipping.php
+  - src/Models/Operations/Address.php
+  - src/Models/Operations/BillingPolicy.php
+  - src/Models/Operations/BillingPolicyAnchor.php
+  - src/Models/Operations/BillingPolicyIntervalDay.php
+  - src/Models/Operations/BillingPolicyIntervalMonth.php
+  - src/Models/Operations/BillingPolicyIntervalWeek.php
+  - src/Models/Operations/BillingPolicyIntervalYear.php
+  - src/Models/Operations/BillingPolicyTypeMonthday.php
+  - src/Models/Operations/BillingPolicyTypeWeekday.php
+  - src/Models/Operations/BillingPolicyTypeYearday.php
+  - src/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdRequest.php
+  - src/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResource.php
+  - src/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResponse.php
+  - src/Models/Operations/DeleteSchedulesAdjustmentsAdjustmentIdResponseBody.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdRequest.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponseBody.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdRequest.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResource.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResponse.php
+  - src/Models/Operations/DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody.php
+  - src/Models/Operations/DeliveryAddress.php
+  - src/Models/Operations/DeliveryMethod.php
+  - src/Models/Operations/DeliveryPolicy.php
+  - src/Models/Operations/DeliveryPolicyAnchor.php
+  - src/Models/Operations/DeliveryPolicyIntervalDay.php
+  - src/Models/Operations/DeliveryPolicyIntervalMonth.php
+  - src/Models/Operations/DeliveryPolicyIntervalWeek.php
+  - src/Models/Operations/DeliveryPolicyIntervalYear.php
+  - src/Models/Operations/DeliveryPolicyTypeMonthday.php
+  - src/Models/Operations/DeliveryPolicyTypeWeekday.php
+  - src/Models/Operations/DeliveryPolicyTypeYearday.php
+  - src/Models/Operations/Expand.php
+  - src/Models/Operations/GetCustomersRequest.php
+  - src/Models/Operations/GetCustomersResource.php
+  - src/Models/Operations/GetCustomersResponse.php
+  - src/Models/Operations/GetCustomersResponseBody.php
+  - src/Models/Operations/GetSchedulesAdjustmentsRequest.php
+  - src/Models/Operations/GetSchedulesAdjustmentsResource.php
+  - src/Models/Operations/GetSchedulesAdjustmentsResponse.php
+  - src/Models/Operations/GetSchedulesAdjustmentsResponseBody.php
+  - src/Models/Operations/GetSchedulesRequest.php
+  - src/Models/Operations/GetSchedulesResponse.php
+  - src/Models/Operations/GetSchedulesResponseBody.php
+  - src/Models/Operations/GetSubscriptionsRequest.php
+  - src/Models/Operations/GetSubscriptionsResource.php
+  - src/Models/Operations/GetSubscriptionsResponse.php
+  - src/Models/Operations/GetSubscriptionsResponseBody.php
+  - src/Models/Operations/Line.php
+  - src/Models/Operations/MatcherCycle.php
+  - src/Models/Operations/MatcherCycleAndDate.php
+  - src/Models/Operations/MatcherDate.php
+  - src/Models/Operations/MatcherInput1.php
+  - src/Models/Operations/MatcherInput2.php
+  - src/Models/Operations/MatcherInput3.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequest.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeAll.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypePercentage.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdRequest.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdItemsItemIdResponse.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdRequest.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdRequestBody.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdResponse.php
+  - src/Models/Operations/PatchSubscriptionsSubscriptionIdType.php
+  - src/Models/Operations/PostSchedulesAdjustmentsInterval.php
+  - src/Models/Operations/PostSchedulesAdjustmentsIntervalDay.php
+  - src/Models/Operations/PostSchedulesAdjustmentsIntervalMonth.php
+  - src/Models/Operations/PostSchedulesAdjustmentsIntervalWeek.php
+  - src/Models/Operations/PostSchedulesAdjustmentsIntervalYear.php
+  - src/Models/Operations/PostSchedulesAdjustmentsRequest.php
+  - src/Models/Operations/PostSchedulesAdjustmentsRequestBody.php
+  - src/Models/Operations/PostSchedulesAdjustmentsResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdCancelRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdCancelRequestBody.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdCancelResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsSelectorAll.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsSelectorSome.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTargetLine.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTargetShipping.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeAll.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeLine.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypePercentage.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeShipping.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsTypeSome.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdDiscountsValuePercentage.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdItemsRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdItemsRequestBody.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdItemsResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdPauseRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdPauseResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdReactivateRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdReactivateResponse.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdResumeRequest.php
+  - src/Models/Operations/PostSubscriptionsSubscriptionIdResumeResponse.php
+  - src/Models/Operations/RequestBody1.php
+  - src/Models/Operations/RequestBody2.php
+  - src/Models/Operations/TypeChangeDate.php
+  - src/Models/Operations/TypeCycle.php
+  - src/Models/Operations/TypeCycleAndDate.php
+  - src/Models/Operations/TypeDate.php
+  - src/Models/Operations/TypeSkipOrder.php
+  - src/Models/Operations/TypeUpdatePaymentMethod.php
+  - src/Models/Operations/TypeUpdateProducts.php
+  - src/Models/Operations/TypeUpdateShipping.php
+  - src/SDKConfiguration.php
+  - src/Schedules.php
+  - src/Subscriptions.php
+  - src/Utils/BigDecimalHandler.php
+  - src/Utils/BigIntHandler.php
+  - src/Utils/DateHandler.php
+  - src/Utils/DateTimeHandler.php
+  - src/Utils/DefaultRequest.php
+  - src/Utils/DefaultResponse.php
+  - src/Utils/DefaultStream.php
+  - src/Utils/DefaultUri.php
+  - src/Utils/EnumHandler.php
+  - src/Utils/FormMetadata.php
+  - src/Utils/Headers.php
+  - src/Utils/JSON.php
+  - src/Utils/MixedJSONHandler.php
+  - src/Utils/MultipartMetadata.php
+  - src/Utils/Options.php
+  - src/Utils/ParamsMetadata.php
+  - src/Utils/PathParameters.php
+  - src/Utils/PhpDocTypeParser.php
+  - src/Utils/QueryParameters.php
+  - src/Utils/RequestBodies.php
+  - src/Utils/RequestMetadata.php
+  - src/Utils/Retry/PermanentError.php
+  - src/Utils/Retry/RetryConfig.php
+  - src/Utils/Retry/RetryConfigBackoff.php
+  - src/Utils/Retry/RetryConfigNone.php
+  - src/Utils/Retry/RetryStrategy.php
+  - src/Utils/Retry/RetryUtils.php
+  - src/Utils/Retry/TemporaryError.php
+  - src/Utils/Security.php
+  - src/Utils/SecurityClient.php
+  - src/Utils/SecurityMetadata.php
+  - src/Utils/ServerDetails.php
+  - src/Utils/SpeakeasyMetadata.php
+  - src/Utils/UnionHandler.php
+  - src/Utils/Utils.php
+examples:
+  get_/customers:
+    speakeasy-default-get-/customers:
+      parameters:
+        query:
+          limit: 20
+          sort: "id:asc"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"resource": "list", "hasNextPage": true, "hasPrevPage": false, "endCursor": "<value>", "startCursor": "<value>", "data": []}
+  get_/subscriptions:
+    speakeasy-default-get-/subscriptions:
+      parameters:
+        query:
+          limit: 20
+          sort: "createdAt:asc"
+          includeCanceledItems: false
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"resource": "list", "hasNextPage": true, "hasPrevPage": false, "endCursor": null, "startCursor": "<value>", "data": [{"id": "dbc09e0b-1f70-41bf-b136-770b4cd8fed6", "resource": "subscription", "serial": "<value>", "status": "canceled", "createdAt": "2025-04-10T16:58:14.032Z", "updatedAt": "2025-03-24T08:23:03.891Z", "canceledAt": "2024-12-30T10:15:59.768Z", "nextBillingDate": "2024-02-10T00:12:25.743Z", "currentCycle": 218758, "currencyCode": "SZL", "deliveryMethod": {"type": "pickup", "title": null, "description": "ha upon than about"}, "customer": "<value>", "items": [{"id": "db9128bc-1204-48bf-9e84-dc77d7b9215d", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 843228, "totalPrice": 6837.37, "recurringCycleLimit": 105395, "canceledAt": "2024-12-16T11:44:01.420Z", "billingPolicy": {"interval": "WEEK", "intervalCount": 778191, "anchors": [], "minCycles": 163138, "maxCycles": 640124}, "deliveryPolicy": {"interval": "YEAR", "intervalCount": 308121, "anchors": []}, "variant": "<value>", "product": "Unbranded Fresh Towels"}], "discounts": [], "paymentMethod": "da662172-9136-42a2-ac30-9eef852a2264", "deliveryAddress": {"firstName": "Stefanie", "lastName": "Corkery", "address1": null, "address2": "<value>", "zip": "05994-7946", "city": "Caldwell", "country": "Turkmenistan", "countryCode": "PT", "provinceCode": "<value>", "province": "<value>", "phone": "318-556-8650 x285", "company": "Lemke Group"}, "deliveryPrice": 3984.59}]}
+  patch_/subscriptions/{subscriptionId}:
+    speakeasy-default-patch-/subscriptions/{subscription-id}:
+      parameters:
+        path:
+          subscriptionId: "8c7c7740-54e3-413d-9502-b3b025cda706"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "397a6c3a-c236-485a-994b-42a957de334e", "resource": "subscription", "serial": "<value>", "status": "active", "createdAt": "2024-05-06T01:09:45.501Z", "updatedAt": "2024-08-06T07:55:40.550Z", "canceledAt": "2026-03-04T05:25:11.256Z", "nextBillingDate": "2026-05-13T06:04:36.360Z", "currentCycle": 946677, "currencyCode": "TND", "deliveryMethod": {"type": "pickup", "title": "<value>", "description": "idealistic couch forenenst corral in blank kielbasa watery"}, "customer": {"id": "<id>", "resource": "customer", "displayName": "Corene_VonRueden10", "email": "Edwardo58@gmail.com", "phone": null}, "items": [{"id": "c7425eb1-ae92-4afa-b126-1368ddcb6f44", "resource": "subscription-item", "title": "<value>", "subtitle": null, "quantity": 306612, "totalPrice": 5312.99, "recurringCycleLimit": 823235, "canceledAt": "2025-09-18T11:20:05.364Z", "billingPolicy": {"interval": "DAY", "intervalCount": 297767, "anchors": [{"type": "YEARDAY", "day": 142909, "month": 739106, "cutoffDay": 923545}], "minCycles": null, "maxCycles": 375249}, "deliveryPolicy": {"interval": "YEAR", "intervalCount": 983812, "anchors": [{"type": "WEEKDAY", "day": 170797, "month": 304179, "cutoffDay": 361887}]}, "variant": "<value>", "product": "Oriental Frozen Tuna"}], "discounts": [], "paymentMethod": "019702cb-d391-45cb-af31-698e5323a2f5", "deliveryAddress": {"firstName": "Reymundo", "lastName": "Rowe", "address1": "<value>", "address2": "<value>", "zip": "89367", "city": "Kylafield", "country": null, "countryCode": "CO", "provinceCode": null, "province": null, "phone": "(517) 709-0762", "company": "Kovacek - Wilderman"}, "deliveryPrice": 7696.16}
+  post_/subscriptions/{subscriptionId}/pause:
+    speakeasy-default-post-/subscriptions/{subscription-id}/pause:
+      parameters:
+        path:
+          subscriptionId: "5b923319-d7ad-4644-9be8-cee71a7bbd90"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "1412f56a-d64b-4539-b7bd-759498661edd", "resource": "subscription", "serial": "<value>", "status": "paused", "createdAt": "2024-09-26T04:37:33.631Z", "updatedAt": "2025-08-21T17:48:52.947Z", "canceledAt": "2026-06-01T02:20:44.231Z", "nextBillingDate": "2026-05-29T23:42:30.261Z", "currentCycle": 574807, "currencyCode": "GEL", "deliveryMethod": {"type": "pickup", "title": "<value>", "description": "whose beyond home nougat ponder"}, "customer": {"id": "<id>", "resource": "customer", "displayName": "Yolanda52", "email": "Sheila_Conn46@yahoo.com", "phone": "(491) 210-9398 x2620"}, "items": [{"id": "24f82c41-7339-4895-b365-b1ffd99c5b9e", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 715425, "totalPrice": 7064.43, "recurringCycleLimit": 335102, "canceledAt": "2024-06-11T09:02:23.753Z", "billingPolicy": {"interval": "YEAR", "intervalCount": 608473, "anchors": [], "minCycles": 720698, "maxCycles": 969769}, "deliveryPolicy": {"interval": "DAY", "intervalCount": 912965, "anchors": []}, "variant": "<value>", "product": "Gorgeous Cotton Cheese"}], "discounts": [{"id": "976436b0-8751-4378-bd22-84c2334cfbe2", "resource": "subscription-discount", "title": "<value>", "target": {"type": "line", "selector": {"type": "some", "lines": []}}, "value": {"amount": 5874.41, "type": "fixed-amount", "appliesOnEachItem": false}, "recurringCycleLimit": null}], "paymentMethod": "610831f3-0a4d-40ae-8892-c80a22e583bc", "deliveryAddress": {"firstName": "Desmond", "lastName": "Gleichner", "address1": "<value>", "address2": "<value>", "zip": "83130", "city": "McCulloughton", "country": "Equatorial Guinea", "countryCode": "BT", "provinceCode": "<value>", "province": "<value>", "phone": "1-272-644-4832", "company": null}, "deliveryPrice": 6325.29}
+  post_/subscriptions/{subscriptionId}/resume:
+    speakeasy-default-post-/subscriptions/{subscription-id}/resume:
+      parameters:
+        path:
+          subscriptionId: "80af0219-af04-4247-ae0a-79410d022410"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "81fb868a-cbfd-434b-bbac-d2f76f3a75fc", "resource": "subscription", "serial": "<value>", "status": "canceled", "createdAt": "2026-01-04T21:16:33.649Z", "updatedAt": "2024-03-28T17:13:04.843Z", "canceledAt": "2024-01-03T12:19:39.909Z", "nextBillingDate": "2026-12-05T01:59:52.255Z", "currentCycle": 441933, "currencyCode": "SYP", "deliveryMethod": {"type": "local-delivery", "title": "<value>", "description": "cruel kettledrum in phew scarily typeface awful baggy anticodon"}, "customer": "<value>", "items": [{"id": "8bb9b9a3-e8cb-448c-a398-17df2bf6a878", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 147982, "totalPrice": 5855.16, "recurringCycleLimit": 926928, "canceledAt": "2026-07-04T07:46:57.491Z", "billingPolicy": {"interval": "YEAR", "intervalCount": 688662, "anchors": [{"type": "MONTHDAY", "day": 202402, "month": 397509, "cutoffDay": null}], "minCycles": 745386, "maxCycles": 56994}, "deliveryPolicy": {"interval": "YEAR", "intervalCount": 86086, "anchors": [{"type": "WEEKDAY", "day": 89563, "month": 816090, "cutoffDay": 268371}]}, "variant": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://impure-slime.com/", "altText": "<value>"}, "product": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://quarrelsome-apricot.com/", "altText": "<value>"}}}, "product": "Practical Rubber Ball"}], "discounts": [], "paymentMethod": "dffef1b4-3a1d-45ce-b185-0858b86d5064", "deliveryAddress": {"firstName": "Delphia", "lastName": "Gottlieb", "address1": "<value>", "address2": "<value>", "zip": "49182", "city": "Hettieworth", "country": "Switzerland", "countryCode": "VE", "provinceCode": "<value>", "province": "<value>", "phone": "(765) 538-0991 x19049", "company": null}, "deliveryPrice": 2556.97}
+  post_/subscriptions/{subscriptionId}/cancel:
+    speakeasy-default-post-/subscriptions/{subscription-id}/cancel:
+      parameters:
+        path:
+          subscriptionId: "8e409b1b-2fdb-4b78-a87a-fc62fd6bb881"
+        header:
+          X-Tenant-ID: "<value>"
+      requestBody:
+        application/json: {"notifyCustomer": true}
+      responses:
+        "200":
+          application/json: {"id": "2285b40f-bfdd-4e83-b310-1e2ad939c0e0", "resource": "subscription", "serial": "<value>", "status": "canceled", "createdAt": "2024-11-03T07:13:56.138Z", "updatedAt": "2026-07-09T13:18:29.750Z", "canceledAt": "2024-08-26T22:34:05.169Z", "nextBillingDate": "2024-01-05T22:28:02.445Z", "currentCycle": 938210, "currencyCode": "TTD", "deliveryMethod": {"type": "local-delivery", "title": "<value>", "description": "providence oof which duh"}, "customer": {"id": "<id>", "resource": "customer", "displayName": "Delaney.Keebler4", "email": "Nora53@hotmail.com", "phone": "485.443.0999 x95512"}, "items": [{"id": "53490c62-08d6-406b-9f8a-6338c675dce1", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 479952, "totalPrice": 2289.56, "recurringCycleLimit": 448727, "canceledAt": "2025-05-30T13:12:03.621Z", "billingPolicy": {"interval": "DAY", "intervalCount": 124139, "anchors": [], "minCycles": 729700, "maxCycles": null}, "deliveryPolicy": {"interval": "DAY", "intervalCount": 892905, "anchors": [{"type": "YEARDAY", "day": 298158, "month": 5244, "cutoffDay": 603455}]}, "variant": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://merry-configuration.org/", "altText": "<value>"}, "product": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://bitter-annual.org", "altText": "<value>"}}}, "product": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://bitter-annual.org", "altText": "<value>"}}}], "discounts": [{"id": "094fb9b3-7f95-4700-9b08-b6979519268d", "resource": "subscription-discount", "title": "<value>", "target": {"type": "line", "selector": {"type": "all"}}, "value": {"amount": 3730.37, "type": "fixed-amount", "appliesOnEachItem": true}, "recurringCycleLimit": 455190}], "paymentMethod": {"id": "afa5d836-4ef3-4d61-8494-13cd352d0796", "customer": "<value>"}, "deliveryAddress": {"firstName": "Freda", "lastName": "Rolfson", "address1": "<value>", "address2": "<value>", "zip": "91163", "city": null, "country": "Pitcairn Islands", "countryCode": null, "provinceCode": "<value>", "province": "<value>", "phone": "(360) 618-1207 x04811", "company": "Schmeler - Sipes"}, "deliveryPrice": 5940.28}
+  post_/subscriptions/{subscriptionId}/reactivate:
+    speakeasy-default-post-/subscriptions/{subscription-id}/reactivate:
+      parameters:
+        path:
+          subscriptionId: "f71f1920-f98e-47cf-ad83-b55b4737972c"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "39300aa5-f63e-4a31-8b9a-f053b45a25f9", "resource": "subscription", "serial": "<value>", "status": "canceled", "createdAt": "2026-12-27T19:48:19.320Z", "updatedAt": "2026-07-20T18:12:57.208Z", "canceledAt": "2024-12-02T05:38:44.220Z", "nextBillingDate": "2026-06-18T22:36:12.047Z", "currentCycle": 262463, "currencyCode": "MAD", "deliveryMethod": null, "customer": null, "items": [{"id": "f8adf4aa-0779-4098-925c-c2fa9f130d86", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 937732, "totalPrice": 7874.85, "recurringCycleLimit": 219586, "canceledAt": "2025-06-18T01:57:26.705Z", "billingPolicy": {"interval": "YEAR", "intervalCount": 319689, "anchors": [], "minCycles": 896780, "maxCycles": 343475}, "deliveryPolicy": {"interval": "MONTH", "intervalCount": 995255, "anchors": [{"type": "YEARDAY", "day": 630967, "month": 209902, "cutoffDay": null}]}, "variant": "<value>", "product": null}], "discounts": [], "paymentMethod": "c209cd86-7abb-498d-83f0-fceb2cc7c5b6", "deliveryAddress": {"firstName": "Hermina", "lastName": "Bashirian", "address1": "<value>", "address2": "<value>", "zip": "24478-3030", "city": "Vilmafort", "country": "Niger", "countryCode": "AI", "provinceCode": "<value>", "province": "<value>", "phone": "500.678.4293", "company": "Kohler - O'Reilly"}, "deliveryPrice": 4573.48}
+  post_/subscriptions/{subscriptionId}/discounts:
+    speakeasy-default-post-/subscriptions/{subscription-id}/discounts:
+      parameters:
+        path:
+          subscriptionId: "85a88783-c359-4b1f-9022-f6129ffd6b86"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "d547c890-9eda-4c57-a4bf-155cfac41722", "resource": "subscription-discount", "title": "<value>", "target": {"type": "shipping"}, "value": {"amount": 9413.16, "type": "fixed-amount", "appliesOnEachItem": true}, "recurringCycleLimit": 86617}
+  delete_/subscriptions/{subscriptionId}/discounts/{discountId}:
+    speakeasy-default-delete-/subscriptions/{subscription-id}/discounts/{discount-id}:
+      parameters:
+        path:
+          subscriptionId: "ac6dd669-8cde-409f-a4e1-085aeeaf246a"
+          discountId: "47ba2170-98b0-4a13-9e2e-7f9e2228a739"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "de19d4c9-7f6f-4d81-9074-ac14dfd3393c", "resource": "subscription-discount", "deleted": true}
+  patch_/subscriptions/{subscriptionId}/discounts/{discountId}:
+    speakeasy-default-patch-/subscriptions/{subscription-id}/discounts/{discount-id}:
+      parameters:
+        path:
+          subscriptionId: "5b7f7c26-a817-4867-babd-ad1e81d4c949"
+          discountId: "b24f6aa0-fd16-4eb8-b9c7-64abe8da97d5"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "82737a52-ad64-46c6-901a-b356c6df15db", "resource": "subscription-discount", "title": "<value>", "target": {"type": "line", "selector": {"type": "all"}}, "value": {"amount": 9619.1, "type": "fixed-amount", "appliesOnEachItem": true}, "recurringCycleLimit": 366519}
+  post_/subscriptions/{subscriptionId}/items:
+    speakeasy-default-post-/subscriptions/{subscription-id}/items:
+      parameters:
+        path:
+          subscriptionId: "ca8e5a5e-6c71-41c5-bf47-344a1c6193b5"
+        header:
+          X-Tenant-ID: "<value>"
+      requestBody:
+        application/json: {"variant": "<value>", "quantity": 502841}
+      responses:
+        "200":
+          application/json: {"id": "38b78805-89aa-4bbe-9f5f-524cab7adb9a", "resource": "subscription-item", "title": "<value>", "subtitle": "<value>", "quantity": 926371, "totalPrice": 6126.3, "recurringCycleLimit": 722966, "canceledAt": "2024-10-13T11:37:30.789Z", "billingPolicy": {"interval": "MONTH", "intervalCount": 378766, "anchors": [], "minCycles": 896928, "maxCycles": 391561}, "deliveryPolicy": {"interval": "YEAR", "intervalCount": 301367, "anchors": [{"type": "YEARDAY", "day": 541386, "month": 470980, "cutoffDay": 851625}]}, "variant": "<value>", "product": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://fearless-decryption.info/", "altText": "<value>"}}}
+  delete_/subscriptions/{subscriptionId}/items/{itemId}:
+    speakeasy-default-delete-/subscriptions/{subscription-id}/items/{item-id}:
+      parameters:
+        path:
+          subscriptionId: "81c9d54c-c277-4d1d-812d-94a6a95ba086"
+          itemId: "e38ac163-dc12-446c-8862-ae6640967cac"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "6a730361-255e-48e6-819a-e1ac1398312c", "resource": "subscription-item", "deleted": true}
+  patch_/subscriptions/{subscriptionId}/items/{itemId}:
+    speakeasy-default-patch-/subscriptions/{subscription-id}/items/{item-id}:
+      parameters:
+        path:
+          subscriptionId: "d2b28517-0fd5-4981-943b-556135fbb598"
+          itemId: "e3ab8a07-6e97-42fc-b919-54c29a4fcde2"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "1efb7468-0aaa-4691-8104-3d320eafe743", "resource": "subscription-item", "title": "<value>", "subtitle": null, "quantity": 560522, "totalPrice": 7031.62, "recurringCycleLimit": 174715, "canceledAt": "2025-11-12T12:16:52.060Z", "billingPolicy": {"interval": "DAY", "intervalCount": 973299, "anchors": [], "minCycles": 867263, "maxCycles": 337970}, "deliveryPolicy": {"interval": "WEEK", "intervalCount": 846160, "anchors": [{"type": "MONTHDAY", "day": 434793, "month": 47877, "cutoffDay": 59068}]}, "variant": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://devoted-mathematics.info/", "altText": "<value>"}, "product": "Awesome Metal Car"}, "product": "Generic Rubber Hat"}
+  get_/schedules/:
+    speakeasy-default-get-/schedules/:
+      parameters:
+        query:
+          customerId: "<id>"
+          count: 168523
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"orders": [{"id": "<id>", "customerId": "<id>", "currencyCode": "GYD", "skipped": true, "date": "2025-09-29T20:32:53.165Z", "cycleIndex": 812692, "subtotal": 9760.58, "deliveryPrice": 4044.09, "deliveryAddress": {}, "paymentMethodId": "<id>", "items": [{"id": "<id>", "title": "<value>", "subtitle": "<value>", "quantity": 215885, "price": 9092.99, "totalPrice": 4378.56, "variant": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://optimistic-tarragon.org/", "altText": "<value>"}, "product": "Sleek Plastic Shoes"}, "product": {"id": "<id>", "title": "<value>", "image": {"id": "<id>", "url": "https://musty-declaration.biz/", "altText": "<value>"}}, "subscription": "700b8156-76c3-478e-bc5c-b8377f2fa030", "subscriptionItem": "bec83bf6-4497-4ae6-9daa-d89c35feeae8", "parentProductId": "<id>", "parentLineId": null, "customAttributes": []}], "discounts": [{"id": "<id>", "title": "<value>", "target": "line", "value": {"type": "percentage", "percentage": 7501.82}, "entitledItems": {"all": false, "items": ["<value 1>", "<value 2>"]}, "subscriptionId": "45ea3b9f-85c1-42a1-bb0b-1e68906ef81f"}]}]}
+  get_/schedules/adjustments:
+    speakeasy-default-get-/schedules/adjustments:
+      parameters:
+        query:
+          customerId: "<id>"
+          limit: 20
+          sort: "createdAt:asc"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"resource": "list", "hasNextPage": true, "hasPrevPage": true, "endCursor": "<value>", "startCursor": "<value>", "data": [{"id": "c2c6a1fb-ba84-48d2-9416-d3db19ff1356", "resource": "schedule_adjustment", "customer": "<value>", "matcher": {"type": "<value>", "input": "<value>"}, "action": {"type": "<value>", "input": "<value>"}, "actor": {"type": "bulk-action", "id": "<id>"}, "createdAt": "2024-10-07T07:36:52.492Z", "updatedAt": "2026-04-19T23:28:56.227Z"}]}
+  post_/schedules/adjustments:
+    speakeasy-default-post-/schedules/adjustments:
+      parameters:
+        header:
+          X-Tenant-ID: "<value>"
+      requestBody:
+        application/json: {"customerId": "<id>", "matcher": {"type": "CYCLE", "input": {"cycle": 734289}}, "action": {"type": "UPDATE_PRODUCTS", "input": {"lines": [{"lineId": "<id>"}]}}}
+      responses:
+        "201":
+          application/json: {"id": "535815d9-c3b7-49e7-979e-5c69d7faab88", "resource": "schedule_adjustment", "customer": "<value>", "matcher": {"type": "<value>", "input": "<value>"}, "action": {"type": "<value>", "input": "<value>"}, "actor": {"type": "customer", "id": "<id>"}, "createdAt": "2026-06-25T07:37:40.135Z", "updatedAt": "2026-08-19T01:39:50.398Z"}
+  delete_/schedules/adjustments/{adjustmentId}:
+    speakeasy-default-delete-/schedules/adjustments/{adjustment-id}:
+      parameters:
+        path:
+          adjustmentId: "b26d15ed-5f39-4b3b-ae89-fcfbe0c20a66"
+        header:
+          X-Tenant-ID: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "b61aae58-942b-451a-83fe-980433aeb3cc", "resource": "schedule_adjustment", "deleted": true}
+examplesVersion: 1.0.2

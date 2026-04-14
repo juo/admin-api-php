@@ -1,0 +1,11 @@
+# ProductVariant
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `id`                                                                             | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |
+| `title`                                                                          | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |
+| `image`                                                                          | [Components\ProductVariantImage](../../Models/Components/ProductVariantImage.md) | :heavy_check_mark:                                                               | N/A                                                                              |
+| `product`                                                                        | [string\|Components\Product](../../Models/Components/ProductVariantProduct.md)   | :heavy_check_mark:                                                               | This field is expandable.                                                        |

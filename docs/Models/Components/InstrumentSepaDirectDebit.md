@@ -1,0 +1,11 @@
+# InstrumentSepaDirectDebit
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `type`                                                                           | [Components\TypeSepaDirectDebit](../../Models/Components/TypeSepaDirectDebit.md) | :heavy_check_mark:                                                               | N/A                                                                              |
+| `consumerName`                                                                   | *string*                                                                         | :heavy_check_mark:                                                               | Full name of the account holder.                                                 |
+| `consumerBic`                                                                    | *string*                                                                         | :heavy_check_mark:                                                               | BIC code.                                                                        |
+| `maskedConsumerAccount`                                                          | *string*                                                                         | :heavy_check_mark:                                                               | Masked IBAN.                                                                     |

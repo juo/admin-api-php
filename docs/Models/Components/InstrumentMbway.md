@@ -1,0 +1,9 @@
+# InstrumentMbway
+
+
+## Fields
+
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `type`                                                       | [Components\TypeMbway](../../Models/Components/TypeMbway.md) | :heavy_check_mark:                                           | N/A                                                          |
+| `phone`                                                      | *?string*                                                    | :heavy_minus_sign:                                           | N/A                                                          |
