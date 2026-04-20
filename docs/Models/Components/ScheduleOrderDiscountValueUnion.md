@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\ScheduleOrderDiscountValuePercentage
+* @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValuePercentage
 */
 Components\ScheduleOrderDiscountValuePercentage $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\ScheduleOrderDiscountValuePercentage $value = /* values here */
 
 ```php
 /**
-* @var Components\ScheduleOrderDiscountValueFixedAmount
+* @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValueFixedAmount
 */
 Components\ScheduleOrderDiscountValueFixedAmount $value = /* values here */
 ```

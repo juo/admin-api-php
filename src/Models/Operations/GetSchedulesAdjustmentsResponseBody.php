@@ -14,7 +14,7 @@ class GetSchedulesAdjustmentsResponseBody
 {
     /**
      *
-     * @var GetSchedulesAdjustmentsResource $resource
+     * @var \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResource')]
@@ -37,7 +37,7 @@ class GetSchedulesAdjustmentsResponseBody
     /**
      * $data
      *
-     * @var array<Components\ScheduleAdjustment> $data
+     * @var array<\Juo\AdminAPI\Models\Components\ScheduleAdjustment> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\ScheduleAdjustment>')]
@@ -58,10 +58,10 @@ class GetSchedulesAdjustmentsResponseBody
     public ?string $startCursor;
 
     /**
-     * @param  GetSchedulesAdjustmentsResource  $resource
+     * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResource  $resource
      * @param  bool  $hasNextPage
      * @param  bool  $hasPrevPage
-     * @param  array<Components\ScheduleAdjustment>  $data
+     * @param  array<\Juo\AdminAPI\Models\Components\ScheduleAdjustment>  $data
      * @param  ?string  $endCursor
      * @param  ?string  $startCursor
      * @phpstan-pure

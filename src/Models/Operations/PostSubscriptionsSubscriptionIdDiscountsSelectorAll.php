@@ -13,14 +13,14 @@ class PostSubscriptionsSubscriptionIdDiscountsSelectorAll
 {
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTypeAll $type
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeAll $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeAll')]
     public PostSubscriptionsSubscriptionIdDiscountsTypeAll $type;
 
     /**
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTypeAll  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeAll  $type
      * @phpstan-pure
      */
     public function __construct(PostSubscriptionsSubscriptionIdDiscountsTypeAll $type)

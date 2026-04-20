@@ -13,7 +13,7 @@ class InstrumentPaypal
 {
     /**
      *
-     * @var TypePaypal $type
+     * @var \Juo\AdminAPI\Models\Components\TypePaypal $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypePaypal')]
@@ -28,7 +28,7 @@ class InstrumentPaypal
     public ?string $paypalAccountEmail;
 
     /**
-     * @param  TypePaypal  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypePaypal  $type
      * @param  ?string  $paypalAccountEmail
      * @phpstan-pure
      */

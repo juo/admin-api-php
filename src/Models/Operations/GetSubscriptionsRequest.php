@@ -38,7 +38,7 @@ class GetSubscriptionsRequest
     /**
      * Specify which related resources to include in the response. Currently supports 'customer'.
      *
-     * @var ?array<Expand> $expand
+     * @var ?array<\Juo\AdminAPI\Models\Operations\Expand> $expand
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=expand')]
     public ?array $expand = null;
@@ -81,7 +81,7 @@ class GetSubscriptionsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $sort
-     * @param  ?array<Expand>  $expand
+     * @param  ?array<\Juo\AdminAPI\Models\Operations\Expand>  $expand
      * @param  ?bool  $includeCanceledItems
      * @param  ?string  $tenant
      * @phpstan-pure

@@ -13,7 +13,7 @@ class PostSchedulesAdjustmentsRequest
 {
     /**
      *
-     * @var PostSchedulesAdjustmentsRequestBody $requestBody
+     * @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public PostSchedulesAdjustmentsRequestBody $requestBody;
@@ -27,7 +27,7 @@ class PostSchedulesAdjustmentsRequest
     public ?string $tenant = null;
 
     /**
-     * @param  PostSchedulesAdjustmentsRequestBody  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsRequestBody  $requestBody
      * @param  ?string  $tenant
      * @phpstan-pure
      */

@@ -13,7 +13,7 @@ class InstrumentBacs
 {
     /**
      *
-     * @var TypeBacs $type
+     * @var \Juo\AdminAPI\Models\Components\TypeBacs $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeBacs')]
@@ -28,7 +28,7 @@ class InstrumentBacs
     public string $maskedNumber;
 
     /**
-     * @param  TypeBacs  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeBacs  $type
      * @param  string  $maskedNumber
      * @phpstan-pure
      */

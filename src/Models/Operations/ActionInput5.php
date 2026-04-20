@@ -14,14 +14,14 @@ class ActionInput5
     /**
      * $lines
      *
-     * @var array<Line> $lines
+     * @var array<\Juo\AdminAPI\Models\Operations\Line> $lines
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('lines')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Operations\Line>')]
     public array $lines;
 
     /**
-     * @param  array<Line>  $lines
+     * @param  array<\Juo\AdminAPI\Models\Operations\Line>  $lines
      * @phpstan-pure
      */
     public function __construct(array $lines)

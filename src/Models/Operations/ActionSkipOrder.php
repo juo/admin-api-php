@@ -14,7 +14,7 @@ class ActionSkipOrder
 {
     /**
      *
-     * @var TypeSkipOrder $type
+     * @var \Juo\AdminAPI\Models\Operations\TypeSkipOrder $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\TypeSkipOrder')]
@@ -22,15 +22,15 @@ class ActionSkipOrder
 
     /**
      *
-     * @var ActionInput1 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput1 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput1')]
     public ActionInput1 $input;
 
     /**
-     * @param  TypeSkipOrder  $type
-     * @param  ActionInput1  $input
+     * @param  \Juo\AdminAPI\Models\Operations\TypeSkipOrder  $type
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput1  $input
      * @phpstan-pure
      */
     public function __construct(TypeSkipOrder $type, ActionInput1 $input)

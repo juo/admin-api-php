@@ -13,7 +13,7 @@ class InstrumentShopPay
 {
     /**
      *
-     * @var TypeShopPay $type
+     * @var \Juo\AdminAPI\Models\Components\TypeShopPay $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeShopPay')]
@@ -28,7 +28,7 @@ class InstrumentShopPay
     public string $maskedNumber;
 
     /**
-     * @param  TypeShopPay  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeShopPay  $type
      * @param  string  $maskedNumber
      * @phpstan-pure
      */

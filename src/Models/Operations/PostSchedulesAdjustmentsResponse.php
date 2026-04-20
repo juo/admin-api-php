@@ -35,7 +35,7 @@ class PostSchedulesAdjustmentsResponse
     /**
      * Default Response
      *
-     * @var ?Components\ScheduleAdjustment $scheduleAdjustment
+     * @var ?\Juo\AdminAPI\Models\Components\ScheduleAdjustment $scheduleAdjustment
      */
     public ?Components\ScheduleAdjustment $scheduleAdjustment = null;
 
@@ -43,7 +43,7 @@ class PostSchedulesAdjustmentsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\ScheduleAdjustment  $scheduleAdjustment
+     * @param  ?\Juo\AdminAPI\Models\Components\ScheduleAdjustment  $scheduleAdjustment
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\ScheduleAdjustment $scheduleAdjustment = null)

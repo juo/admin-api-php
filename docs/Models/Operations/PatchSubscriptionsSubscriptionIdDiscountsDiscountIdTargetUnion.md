@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping
+* @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping
 */
 Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping $va
 
 ```php
 /**
-* @var Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine
+* @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine
 */
 Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine $value = /* values here */
 ```

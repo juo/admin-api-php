@@ -20,7 +20,7 @@ class Subscription
 
     /**
      *
-     * @var SubscriptionResource $resource
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionResource')]
@@ -36,7 +36,7 @@ class Subscription
 
     /**
      *
-     * @var Status $status
+     * @var \Juo\AdminAPI\Models\Components\Status $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Status')]
@@ -77,7 +77,7 @@ class Subscription
     /**
      * $items
      *
-     * @var array<SubscriptionItem> $items
+     * @var array<\Juo\AdminAPI\Models\Components\SubscriptionItem> $items
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\SubscriptionItem>')]
@@ -86,7 +86,7 @@ class Subscription
     /**
      * $discounts
      *
-     * @var array<SubscriptionDiscount> $discounts
+     * @var array<\Juo\AdminAPI\Models\Components\SubscriptionDiscount> $discounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\SubscriptionDiscount>')]
@@ -118,7 +118,7 @@ class Subscription
 
     /**
      *
-     * @var ?DeliveryMethod $deliveryMethod
+     * @var ?\Juo\AdminAPI\Models\Components\DeliveryMethod $deliveryMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryMethod')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\DeliveryMethod|null')]
@@ -127,7 +127,7 @@ class Subscription
     /**
      * This field is expandable.
      *
-     * @var string|Customer|null $customer
+     * @var string|\Juo\AdminAPI\Models\Components\Customer|null $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Customer|null')]
@@ -136,7 +136,7 @@ class Subscription
     /**
      * This field is expandable.
      *
-     * @var string|CustomerPaymentMethod|null $paymentMethod
+     * @var string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null $paymentMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('paymentMethod')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null')]
@@ -144,7 +144,7 @@ class Subscription
 
     /**
      *
-     * @var ?Address $deliveryAddress
+     * @var ?\Juo\AdminAPI\Models\Components\Address $deliveryAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryAddress')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Address|null')]
@@ -152,22 +152,22 @@ class Subscription
 
     /**
      * @param  string  $id
-     * @param  SubscriptionResource  $resource
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionResource  $resource
      * @param  string  $serial
-     * @param  Status  $status
+     * @param  \Juo\AdminAPI\Models\Components\Status  $status
      * @param  \DateTime  $createdAt
      * @param  \DateTime  $updatedAt
      * @param  int  $currentCycle
      * @param  string  $currencyCode
-     * @param  array<SubscriptionItem>  $items
-     * @param  array<SubscriptionDiscount>  $discounts
+     * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionItem>  $items
+     * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionDiscount>  $discounts
      * @param  float  $deliveryPrice
      * @param  ?\DateTime  $canceledAt
      * @param  ?\DateTime  $nextBillingDate
-     * @param  ?DeliveryMethod  $deliveryMethod
-     * @param  string|Customer|null  $customer
-     * @param  string|CustomerPaymentMethod|null  $paymentMethod
-     * @param  ?Address  $deliveryAddress
+     * @param  ?\Juo\AdminAPI\Models\Components\DeliveryMethod  $deliveryMethod
+     * @param  string|\Juo\AdminAPI\Models\Components\Customer|null  $customer
+     * @param  string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null  $paymentMethod
+     * @param  ?\Juo\AdminAPI\Models\Components\Address  $deliveryAddress
      * @phpstan-pure
      */
     public function __construct(string $id, SubscriptionResource $resource, string $serial, Status $status, \DateTime $createdAt, \DateTime $updatedAt, int $currentCycle, string $currencyCode, array $items, array $discounts, float $deliveryPrice, ?\DateTime $canceledAt = null, ?\DateTime $nextBillingDate = null, ?DeliveryMethod $deliveryMethod = null, string|Customer|null $customer = null, string|CustomerPaymentMethod|null $paymentMethod = null, ?Address $deliveryAddress = null)

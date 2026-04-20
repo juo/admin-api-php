@@ -35,7 +35,7 @@ class PostSubscriptionsSubscriptionIdDiscountsResponse
     /**
      * Default Response
      *
-     * @var ?Components\SubscriptionDiscount $subscriptionDiscount
+     * @var ?\Juo\AdminAPI\Models\Components\SubscriptionDiscount $subscriptionDiscount
      */
     public ?Components\SubscriptionDiscount $subscriptionDiscount = null;
 
@@ -43,7 +43,7 @@ class PostSubscriptionsSubscriptionIdDiscountsResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\SubscriptionDiscount  $subscriptionDiscount
+     * @param  ?\Juo\AdminAPI\Models\Components\SubscriptionDiscount  $subscriptionDiscount
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriptionDiscount $subscriptionDiscount = null)

@@ -29,7 +29,7 @@ class PatchSubscriptionsSubscriptionIdRequest
 
     /**
      *
-     * @var ?PatchSubscriptionsSubscriptionIdRequestBody $requestBody
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?PatchSubscriptionsSubscriptionIdRequestBody $requestBody = null;
@@ -37,7 +37,7 @@ class PatchSubscriptionsSubscriptionIdRequest
     /**
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @param  ?PatchSubscriptionsSubscriptionIdRequestBody  $requestBody
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $subscriptionId, ?string $tenant = null, ?PatchSubscriptionsSubscriptionIdRequestBody $requestBody = null)

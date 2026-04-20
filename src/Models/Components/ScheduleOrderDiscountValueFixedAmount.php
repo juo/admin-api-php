@@ -13,7 +13,7 @@ class ScheduleOrderDiscountValueFixedAmount
 {
     /**
      *
-     * @var ScheduleOrderDiscountTypeFixedAmount $type
+     * @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypeFixedAmount $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypeFixedAmount')]
@@ -34,7 +34,7 @@ class ScheduleOrderDiscountValueFixedAmount
     public bool $appliesOnEachItem;
 
     /**
-     * @param  ScheduleOrderDiscountTypeFixedAmount  $type
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypeFixedAmount  $type
      * @param  float  $amount
      * @param  bool  $appliesOnEachItem
      * @phpstan-pure

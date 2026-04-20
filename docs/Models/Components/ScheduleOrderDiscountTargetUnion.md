@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\TargetLineEnum
+* @var \Juo\AdminAPI\Models\Components\TargetLineEnum
 */
 Components\TargetLineEnum $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\TargetLineEnum $value = /* values here */
 
 ```php
 /**
-* @var Components\TargetShippingEnum
+* @var \Juo\AdminAPI\Models\Components\TargetShippingEnum
 */
 Components\TargetShippingEnum $value = /* values here */
 ```

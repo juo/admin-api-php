@@ -13,7 +13,7 @@ class SelectorSome
 {
     /**
      *
-     * @var TypeSome $type
+     * @var \Juo\AdminAPI\Models\Components\TypeSome $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeSome')]
@@ -29,7 +29,7 @@ class SelectorSome
     public array $lines;
 
     /**
-     * @param  TypeSome  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeSome  $type
      * @param  array<string>  $lines
      * @phpstan-pure
      */

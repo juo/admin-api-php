@@ -13,7 +13,7 @@ class RequestBody2
 {
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTargetShipping|PostSubscriptionsSubscriptionIdDiscountsTargetLine $target
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetShipping|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetLine $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetShipping|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetLine')]
@@ -21,7 +21,7 @@ class RequestBody2
 
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount|PostSubscriptionsSubscriptionIdDiscountsValuePercentage $value
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage')]
@@ -44,8 +44,8 @@ class RequestBody2
     public ?int $recurringCycleLimit;
 
     /**
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTargetShipping|PostSubscriptionsSubscriptionIdDiscountsTargetLine  $target
-     * @param  PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount|PostSubscriptionsSubscriptionIdDiscountsValuePercentage  $value
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetShipping|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTargetLine  $target
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage  $value
      * @param  ?string  $title
      * @param  ?int  $recurringCycleLimit
      * @phpstan-pure

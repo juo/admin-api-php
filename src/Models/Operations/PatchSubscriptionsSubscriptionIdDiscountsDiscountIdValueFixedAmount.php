@@ -20,7 +20,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount
 
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount $type
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount')]
@@ -36,7 +36,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount
 
     /**
      * @param  float  $amount
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeFixedAmount  $type
      * @param  bool  $appliesOnEachItem
      * @phpstan-pure
      */

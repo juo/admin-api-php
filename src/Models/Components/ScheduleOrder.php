@@ -70,7 +70,7 @@ class ScheduleOrder
     /**
      * $items
      *
-     * @var array<ScheduleOrderItem> $items
+     * @var array<\Juo\AdminAPI\Models\Components\ScheduleOrderItem> $items
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('items')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\ScheduleOrderItem>')]
@@ -79,7 +79,7 @@ class ScheduleOrder
     /**
      * $discounts
      *
-     * @var array<ScheduleOrderDiscount> $discounts
+     * @var array<\Juo\AdminAPI\Models\Components\ScheduleOrderDiscount> $discounts
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('discounts')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\ScheduleOrderDiscount>')]
@@ -87,7 +87,7 @@ class ScheduleOrder
 
     /**
      *
-     * @var ?DeliveryAddress $deliveryAddress
+     * @var ?\Juo\AdminAPI\Models\Components\DeliveryAddress $deliveryAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryAddress')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\DeliveryAddress|null')]
@@ -109,9 +109,9 @@ class ScheduleOrder
      * @param  int  $cycleIndex
      * @param  float  $subtotal
      * @param  float  $deliveryPrice
-     * @param  array<ScheduleOrderItem>  $items
-     * @param  array<ScheduleOrderDiscount>  $discounts
-     * @param  ?DeliveryAddress  $deliveryAddress
+     * @param  array<\Juo\AdminAPI\Models\Components\ScheduleOrderItem>  $items
+     * @param  array<\Juo\AdminAPI\Models\Components\ScheduleOrderDiscount>  $discounts
+     * @param  ?\Juo\AdminAPI\Models\Components\DeliveryAddress  $deliveryAddress
      * @param  ?string  $paymentMethodId
      * @phpstan-pure
      */

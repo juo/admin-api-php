@@ -35,7 +35,7 @@ class DeleteSubscriptionsSubscriptionIdItemsItemIdResponse
     /**
      * Default Response
      *
-     * @var ?DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody $object
+     * @var ?\Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody $object
      */
     public ?DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteSubscriptionsSubscriptionIdItemsItemIdResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody  $object
+     * @param  ?\Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody $object = null)

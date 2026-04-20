@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\RequestBody1
+* @var \Juo\AdminAPI\Models\Operations\RequestBody1
 */
 Operations\RequestBody1 $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\RequestBody1 $value = /* values here */
 
 ```php
 /**
-* @var Operations\RequestBody2
+* @var \Juo\AdminAPI\Models\Operations\RequestBody2
 */
 Operations\RequestBody2 $value = /* values here */
 ```

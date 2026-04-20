@@ -13,14 +13,14 @@ class PostSubscriptionsSubscriptionIdDiscountsTargetShipping
 {
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTypeShipping $type
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeShipping $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeShipping')]
     public PostSubscriptionsSubscriptionIdDiscountsTypeShipping $type;
 
     /**
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTypeShipping  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeShipping  $type
      * @phpstan-pure
      */
     public function __construct(PostSubscriptionsSubscriptionIdDiscountsTypeShipping $type)

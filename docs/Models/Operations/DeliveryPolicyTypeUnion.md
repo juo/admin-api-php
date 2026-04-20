@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\DeliveryPolicyTypeWeekday
+* @var \Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeWeekday
 */
 Operations\DeliveryPolicyTypeWeekday $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\DeliveryPolicyTypeWeekday $value = /* values here */
 
 ```php
 /**
-* @var Operations\DeliveryPolicyTypeMonthday
+* @var \Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeMonthday
 */
 Operations\DeliveryPolicyTypeMonthday $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\DeliveryPolicyTypeMonthday $value = /* values here */
 
 ```php
 /**
-* @var Operations\DeliveryPolicyTypeYearday
+* @var \Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeYearday
 */
 Operations\DeliveryPolicyTypeYearday $value = /* values here */
 ```

@@ -15,14 +15,14 @@ class GetSchedulesResponseBody
     /**
      * $orders
      *
-     * @var array<Components\ScheduleOrder> $orders
+     * @var array<\Juo\AdminAPI\Models\Components\ScheduleOrder> $orders
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('orders')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\ScheduleOrder>')]
     public array $orders;
 
     /**
-     * @param  array<Components\ScheduleOrder>  $orders
+     * @param  array<\Juo\AdminAPI\Models\Components\ScheduleOrder>  $orders
      * @phpstan-pure
      */
     public function __construct(array $orders)

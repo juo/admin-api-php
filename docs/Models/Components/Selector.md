@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\SelectorAll
+* @var \Juo\AdminAPI\Models\Components\SelectorAll
 */
 Components\SelectorAll $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\SelectorAll $value = /* values here */
 
 ```php
 /**
-* @var Components\SelectorSome
+* @var \Juo\AdminAPI\Models\Components\SelectorSome
 */
 Components\SelectorSome $value = /* values here */
 ```

@@ -27,7 +27,7 @@ class Product
 
     /**
      *
-     * @var ?ProductImage $image
+     * @var ?\Juo\AdminAPI\Models\Components\ProductImage $image
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ProductImage|null')]
@@ -36,7 +36,7 @@ class Product
     /**
      * @param  string  $id
      * @param  string  $title
-     * @param  ?ProductImage  $image
+     * @param  ?\Juo\AdminAPI\Models\Components\ProductImage  $image
      * @phpstan-pure
      */
     public function __construct(string $id, string $title, ?ProductImage $image = null)

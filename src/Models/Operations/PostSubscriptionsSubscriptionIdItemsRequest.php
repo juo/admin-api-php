@@ -21,7 +21,7 @@ class PostSubscriptionsSubscriptionIdItemsRequest
 
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdItemsRequestBody $requestBody
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdItemsRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public PostSubscriptionsSubscriptionIdItemsRequestBody $requestBody;
@@ -36,7 +36,7 @@ class PostSubscriptionsSubscriptionIdItemsRequest
 
     /**
      * @param  string  $subscriptionId
-     * @param  PostSubscriptionsSubscriptionIdItemsRequestBody  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdItemsRequestBody  $requestBody
      * @param  ?string  $tenant
      * @phpstan-pure
      */

@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\ActionSkipOrder
+* @var \Juo\AdminAPI\Models\Operations\ActionSkipOrder
 */
 Operations\ActionSkipOrder $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\ActionSkipOrder $value = /* values here */
 
 ```php
 /**
-* @var Operations\ActionChangeDate
+* @var \Juo\AdminAPI\Models\Operations\ActionChangeDate
 */
 Operations\ActionChangeDate $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\ActionChangeDate $value = /* values here */
 
 ```php
 /**
-* @var Operations\ActionUpdateShipping
+* @var \Juo\AdminAPI\Models\Operations\ActionUpdateShipping
 */
 Operations\ActionUpdateShipping $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Operations\ActionUpdateShipping $value = /* values here */
 
 ```php
 /**
-* @var Operations\ActionUpdatePaymentMethod
+* @var \Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod
 */
 Operations\ActionUpdatePaymentMethod $value = /* values here */
 ```
@@ -43,7 +43,7 @@ Operations\ActionUpdatePaymentMethod $value = /* values here */
 
 ```php
 /**
-* @var Operations\ActionUpdateProducts
+* @var \Juo\AdminAPI\Models\Operations\ActionUpdateProducts
 */
 Operations\ActionUpdateProducts $value = /* values here */
 ```

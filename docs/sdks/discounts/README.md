@@ -1,5 +1,4 @@
-# Discounts
-(*subscriptions->discounts*)
+# Subscriptions.Discounts
 
 ## Overview
 

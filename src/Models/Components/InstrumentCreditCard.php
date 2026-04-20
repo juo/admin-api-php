@@ -13,7 +13,7 @@ class InstrumentCreditCard
 {
     /**
      *
-     * @var TypeCreditCard $type
+     * @var \Juo\AdminAPI\Models\Components\TypeCreditCard $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeCreditCard')]
@@ -36,7 +36,7 @@ class InstrumentCreditCard
     public string $maskedNumber;
 
     /**
-     * @param  TypeCreditCard  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeCreditCard  $type
      * @param  string  $brand
      * @param  string  $maskedNumber
      * @phpstan-pure

@@ -14,7 +14,7 @@ class GetCustomersResponseBody
 {
     /**
      *
-     * @var GetCustomersResource $resource
+     * @var \Juo\AdminAPI\Models\Operations\GetCustomersResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\GetCustomersResource')]
@@ -37,7 +37,7 @@ class GetCustomersResponseBody
     /**
      * $data
      *
-     * @var array<Components\Customer> $data
+     * @var array<\Juo\AdminAPI\Models\Components\Customer> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\Customer>')]
@@ -58,10 +58,10 @@ class GetCustomersResponseBody
     public ?string $startCursor;
 
     /**
-     * @param  GetCustomersResource  $resource
+     * @param  \Juo\AdminAPI\Models\Operations\GetCustomersResource  $resource
      * @param  bool  $hasNextPage
      * @param  bool  $hasPrevPage
-     * @param  array<Components\Customer>  $data
+     * @param  array<\Juo\AdminAPI\Models\Components\Customer>  $data
      * @param  ?string  $endCursor
      * @param  ?string  $startCursor
      * @phpstan-pure

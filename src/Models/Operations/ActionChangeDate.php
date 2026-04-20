@@ -14,7 +14,7 @@ class ActionChangeDate
 {
     /**
      *
-     * @var TypeChangeDate $type
+     * @var \Juo\AdminAPI\Models\Operations\TypeChangeDate $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\TypeChangeDate')]
@@ -22,15 +22,15 @@ class ActionChangeDate
 
     /**
      *
-     * @var ActionInput2 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput2 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput2')]
     public ActionInput2 $input;
 
     /**
-     * @param  TypeChangeDate  $type
-     * @param  ActionInput2  $input
+     * @param  \Juo\AdminAPI\Models\Operations\TypeChangeDate  $type
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput2  $input
      * @phpstan-pure
      */
     public function __construct(TypeChangeDate $type, ActionInput2 $input)

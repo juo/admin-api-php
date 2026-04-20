@@ -13,14 +13,14 @@ class ActionInput3
 {
     /**
      *
-     * @var Address $address
+     * @var \Juo\AdminAPI\Models\Operations\Address $address
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\Address')]
     public Address $address;
 
     /**
-     * @param  Address  $address
+     * @param  \Juo\AdminAPI\Models\Operations\Address  $address
      * @phpstan-pure
      */
     public function __construct(Address $address)

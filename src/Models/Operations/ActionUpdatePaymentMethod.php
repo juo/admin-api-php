@@ -14,7 +14,7 @@ class ActionUpdatePaymentMethod
 {
     /**
      *
-     * @var TypeUpdatePaymentMethod $type
+     * @var \Juo\AdminAPI\Models\Operations\TypeUpdatePaymentMethod $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\TypeUpdatePaymentMethod')]
@@ -22,15 +22,15 @@ class ActionUpdatePaymentMethod
 
     /**
      *
-     * @var ActionInput4 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput4 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput4')]
     public ActionInput4 $input;
 
     /**
-     * @param  TypeUpdatePaymentMethod  $type
-     * @param  ActionInput4  $input
+     * @param  \Juo\AdminAPI\Models\Operations\TypeUpdatePaymentMethod  $type
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput4  $input
      * @phpstan-pure
      */
     public function __construct(TypeUpdatePaymentMethod $type, ActionInput4 $input)

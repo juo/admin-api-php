@@ -13,7 +13,7 @@ class SubscriptionDiscountTargetLine
 {
     /**
      *
-     * @var TypeLine $type
+     * @var \Juo\AdminAPI\Models\Components\TypeLine $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeLine')]
@@ -21,15 +21,15 @@ class SubscriptionDiscountTargetLine
 
     /**
      *
-     * @var SelectorAll|SelectorSome $selector
+     * @var \Juo\AdminAPI\Models\Components\SelectorAll|\Juo\AdminAPI\Models\Components\SelectorSome $selector
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('selector')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SelectorAll|\Juo\AdminAPI\Models\Components\SelectorSome')]
     public SelectorAll|SelectorSome $selector;
 
     /**
-     * @param  TypeLine  $type
-     * @param  SelectorAll|SelectorSome  $selector
+     * @param  \Juo\AdminAPI\Models\Components\TypeLine  $type
+     * @param  \Juo\AdminAPI\Models\Components\SelectorAll|\Juo\AdminAPI\Models\Components\SelectorSome  $selector
      * @phpstan-pure
      */
     public function __construct(TypeLine $type, SelectorAll|SelectorSome $selector)

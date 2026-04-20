@@ -20,7 +20,7 @@ class SubscriptionDiscount
 
     /**
      *
-     * @var SubscriptionDiscountResource $resource
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionDiscountResource')]
@@ -28,7 +28,7 @@ class SubscriptionDiscount
 
     /**
      *
-     * @var SubscriptionDiscountTargetShipping|SubscriptionDiscountTargetLine $target
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetShipping|\Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetLine $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetShipping|\Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetLine')]
@@ -36,7 +36,7 @@ class SubscriptionDiscount
 
     /**
      *
-     * @var SubscriptionDiscountValueFixedAmount|SubscriptionDiscountValuePercentage $value
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountValueFixedAmount|\Juo\AdminAPI\Models\Components\SubscriptionDiscountValuePercentage $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionDiscountValueFixedAmount|\Juo\AdminAPI\Models\Components\SubscriptionDiscountValuePercentage')]
@@ -60,9 +60,9 @@ class SubscriptionDiscount
 
     /**
      * @param  string  $id
-     * @param  SubscriptionDiscountResource  $resource
-     * @param  SubscriptionDiscountTargetShipping|SubscriptionDiscountTargetLine  $target
-     * @param  SubscriptionDiscountValueFixedAmount|SubscriptionDiscountValuePercentage  $value
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionDiscountResource  $resource
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetShipping|\Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetLine  $target
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionDiscountValueFixedAmount|\Juo\AdminAPI\Models\Components\SubscriptionDiscountValuePercentage  $value
      * @param  ?string  $title
      * @param  ?int  $recurringCycleLimit
      * @phpstan-pure

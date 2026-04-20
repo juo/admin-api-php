@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\BillingPolicyIntervalDay
+* @var \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalDay
 */
 Operations\BillingPolicyIntervalDay $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\BillingPolicyIntervalDay $value = /* values here */
 
 ```php
 /**
-* @var Operations\BillingPolicyIntervalWeek
+* @var \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalWeek
 */
 Operations\BillingPolicyIntervalWeek $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\BillingPolicyIntervalWeek $value = /* values here */
 
 ```php
 /**
-* @var Operations\BillingPolicyIntervalMonth
+* @var \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalMonth
 */
 Operations\BillingPolicyIntervalMonth $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Operations\BillingPolicyIntervalMonth $value = /* values here */
 
 ```php
 /**
-* @var Operations\BillingPolicyIntervalYear
+* @var \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalYear
 */
 Operations\BillingPolicyIntervalYear $value = /* values here */
 ```

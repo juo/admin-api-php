@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\SubscriptionDiscountValueFixedAmount
+* @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountValueFixedAmount
 */
 Components\SubscriptionDiscountValueFixedAmount $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\SubscriptionDiscountValueFixedAmount $value = /* values here */
 
 ```php
 /**
-* @var Components\SubscriptionDiscountValuePercentage
+* @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountValuePercentage
 */
 Components\SubscriptionDiscountValuePercentage $value = /* values here */
 ```

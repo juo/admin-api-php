@@ -62,7 +62,7 @@ To install the SDK first add the below to your `composer.json` file:
     "repositories": [
         {
             "type": "github",
-            "url": "<UNSET>.git"
+            "url": "https://github.com/juo/admin-api-php.git"
         }
     ],
     "require": {
@@ -161,18 +161,18 @@ foreach ($responses as $response) {
 <details open>
 <summary>Available methods</summary>
 
-### [customers](docs/sdks/customers/README.md)
+### [Customers](docs/sdks/customers/README.md)
 
 * [list](docs/sdks/customers/README.md#list) - Lists customers
 
-### [schedules](docs/sdks/schedules/README.md)
+### [Schedules](docs/sdks/schedules/README.md)
 
 * [list](docs/sdks/schedules/README.md#list) - List schedule orders for a customer
 * [listAdjustments](docs/sdks/schedules/README.md#listadjustments) - List schedule adjustments for a customer
 * [postSchedulesAdjustments](docs/sdks/schedules/README.md#postschedulesadjustments) - Creates a schedule adjustment
 * [delete](docs/sdks/schedules/README.md#delete) - Deletes a schedule adjustment
 
-### [subscriptions](docs/sdks/subscriptions/README.md)
+### [Subscriptions](docs/sdks/subscriptions/README.md)
 
 * [list](docs/sdks/subscriptions/README.md#list) - Lists subscriptions
 * [update](docs/sdks/subscriptions/README.md#update) - Updates a subscription
@@ -181,13 +181,13 @@ foreach ($responses as $response) {
 * [cancel](docs/sdks/subscriptions/README.md#cancel) - Cancels an active/paused subscription
 * [reactivate](docs/sdks/subscriptions/README.md#reactivate) - Reactivates a cancelled subscription
 
-#### [subscriptions->discounts](docs/sdks/discounts/README.md)
+#### [Subscriptions.Discounts](docs/sdks/discounts/README.md)
 
 * [create](docs/sdks/discounts/README.md#create) - Creates a subscription discount
 * [delete](docs/sdks/discounts/README.md#delete) - Deletes a subscription discount
 * [update](docs/sdks/discounts/README.md#update) - Updates a subscription discount
 
-#### [subscriptions->items](docs/sdks/items/README.md)
+#### [Subscriptions.Items](docs/sdks/items/README.md)
 
 * [create](docs/sdks/items/README.md#create) - Creates a subscription item
 * [delete](docs/sdks/items/README.md#delete) - Deletes a subscription item

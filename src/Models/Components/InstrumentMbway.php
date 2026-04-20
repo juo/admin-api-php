@@ -13,7 +13,7 @@ class InstrumentMbway
 {
     /**
      *
-     * @var TypeMbway $type
+     * @var \Juo\AdminAPI\Models\Components\TypeMbway $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeMbway')]
@@ -28,7 +28,7 @@ class InstrumentMbway
     public ?string $phone = null;
 
     /**
-     * @param  TypeMbway  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeMbway  $type
      * @param  ?string  $phone
      * @phpstan-pure
      */

@@ -13,7 +13,7 @@ class ScheduleOrderDiscountValuePercentage
 {
     /**
      *
-     * @var ScheduleOrderDiscountTypePercentage $type
+     * @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypePercentage $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypePercentage')]
@@ -27,7 +27,7 @@ class ScheduleOrderDiscountValuePercentage
     public float $percentage;
 
     /**
-     * @param  ScheduleOrderDiscountTypePercentage  $type
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTypePercentage  $type
      * @param  float  $percentage
      * @phpstan-pure
      */

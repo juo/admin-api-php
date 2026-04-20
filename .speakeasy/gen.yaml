@@ -13,6 +13,8 @@ generation:
     requestResponseComponentNamesFeb2024: true
     securityFeb2025: true
     sharedErrorComponentsApr2025: true
+    sharedNestedComponentsJan2026: false
+    nameOverrideFeb2026: false
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
@@ -21,12 +23,15 @@ generation:
   sdkHooksConfigAccess: true
   schemas:
     allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
+  versioningStrategy: automatic
+  persistentEdits: {}
   tests:
     generateTests: false
     generateNewTests: true
     skipResponseBodyAssertions: false
 php:
-  version: 0.0.1
+  version: 0.1.0
   additionalDependencies:
     autoload: {}
     autoload-dev: {}
@@ -44,12 +49,14 @@ php:
       operations: Models/Operations
       shared: Models/Components
       webhooks: Models/Webhooks
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   laravelServiceProvider:
     enabled: false
     svcName: openapi
   maxMethodParams: 4
   methodArguments: infer-optional-args
+  multipartArrayFormat: legacy
   namespace: Juo\AdminAPI
   outputModelSuffix: output
   packageName: juo/admin-api

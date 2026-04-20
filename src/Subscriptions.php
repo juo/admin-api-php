@@ -53,8 +53,8 @@ class Subscriptions
     /**
      * Lists subscriptions
      *
-     * @param  ?Operations\GetSubscriptionsRequest  $request
-     * @return Operations\GetSubscriptionsResponse
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetSubscriptionsRequest  $request
+     * @return \Juo\AdminAPI\Models\Operations\GetSubscriptionsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     private function listIndividual(?Operations\GetSubscriptionsRequest $request = null, ?Options $options = null): Operations\GetSubscriptionsResponse
@@ -85,11 +85,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -146,8 +147,8 @@ class Subscriptions
     /**
      * Lists subscriptions
      *
-     * @param  ?Operations\GetSubscriptionsRequest  $request
-     * @return \Generator<Operations\GetSubscriptionsResponse>
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetSubscriptionsRequest  $request
+     * @return \Generator<\Juo\AdminAPI\Models\Operations\GetSubscriptionsResponse>
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function list(?Operations\GetSubscriptionsRequest $request = null, ?Options $options = null): \Generator
@@ -163,9 +164,9 @@ class Subscriptions
      * Updates a subscription
      *
      * @param  string  $subscriptionId
-     * @param  ?Operations\PatchSubscriptionsSubscriptionIdRequestBody  $requestBody
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdRequestBody  $requestBody
      * @param  ?string  $tenant
-     * @return Operations\PatchSubscriptionsSubscriptionIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function update(string $subscriptionId, ?Operations\PatchSubscriptionsSubscriptionIdRequestBody $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PatchSubscriptionsSubscriptionIdResponse
@@ -202,11 +203,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -236,10 +238,10 @@ class Subscriptions
     /**
      * Cancels an active/paused subscription
      *
-     * @param  Operations\PostSubscriptionsSubscriptionIdCancelRequestBody  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdCancelRequestBody  $requestBody
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdCancelResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdCancelResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function cancel(Operations\PostSubscriptionsSubscriptionIdCancelRequestBody $requestBody, string $subscriptionId, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdCancelResponse
@@ -277,11 +279,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -313,7 +316,7 @@ class Subscriptions
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdPauseResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdPauseResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function pause(string $subscriptionId, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdPauseResponse
@@ -345,11 +348,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -381,7 +385,7 @@ class Subscriptions
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdReactivateResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdReactivateResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function reactivate(string $subscriptionId, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdReactivateResponse
@@ -413,11 +417,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -449,7 +454,7 @@ class Subscriptions
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdResumeResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdResumeResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function resume(string $subscriptionId, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdResumeResponse
@@ -481,11 +486,12 @@ class Subscriptions
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);

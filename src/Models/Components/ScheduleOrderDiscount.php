@@ -27,7 +27,7 @@ class ScheduleOrderDiscount
 
     /**
      *
-     * @var TargetLineEnum|TargetShippingEnum $target
+     * @var \Juo\AdminAPI\Models\Components\TargetLineEnum|\Juo\AdminAPI\Models\Components\TargetShippingEnum $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TargetLineEnum|\Juo\AdminAPI\Models\Components\TargetShippingEnum')]
@@ -35,7 +35,7 @@ class ScheduleOrderDiscount
 
     /**
      *
-     * @var ScheduleOrderDiscountValuePercentage|ScheduleOrderDiscountValueFixedAmount $value
+     * @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValuePercentage|\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValueFixedAmount $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValuePercentage|\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValueFixedAmount')]
@@ -43,7 +43,7 @@ class ScheduleOrderDiscount
 
     /**
      *
-     * @var EntitledItems1|EntitledItems2 $entitledItems
+     * @var \Juo\AdminAPI\Models\Components\EntitledItems1|\Juo\AdminAPI\Models\Components\EntitledItems2 $entitledItems
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('entitledItems')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\EntitledItems1|\Juo\AdminAPI\Models\Components\EntitledItems2')]
@@ -59,9 +59,9 @@ class ScheduleOrderDiscount
     /**
      * @param  string  $id
      * @param  string  $title
-     * @param  TargetLineEnum|TargetShippingEnum  $target
-     * @param  ScheduleOrderDiscountValuePercentage|ScheduleOrderDiscountValueFixedAmount  $value
-     * @param  EntitledItems1|EntitledItems2  $entitledItems
+     * @param  \Juo\AdminAPI\Models\Components\TargetLineEnum|\Juo\AdminAPI\Models\Components\TargetShippingEnum  $target
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValuePercentage|\Juo\AdminAPI\Models\Components\ScheduleOrderDiscountValueFixedAmount  $value
+     * @param  \Juo\AdminAPI\Models\Components\EntitledItems1|\Juo\AdminAPI\Models\Components\EntitledItems2  $entitledItems
      * @param  ?string  $subscriptionId
      * @phpstan-pure
      */

@@ -13,7 +13,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine
 {
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine $type
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine')]
@@ -21,15 +21,15 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine
 
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome $selector
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome $selector
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('selector')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome')]
     public PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome $selector;
 
     /**
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine  $type
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome  $selector
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome  $selector
      * @phpstan-pure
      */
     public function __construct(PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeLine $type, PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorAll|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome $selector)

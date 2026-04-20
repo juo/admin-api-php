@@ -28,7 +28,7 @@ class ProductVariant
     /**
      * This field is expandable.
      *
-     * @var string|Product $product
+     * @var string|\Juo\AdminAPI\Models\Components\Product $product
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('product')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Product')]
@@ -36,7 +36,7 @@ class ProductVariant
 
     /**
      *
-     * @var ?ProductVariantImage $image
+     * @var ?\Juo\AdminAPI\Models\Components\ProductVariantImage $image
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('image')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ProductVariantImage|null')]
@@ -45,8 +45,8 @@ class ProductVariant
     /**
      * @param  string  $id
      * @param  string  $title
-     * @param  string|Product  $product
-     * @param  ?ProductVariantImage  $image
+     * @param  string|\Juo\AdminAPI\Models\Components\Product  $product
+     * @param  ?\Juo\AdminAPI\Models\Components\ProductVariantImage  $image
      * @phpstan-pure
      */
     public function __construct(string $id, string $title, string|Product $product, ?ProductVariantImage $image = null)

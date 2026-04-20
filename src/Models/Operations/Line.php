@@ -40,7 +40,7 @@ class Line
     /**
      * Override billing interval for this cycle
      *
-     * @var ?PostSchedulesAdjustmentsInterval $interval
+     * @var ?\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsInterval $interval
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interval')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsInterval|null')]
@@ -60,7 +60,7 @@ class Line
      * @param  string  $lineId
      * @param  ?string  $variantId
      * @param  ?int  $quantity
-     * @param  ?PostSchedulesAdjustmentsInterval  $interval
+     * @param  ?\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsInterval  $interval
      * @param  ?\DateTime  $nextBillingDate
      * @phpstan-pure
      */

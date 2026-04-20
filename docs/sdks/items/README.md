@@ -1,5 +1,4 @@
-# Items
-(*subscriptions->items*)
+# Subscriptions.Items
 
 ## Overview
 

@@ -13,14 +13,14 @@ class SubscriptionDiscountTargetShipping
 {
     /**
      *
-     * @var TypeShipping $type
+     * @var \Juo\AdminAPI\Models\Components\TypeShipping $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeShipping')]
     public TypeShipping $type;
 
     /**
-     * @param  TypeShipping  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeShipping  $type
      * @phpstan-pure
      */
     public function __construct(TypeShipping $type)
