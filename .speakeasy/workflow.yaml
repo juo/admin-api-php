@@ -11,6 +11,10 @@ targets:
     juo:
         target: php
         source: Juo-OAS
+        publish:
+            packagist:
+                username: $packagist_username
+                token: $packagist_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas-php-code-samples
