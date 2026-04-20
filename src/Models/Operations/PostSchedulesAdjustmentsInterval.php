@@ -23,7 +23,7 @@ class PostSchedulesAdjustmentsInterval
     /**
      * Interval unit
      *
-     * @var PostSchedulesAdjustmentsIntervalDay|PostSchedulesAdjustmentsIntervalWeek|PostSchedulesAdjustmentsIntervalMonth|PostSchedulesAdjustmentsIntervalYear $interval
+     * @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalDay|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalWeek|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalMonth|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalYear $interval
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interval')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalDay|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalWeek|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalMonth|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalYear')]
@@ -31,7 +31,7 @@ class PostSchedulesAdjustmentsInterval
 
     /**
      * @param  int  $intervalCount
-     * @param  PostSchedulesAdjustmentsIntervalDay|PostSchedulesAdjustmentsIntervalWeek|PostSchedulesAdjustmentsIntervalMonth|PostSchedulesAdjustmentsIntervalYear  $interval
+     * @param  \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalDay|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalWeek|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalMonth|\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalYear  $interval
      * @phpstan-pure
      */
     public function __construct(int $intervalCount, PostSchedulesAdjustmentsIntervalDay|PostSchedulesAdjustmentsIntervalWeek|PostSchedulesAdjustmentsIntervalMonth|PostSchedulesAdjustmentsIntervalYear $interval)

@@ -21,7 +21,7 @@ class DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponseBody
 
     /**
      *
-     * @var DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource $resource
+     * @var \Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource')]
@@ -36,11 +36,11 @@ class DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponseBody
 
     /**
      * @param  string  $id
-     * @param  DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource  $resource
+     * @param  \Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource  $resource
      * @param  bool  $deleted
      * @phpstan-pure
      */
-    public function __construct(string $id, DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource $resource, bool $deleted)
+    public function __construct(string $id, DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResource $resource, bool $deleted = true)
     {
         $this->id = $id;
         $this->resource = $resource;

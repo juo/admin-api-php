@@ -37,7 +37,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequest
 
     /**
      *
-     * @var ?PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody $requestBody
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
     public ?PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody $requestBody = null;
@@ -46,7 +46,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequest
      * @param  string  $subscriptionId
      * @param  string  $discountId
      * @param  ?string  $tenant
-     * @param  ?PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody  $requestBody
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody  $requestBody
      * @phpstan-pure
      */
     public function __construct(string $subscriptionId, string $discountId, ?string $tenant = null, ?PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody $requestBody = null)

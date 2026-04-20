@@ -1,4 +1,4 @@
-speakeasyVersion: 1.637.3
+speakeasyVersion: 1.761.8
 sources:
     Juo-OAS:
         sourceNamespace: fastify-swagger
@@ -13,7 +13,7 @@ targets:
         sourceRevisionDigest: sha256:9f31fa7f805ccbbc979ea7d70ea034204f6192b464bb495fe78f94e568e5da45
         sourceBlobDigest: sha256:8b5ce2260ca59133d0eeb2389d7d5b7331d0c1effae32032b059d858cf8c6a3a
         codeSamplesNamespace: juo-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:d2e8f2a8e141c785f5d8a6f2e6c63b52a1a30546234c1e1968a18b036ac9186c
+        codeSamplesRevisionDigest: sha256:4e5f141580da0287fd493a057b893769109ee55f03801efde966e6f65c083da3
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

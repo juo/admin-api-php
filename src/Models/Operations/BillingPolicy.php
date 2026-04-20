@@ -13,7 +13,7 @@ class BillingPolicy
 {
     /**
      *
-     * @var BillingPolicyIntervalDay|BillingPolicyIntervalWeek|BillingPolicyIntervalMonth|BillingPolicyIntervalYear $interval
+     * @var \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalDay|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalWeek|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalMonth|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalYear $interval
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interval')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalDay|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalWeek|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalMonth|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalYear')]
@@ -29,7 +29,7 @@ class BillingPolicy
     /**
      * $anchors
      *
-     * @var array<BillingPolicyAnchor> $anchors
+     * @var array<\Juo\AdminAPI\Models\Operations\BillingPolicyAnchor> $anchors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('anchors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Operations\BillingPolicyAnchor>')]
@@ -50,9 +50,9 @@ class BillingPolicy
     public ?int $maxCycles;
 
     /**
-     * @param  BillingPolicyIntervalDay|BillingPolicyIntervalWeek|BillingPolicyIntervalMonth|BillingPolicyIntervalYear  $interval
+     * @param  \Juo\AdminAPI\Models\Operations\BillingPolicyIntervalDay|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalWeek|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalMonth|\Juo\AdminAPI\Models\Operations\BillingPolicyIntervalYear  $interval
      * @param  int  $intervalCount
-     * @param  array<BillingPolicyAnchor>  $anchors
+     * @param  array<\Juo\AdminAPI\Models\Operations\BillingPolicyAnchor>  $anchors
      * @param  ?int  $minCycles
      * @param  ?int  $maxCycles
      * @phpstan-pure

@@ -47,8 +47,8 @@ class Customers
     /**
      * Lists customers
      *
-     * @param  ?Operations\GetCustomersRequest  $request
-     * @return Operations\GetCustomersResponse
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetCustomersRequest  $request
+     * @return \Juo\AdminAPI\Models\Operations\GetCustomersResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     private function listIndividual(?Operations\GetCustomersRequest $request = null, ?Options $options = null): Operations\GetCustomersResponse
@@ -79,11 +79,12 @@ class Customers
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -138,8 +139,8 @@ class Customers
     /**
      * Lists customers
      *
-     * @param  ?Operations\GetCustomersRequest  $request
-     * @return \Generator<Operations\GetCustomersResponse>
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetCustomersRequest  $request
+     * @return \Generator<\Juo\AdminAPI\Models\Operations\GetCustomersResponse>
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function list(?Operations\GetCustomersRequest $request = null, ?Options $options = null): \Generator

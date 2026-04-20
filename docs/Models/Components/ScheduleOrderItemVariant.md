@@ -18,7 +18,7 @@ string $value = /* values here */
 
 ```php
 /**
-* @var Components\ProductVariant
+* @var \Juo\AdminAPI\Models\Components\ProductVariant
 */
 Components\ProductVariant $value = /* values here */
 ```

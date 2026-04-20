@@ -14,7 +14,7 @@ class MatcherCycle
 {
     /**
      *
-     * @var TypeCycle $type
+     * @var \Juo\AdminAPI\Models\Operations\TypeCycle $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\TypeCycle')]
@@ -22,15 +22,15 @@ class MatcherCycle
 
     /**
      *
-     * @var MatcherInput1 $input
+     * @var \Juo\AdminAPI\Models\Operations\MatcherInput1 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\MatcherInput1')]
     public MatcherInput1 $input;
 
     /**
-     * @param  TypeCycle  $type
-     * @param  MatcherInput1  $input
+     * @param  \Juo\AdminAPI\Models\Operations\TypeCycle  $type
+     * @param  \Juo\AdminAPI\Models\Operations\MatcherInput1  $input
      * @phpstan-pure
      */
     public function __construct(TypeCycle $type, MatcherInput1 $input)

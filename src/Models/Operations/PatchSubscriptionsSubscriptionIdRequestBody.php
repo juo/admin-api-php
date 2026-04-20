@@ -30,7 +30,7 @@ class PatchSubscriptionsSubscriptionIdRequestBody
 
     /**
      *
-     * @var ?DeliveryAddress $deliveryAddress
+     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryAddress $deliveryAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryAddress')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryAddress|null')]
@@ -39,7 +39,7 @@ class PatchSubscriptionsSubscriptionIdRequestBody
 
     /**
      *
-     * @var ?DeliveryMethod $deliveryMethod
+     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryMethod $deliveryMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryMethod')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryMethod|null')]
@@ -57,8 +57,8 @@ class PatchSubscriptionsSubscriptionIdRequestBody
     /**
      * @param  ?float  $deliveryPrice
      * @param  ?string  $paymentMethod
-     * @param  ?DeliveryAddress  $deliveryAddress
-     * @param  ?DeliveryMethod  $deliveryMethod
+     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryAddress  $deliveryAddress
+     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryMethod  $deliveryMethod
      * @param  ?\DateTime  $nextBillingDate
      * @phpstan-pure
      */

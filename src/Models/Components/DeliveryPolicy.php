@@ -13,7 +13,7 @@ class DeliveryPolicy
 {
     /**
      *
-     * @var DeliveryPolicyIntervalDay|DeliveryPolicyIntervalWeek|DeliveryPolicyIntervalMonth|DeliveryPolicyIntervalYear $interval
+     * @var \Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalDay|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalWeek|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalMonth|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalYear $interval
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('interval')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalDay|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalWeek|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalMonth|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalYear')]
@@ -29,16 +29,16 @@ class DeliveryPolicy
     /**
      * $anchors
      *
-     * @var array<DeliveryPolicyAnchor> $anchors
+     * @var array<\Juo\AdminAPI\Models\Components\DeliveryPolicyAnchor> $anchors
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('anchors')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\DeliveryPolicyAnchor>')]
     public array $anchors;
 
     /**
-     * @param  DeliveryPolicyIntervalDay|DeliveryPolicyIntervalWeek|DeliveryPolicyIntervalMonth|DeliveryPolicyIntervalYear  $interval
+     * @param  \Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalDay|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalWeek|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalMonth|\Juo\AdminAPI\Models\Components\DeliveryPolicyIntervalYear  $interval
      * @param  int  $intervalCount
-     * @param  array<DeliveryPolicyAnchor>  $anchors
+     * @param  array<\Juo\AdminAPI\Models\Components\DeliveryPolicyAnchor>  $anchors
      * @phpstan-pure
      */
     public function __construct(DeliveryPolicyIntervalDay|DeliveryPolicyIntervalWeek|DeliveryPolicyIntervalMonth|DeliveryPolicyIntervalYear $interval, int $intervalCount, array $anchors)

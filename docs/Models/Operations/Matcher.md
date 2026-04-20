@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\MatcherCycle
+* @var \Juo\AdminAPI\Models\Operations\MatcherCycle
 */
 Operations\MatcherCycle $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\MatcherCycle $value = /* values here */
 
 ```php
 /**
-* @var Operations\MatcherDate
+* @var \Juo\AdminAPI\Models\Operations\MatcherDate
 */
 Operations\MatcherDate $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Operations\MatcherDate $value = /* values here */
 
 ```php
 /**
-* @var Operations\MatcherCycleAndDate
+* @var \Juo\AdminAPI\Models\Operations\MatcherCycleAndDate
 */
 Operations\MatcherCycleAndDate $value = /* values here */
 ```

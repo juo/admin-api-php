@@ -13,14 +13,14 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping
 {
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping $type
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping')]
     public PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping $type;
 
     /**
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping  $type
      * @phpstan-pure
      */
     public function __construct(PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeShipping $type)

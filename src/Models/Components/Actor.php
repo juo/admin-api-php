@@ -13,7 +13,7 @@ class Actor
 {
     /**
      *
-     * @var ScheduleAdjustmentType $type
+     * @var \Juo\AdminAPI\Models\Components\ScheduleAdjustmentType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleAdjustmentType')]
@@ -28,7 +28,7 @@ class Actor
     public ?string $id;
 
     /**
-     * @param  ScheduleAdjustmentType  $type
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleAdjustmentType  $type
      * @param  ?string  $id
      * @phpstan-pure
      */

@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount
 */
 Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount $value = /* 
 
 ```php
 /**
-* @var Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage
 */
 Operations\PostSubscriptionsSubscriptionIdDiscountsValuePercentage $value = /* values here */
 ```

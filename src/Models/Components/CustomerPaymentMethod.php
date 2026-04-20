@@ -21,7 +21,7 @@ class CustomerPaymentMethod
     /**
      * This field is expandable.
      *
-     * @var string|Customer $customer
+     * @var string|\Juo\AdminAPI\Models\Components\Customer $customer
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customer')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Customer')]
@@ -29,7 +29,7 @@ class CustomerPaymentMethod
 
     /**
      *
-     * @var InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|null $instrument
+     * @var \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null $instrument
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('instrument')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null')]
@@ -38,8 +38,8 @@ class CustomerPaymentMethod
 
     /**
      * @param  string  $id
-     * @param  string|Customer  $customer
-     * @param  InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|null  $instrument
+     * @param  string|\Juo\AdminAPI\Models\Components\Customer  $customer
+     * @param  \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null  $instrument
      * @phpstan-pure
      */
     public function __construct(string $id, string|Customer $customer, InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|null $instrument = null)

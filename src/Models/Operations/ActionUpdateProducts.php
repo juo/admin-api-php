@@ -14,7 +14,7 @@ class ActionUpdateProducts
 {
     /**
      *
-     * @var TypeUpdateProducts $type
+     * @var \Juo\AdminAPI\Models\Operations\TypeUpdateProducts $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\TypeUpdateProducts')]
@@ -22,15 +22,15 @@ class ActionUpdateProducts
 
     /**
      *
-     * @var ActionInput5 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput5 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput5')]
     public ActionInput5 $input;
 
     /**
-     * @param  TypeUpdateProducts  $type
-     * @param  ActionInput5  $input
+     * @param  \Juo\AdminAPI\Models\Operations\TypeUpdateProducts  $type
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput5  $input
      * @phpstan-pure
      */
     public function __construct(TypeUpdateProducts $type, ActionInput5 $input)

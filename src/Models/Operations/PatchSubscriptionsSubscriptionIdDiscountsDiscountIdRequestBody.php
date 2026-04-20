@@ -13,7 +13,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody
 {
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine|null $target
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine|null $target
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('target')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine|null')]
@@ -22,7 +22,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody
 
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage|null $value
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage|null $value
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('value')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage|null')]
@@ -39,8 +39,8 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody
     public ?int $recurringCycleLimit = null;
 
     /**
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine|null  $target
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount|PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage|null  $value
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetShipping|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTargetLine|null  $target
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValueFixedAmount|\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdValuePercentage|null  $value
      * @param  ?int  $recurringCycleLimit
      * @phpstan-pure
      */

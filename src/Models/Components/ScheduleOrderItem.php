@@ -49,7 +49,7 @@ class ScheduleOrderItem
     /**
      * $customAttributes
      *
-     * @var array<CustomAttribute> $customAttributes
+     * @var array<\Juo\AdminAPI\Models\Components\CustomAttribute> $customAttributes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customAttributes')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\CustomAttribute>')]
@@ -65,7 +65,7 @@ class ScheduleOrderItem
     /**
      * This field is expandable.
      *
-     * @var string|ProductVariant|null $variant
+     * @var string|\Juo\AdminAPI\Models\Components\ProductVariant|null $variant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('variant')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\ProductVariant|null')]
@@ -74,7 +74,7 @@ class ScheduleOrderItem
     /**
      * This field is expandable.
      *
-     * @var string|Product|null $product
+     * @var string|\Juo\AdminAPI\Models\Components\Product|null $product
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('product')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Product|null')]
@@ -83,7 +83,7 @@ class ScheduleOrderItem
     /**
      * This field is expandable.
      *
-     * @var string|Subscription|null $subscription
+     * @var string|\Juo\AdminAPI\Models\Components\Subscription|null $subscription
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscription')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Subscription|null')]
@@ -92,7 +92,7 @@ class ScheduleOrderItem
     /**
      * This field is expandable.
      *
-     * @var string|SubscriptionItem|null $subscriptionItem
+     * @var string|\Juo\AdminAPI\Models\Components\SubscriptionItem|null $subscriptionItem
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('subscriptionItem')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\SubscriptionItem|null')]
@@ -118,12 +118,12 @@ class ScheduleOrderItem
      * @param  int  $quantity
      * @param  float  $price
      * @param  float  $totalPrice
-     * @param  array<CustomAttribute>  $customAttributes
+     * @param  array<\Juo\AdminAPI\Models\Components\CustomAttribute>  $customAttributes
      * @param  ?string  $subtitle
-     * @param  string|ProductVariant|null  $variant
-     * @param  string|Product|null  $product
-     * @param  string|Subscription|null  $subscription
-     * @param  string|SubscriptionItem|null  $subscriptionItem
+     * @param  string|\Juo\AdminAPI\Models\Components\ProductVariant|null  $variant
+     * @param  string|\Juo\AdminAPI\Models\Components\Product|null  $product
+     * @param  string|\Juo\AdminAPI\Models\Components\Subscription|null  $subscription
+     * @param  string|\Juo\AdminAPI\Models\Components\SubscriptionItem|null  $subscriptionItem
      * @param  ?string  $parentProductId
      * @param  ?string  $parentLineId
      * @phpstan-pure

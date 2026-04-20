@@ -13,7 +13,7 @@ class DeliveryMethod
 {
     /**
      *
-     * @var ?PatchSubscriptionsSubscriptionIdType $type
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdType $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdType|null')]
@@ -39,7 +39,7 @@ class DeliveryMethod
     public ?string $description = null;
 
     /**
-     * @param  ?PatchSubscriptionsSubscriptionIdType  $type
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdType  $type
      * @param  ?string  $title
      * @param  ?string  $description
      * @phpstan-pure

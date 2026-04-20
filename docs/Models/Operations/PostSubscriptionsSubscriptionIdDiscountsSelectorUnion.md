@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll
 */
 Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll $value = /* value
 
 ```php
 /**
-* @var Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome
 */
 Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome $value = /* values here */
 ```

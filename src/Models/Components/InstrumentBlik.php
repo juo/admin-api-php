@@ -13,14 +13,14 @@ class InstrumentBlik
 {
     /**
      *
-     * @var TypeBlik $type
+     * @var \Juo\AdminAPI\Models\Components\TypeBlik $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeBlik')]
     public TypeBlik $type;
 
     /**
-     * @param  TypeBlik  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeBlik  $type
      * @phpstan-pure
      */
     public function __construct(TypeBlik $type)

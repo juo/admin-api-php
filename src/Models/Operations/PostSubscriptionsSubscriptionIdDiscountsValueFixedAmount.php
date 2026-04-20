@@ -20,7 +20,7 @@ class PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount
 
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount $type
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount')]
@@ -36,7 +36,7 @@ class PostSubscriptionsSubscriptionIdDiscountsValueFixedAmount
 
     /**
      * @param  float  $amount
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeFixedAmount  $type
      * @param  bool  $appliesOnEachItem
      * @phpstan-pure
      */

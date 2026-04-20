@@ -49,7 +49,7 @@ class Schedules
      *
      * @param  string  $adjustmentId
      * @param  ?string  $tenant
-     * @return Operations\DeleteSchedulesAdjustmentsAdjustmentIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\DeleteSchedulesAdjustmentsAdjustmentIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function delete(string $adjustmentId, ?string $tenant = null, ?Options $options = null): Operations\DeleteSchedulesAdjustmentsAdjustmentIdResponse
@@ -81,11 +81,12 @@ class Schedules
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -119,7 +120,7 @@ class Schedules
      * @param  int  $count
      * @param  ?string  $query
      * @param  ?string  $tenant
-     * @return Operations\GetSchedulesResponse
+     * @return \Juo\AdminAPI\Models\Operations\GetSchedulesResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function list(string $customerId, int $count, ?string $query = null, ?string $tenant = null, ?Options $options = null): Operations\GetSchedulesResponse
@@ -156,11 +157,12 @@ class Schedules
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -190,8 +192,8 @@ class Schedules
     /**
      * List schedule adjustments for a customer
      *
-     * @param  Operations\GetSchedulesAdjustmentsRequest  $request
-     * @return Operations\GetSchedulesAdjustmentsResponse
+     * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsRequest  $request
+     * @return \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     private function listAdjustmentsIndividual(Operations\GetSchedulesAdjustmentsRequest $request, ?Options $options = null): Operations\GetSchedulesAdjustmentsResponse
@@ -222,11 +224,12 @@ class Schedules
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -281,8 +284,8 @@ class Schedules
     /**
      * List schedule adjustments for a customer
      *
-     * @param  Operations\GetSchedulesAdjustmentsRequest  $request
-     * @return \Generator<Operations\GetSchedulesAdjustmentsResponse>
+     * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsRequest  $request
+     * @return \Generator<\Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResponse>
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function listAdjustments(Operations\GetSchedulesAdjustmentsRequest $request, ?Options $options = null): \Generator
@@ -297,9 +300,9 @@ class Schedules
     /**
      * Creates a schedule adjustment
      *
-     * @param  Operations\PostSchedulesAdjustmentsRequestBody  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsRequestBody  $requestBody
      * @param  ?string  $tenant
-     * @return Operations\PostSchedulesAdjustmentsResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function postSchedulesAdjustments(Operations\PostSchedulesAdjustmentsRequestBody $requestBody, ?string $tenant = null, ?Options $options = null): Operations\PostSchedulesAdjustmentsResponse
@@ -336,11 +339,12 @@ class Schedules
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['201'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);

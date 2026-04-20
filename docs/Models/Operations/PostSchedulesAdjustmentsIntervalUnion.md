@@ -9,7 +9,7 @@ Interval unit
 
 ```php
 /**
-* @var Operations\PostSchedulesAdjustmentsIntervalDay
+* @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalDay
 */
 Operations\PostSchedulesAdjustmentsIntervalDay $value = /* values here */
 ```
@@ -18,7 +18,7 @@ Operations\PostSchedulesAdjustmentsIntervalDay $value = /* values here */
 
 ```php
 /**
-* @var Operations\PostSchedulesAdjustmentsIntervalWeek
+* @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalWeek
 */
 Operations\PostSchedulesAdjustmentsIntervalWeek $value = /* values here */
 ```
@@ -27,7 +27,7 @@ Operations\PostSchedulesAdjustmentsIntervalWeek $value = /* values here */
 
 ```php
 /**
-* @var Operations\PostSchedulesAdjustmentsIntervalMonth
+* @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalMonth
 */
 Operations\PostSchedulesAdjustmentsIntervalMonth $value = /* values here */
 ```
@@ -36,7 +36,7 @@ Operations\PostSchedulesAdjustmentsIntervalMonth $value = /* values here */
 
 ```php
 /**
-* @var Operations\PostSchedulesAdjustmentsIntervalYear
+* @var \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsIntervalYear
 */
 Operations\PostSchedulesAdjustmentsIntervalYear $value = /* values here */
 ```

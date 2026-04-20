@@ -21,7 +21,7 @@ class ScheduleAdjustment
 
     /**
      *
-     * @var ScheduleAdjustmentResource $resource
+     * @var \Juo\AdminAPI\Models\Components\ScheduleAdjustmentResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleAdjustmentResource')]
@@ -37,7 +37,7 @@ class ScheduleAdjustment
 
     /**
      *
-     * @var Matcher $matcher
+     * @var \Juo\AdminAPI\Models\Components\Matcher $matcher
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('matcher')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Matcher')]
@@ -45,7 +45,7 @@ class ScheduleAdjustment
 
     /**
      *
-     * @var Action $action
+     * @var \Juo\AdminAPI\Models\Components\Action $action
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('action')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Action')]
@@ -53,7 +53,7 @@ class ScheduleAdjustment
 
     /**
      *
-     * @var Actor $actor
+     * @var \Juo\AdminAPI\Models\Components\Actor $actor
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('actor')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Actor')]
@@ -77,11 +77,11 @@ class ScheduleAdjustment
 
     /**
      * @param  string  $id
-     * @param  ScheduleAdjustmentResource  $resource
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleAdjustmentResource  $resource
      * @param  string  $customer
-     * @param  Matcher  $matcher
-     * @param  Action  $action
-     * @param  Actor  $actor
+     * @param  \Juo\AdminAPI\Models\Components\Matcher  $matcher
+     * @param  \Juo\AdminAPI\Models\Components\Action  $action
+     * @param  \Juo\AdminAPI\Models\Components\Actor  $actor
      * @param  \DateTime  $createdAt
      * @param  \DateTime  $updatedAt
      * @phpstan-pure

@@ -50,7 +50,7 @@ class Items
      * @param  string  $subscriptionId
      * @param  string  $itemId
      * @param  ?string  $tenant
-     * @return Operations\DeleteSubscriptionsSubscriptionIdItemsItemIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdItemsItemIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function delete(string $subscriptionId, string $itemId, ?string $tenant = null, ?Options $options = null): Operations\DeleteSubscriptionsSubscriptionIdItemsItemIdResponse
@@ -83,11 +83,12 @@ class Items
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -119,9 +120,9 @@ class Items
      *
      * @param  string  $subscriptionId
      * @param  string  $itemId
-     * @param  ?Operations\PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody  $requestBody
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody  $requestBody
      * @param  ?string  $tenant
-     * @return Operations\PatchSubscriptionsSubscriptionIdItemsItemIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function update(string $subscriptionId, string $itemId, ?Operations\PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PatchSubscriptionsSubscriptionIdItemsItemIdResponse
@@ -159,11 +160,12 @@ class Items
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -193,10 +195,10 @@ class Items
     /**
      * Creates a subscription item
      *
-     * @param  Operations\PostSubscriptionsSubscriptionIdItemsRequestBody  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdItemsRequestBody  $requestBody
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdItemsResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdItemsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function create(Operations\PostSubscriptionsSubscriptionIdItemsRequestBody $requestBody, string $subscriptionId, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdItemsResponse
@@ -234,11 +236,12 @@ class Items
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);

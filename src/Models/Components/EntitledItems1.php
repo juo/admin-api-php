@@ -22,7 +22,7 @@ class EntitledItems1
      * @param  bool  $all
      * @phpstan-pure
      */
-    public function __construct(bool $all)
+    public function __construct(bool $all = true)
     {
         $this->all = $all;
     }

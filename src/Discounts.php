@@ -50,7 +50,7 @@ class Discounts
      * @param  string  $subscriptionId
      * @param  string  $discountId
      * @param  ?string  $tenant
-     * @return Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function delete(string $subscriptionId, string $discountId, ?string $tenant = null, ?Options $options = null): Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
@@ -83,11 +83,12 @@ class Discounts
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -119,9 +120,9 @@ class Discounts
      *
      * @param  string  $subscriptionId
      * @param  string  $discountId
-     * @param  ?Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody  $requestBody
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody  $requestBody
      * @param  ?string  $tenant
-     * @return Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
+     * @return \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function update(string $subscriptionId, string $discountId, ?Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdRequestBody $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse
@@ -159,11 +160,12 @@ class Discounts
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
@@ -194,9 +196,9 @@ class Discounts
      * Creates a subscription discount
      *
      * @param  string  $subscriptionId
-     * @param  Operations\RequestBody1|Operations\RequestBody2|null  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\RequestBody1|\Juo\AdminAPI\Models\Operations\RequestBody2|null  $requestBody
      * @param  ?string  $tenant
-     * @return Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
     public function create(string $subscriptionId, Operations\RequestBody1|Operations\RequestBody2|null $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
@@ -233,11 +235,12 @@ class Discounts
         }
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $statusCode = $httpResponse->getStatusCode();
-        if (Utils\Utils::matchStatusCodes($statusCode, ['4XX', '5XX'])) {
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
             $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
             $httpResponse = $res;
         }
+
+        $statusCode = $httpResponse->getStatusCode();
         if (Utils\Utils::matchStatusCodes($statusCode, ['200'])) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);

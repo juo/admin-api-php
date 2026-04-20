@@ -35,7 +35,7 @@ class PostSubscriptionsSubscriptionIdCancelResponse
     /**
      * Default Response
      *
-     * @var ?Components\Subscription $subscription
+     * @var ?\Juo\AdminAPI\Models\Components\Subscription $subscription
      */
     public ?Components\Subscription $subscription = null;
 
@@ -43,7 +43,7 @@ class PostSubscriptionsSubscriptionIdCancelResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\Subscription  $subscription
+     * @param  ?\Juo\AdminAPI\Models\Components\Subscription  $subscription
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\Subscription $subscription = null)

@@ -21,7 +21,7 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody
 
     /**
      *
-     * @var ?BillingPolicy $billingPolicy
+     * @var ?\Juo\AdminAPI\Models\Operations\BillingPolicy $billingPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billingPolicy')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\BillingPolicy|null')]
@@ -30,7 +30,7 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody
 
     /**
      *
-     * @var ?DeliveryPolicy $deliveryPolicy
+     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryPolicy $deliveryPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryPolicy')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryPolicy|null')]
@@ -39,8 +39,8 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody
 
     /**
      * @param  ?int  $quantity
-     * @param  ?BillingPolicy  $billingPolicy
-     * @param  ?DeliveryPolicy  $deliveryPolicy
+     * @param  ?\Juo\AdminAPI\Models\Operations\BillingPolicy  $billingPolicy
+     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryPolicy  $deliveryPolicy
      * @phpstan-pure
      */
     public function __construct(?int $quantity = null, ?BillingPolicy $billingPolicy = null, ?DeliveryPolicy $deliveryPolicy = null)

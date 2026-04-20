@@ -21,7 +21,7 @@ class PostSchedulesAdjustmentsRequestBody
 
     /**
      *
-     * @var MatcherCycle|MatcherDate|MatcherCycleAndDate $matcher
+     * @var \Juo\AdminAPI\Models\Operations\MatcherCycle|\Juo\AdminAPI\Models\Operations\MatcherDate|\Juo\AdminAPI\Models\Operations\MatcherCycleAndDate $matcher
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('matcher')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\MatcherCycle|\Juo\AdminAPI\Models\Operations\MatcherDate|\Juo\AdminAPI\Models\Operations\MatcherCycleAndDate')]
@@ -29,7 +29,7 @@ class PostSchedulesAdjustmentsRequestBody
 
     /**
      *
-     * @var ActionSkipOrder|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts $action
+     * @var \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts $action
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('action')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts')]
@@ -37,8 +37,8 @@ class PostSchedulesAdjustmentsRequestBody
 
     /**
      * @param  string  $customerId
-     * @param  MatcherCycle|MatcherDate|MatcherCycleAndDate  $matcher
-     * @param  ActionSkipOrder|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts  $action
+     * @param  \Juo\AdminAPI\Models\Operations\MatcherCycle|\Juo\AdminAPI\Models\Operations\MatcherDate|\Juo\AdminAPI\Models\Operations\MatcherCycleAndDate  $matcher
+     * @param  \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts  $action
      * @phpstan-pure
      */
     public function __construct(string $customerId, MatcherCycle|MatcherDate|MatcherCycleAndDate $matcher, ActionSkipOrder|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts $action)

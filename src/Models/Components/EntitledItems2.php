@@ -12,13 +12,6 @@ namespace Juo\AdminAPI\Models\Components;
 class EntitledItems2
 {
     /**
-     *
-     * @var bool $all
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('all')]
-    public bool $all;
-
-    /**
      * $items
      *
      * @var array<string> $items
@@ -28,13 +21,20 @@ class EntitledItems2
     public array $items;
 
     /**
+     *
+     * @var bool $all
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('all')]
+    public bool $all;
+
+    /**
      * @param  bool  $all
      * @param  array<string>  $items
      * @phpstan-pure
      */
-    public function __construct(bool $all, array $items)
+    public function __construct(array $items, bool $all = false)
     {
-        $this->all = $all;
         $this->items = $items;
+        $this->all = $all;
     }
 }

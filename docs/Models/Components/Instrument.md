@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\InstrumentCreditCard
+* @var \Juo\AdminAPI\Models\Components\InstrumentCreditCard
 */
 Components\InstrumentCreditCard $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\InstrumentCreditCard $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentPaypal
+* @var \Juo\AdminAPI\Models\Components\InstrumentPaypal
 */
 Components\InstrumentPaypal $value = /* values here */
 ```
@@ -25,7 +25,7 @@ Components\InstrumentPaypal $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentShopPay
+* @var \Juo\AdminAPI\Models\Components\InstrumentShopPay
 */
 Components\InstrumentShopPay $value = /* values here */
 ```
@@ -34,7 +34,7 @@ Components\InstrumentShopPay $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentSepaDirectDebit
+* @var \Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit
 */
 Components\InstrumentSepaDirectDebit $value = /* values here */
 ```
@@ -43,7 +43,7 @@ Components\InstrumentSepaDirectDebit $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentBlik
+* @var \Juo\AdminAPI\Models\Components\InstrumentBlik
 */
 Components\InstrumentBlik $value = /* values here */
 ```
@@ -52,7 +52,7 @@ Components\InstrumentBlik $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentMbway
+* @var \Juo\AdminAPI\Models\Components\InstrumentMbway
 */
 Components\InstrumentMbway $value = /* values here */
 ```
@@ -61,7 +61,7 @@ Components\InstrumentMbway $value = /* values here */
 
 ```php
 /**
-* @var Components\InstrumentBacs
+* @var \Juo\AdminAPI\Models\Components\InstrumentBacs
 */
 Components\InstrumentBacs $value = /* values here */
 ```

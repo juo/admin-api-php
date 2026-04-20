@@ -13,7 +13,7 @@ class DeliveryPolicyAnchor
 {
     /**
      *
-     * @var DeliveryPolicyTypeWeekday|DeliveryPolicyTypeMonthday|DeliveryPolicyTypeYearday $type
+     * @var \Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeWeekday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeMonthday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeYearday $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeWeekday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeMonthday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeYearday')]
@@ -41,7 +41,7 @@ class DeliveryPolicyAnchor
     public ?int $cutoffDay;
 
     /**
-     * @param  DeliveryPolicyTypeWeekday|DeliveryPolicyTypeMonthday|DeliveryPolicyTypeYearday  $type
+     * @param  \Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeWeekday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeMonthday|\Juo\AdminAPI\Models\Operations\DeliveryPolicyTypeYearday  $type
      * @param  int  $day
      * @param  ?int  $month
      * @param  ?int  $cutoffDay

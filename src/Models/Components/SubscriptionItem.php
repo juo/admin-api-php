@@ -20,7 +20,7 @@ class SubscriptionItem
 
     /**
      *
-     * @var SubscriptionItemResource $resource
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionItemResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionItemResource')]
@@ -74,7 +74,7 @@ class SubscriptionItem
 
     /**
      *
-     * @var ?BillingPolicy $billingPolicy
+     * @var ?\Juo\AdminAPI\Models\Components\BillingPolicy $billingPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billingPolicy')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\BillingPolicy|null')]
@@ -82,7 +82,7 @@ class SubscriptionItem
 
     /**
      *
-     * @var ?DeliveryPolicy $deliveryPolicy
+     * @var ?\Juo\AdminAPI\Models\Components\DeliveryPolicy $deliveryPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryPolicy')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\DeliveryPolicy|null')]
@@ -91,7 +91,7 @@ class SubscriptionItem
     /**
      * This field is expandable.
      *
-     * @var string|ProductVariant|null $variant
+     * @var string|\Juo\AdminAPI\Models\Components\ProductVariant|null $variant
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('variant')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\ProductVariant|null')]
@@ -100,7 +100,7 @@ class SubscriptionItem
     /**
      * This field is expandable.
      *
-     * @var string|Product|null $product
+     * @var string|\Juo\AdminAPI\Models\Components\Product|null $product
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('product')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Product|null')]
@@ -108,17 +108,17 @@ class SubscriptionItem
 
     /**
      * @param  string  $id
-     * @param  SubscriptionItemResource  $resource
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionItemResource  $resource
      * @param  string  $title
      * @param  int  $quantity
      * @param  float  $totalPrice
      * @param  ?string  $subtitle
      * @param  ?int  $recurringCycleLimit
      * @param  ?\DateTime  $canceledAt
-     * @param  ?BillingPolicy  $billingPolicy
-     * @param  ?DeliveryPolicy  $deliveryPolicy
-     * @param  string|ProductVariant|null  $variant
-     * @param  string|Product|null  $product
+     * @param  ?\Juo\AdminAPI\Models\Components\BillingPolicy  $billingPolicy
+     * @param  ?\Juo\AdminAPI\Models\Components\DeliveryPolicy  $deliveryPolicy
+     * @param  string|\Juo\AdminAPI\Models\Components\ProductVariant|null  $variant
+     * @param  string|\Juo\AdminAPI\Models\Components\Product|null  $product
      * @phpstan-pure
      */
     public function __construct(string $id, SubscriptionItemResource $resource, string $title, int $quantity, float $totalPrice, ?string $subtitle = null, ?int $recurringCycleLimit = null, ?\DateTime $canceledAt = null, ?BillingPolicy $billingPolicy = null, ?DeliveryPolicy $deliveryPolicy = null, string|ProductVariant|null $variant = null, string|Product|null $product = null)

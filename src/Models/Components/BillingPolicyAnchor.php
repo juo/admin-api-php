@@ -13,7 +13,7 @@ class BillingPolicyAnchor
 {
     /**
      *
-     * @var BillingPolicyTypeWeekday|BillingPolicyTypeMonthday|BillingPolicyTypeYearday $type
+     * @var \Juo\AdminAPI\Models\Components\BillingPolicyTypeWeekday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeMonthday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeYearday $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\BillingPolicyTypeWeekday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeMonthday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeYearday')]
@@ -41,7 +41,7 @@ class BillingPolicyAnchor
     public ?int $cutoffDay;
 
     /**
-     * @param  BillingPolicyTypeWeekday|BillingPolicyTypeMonthday|BillingPolicyTypeYearday  $type
+     * @param  \Juo\AdminAPI\Models\Components\BillingPolicyTypeWeekday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeMonthday|\Juo\AdminAPI\Models\Components\BillingPolicyTypeYearday  $type
      * @param  int  $day
      * @param  ?int  $month
      * @param  ?int  $cutoffDay

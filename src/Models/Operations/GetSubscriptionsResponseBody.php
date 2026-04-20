@@ -14,7 +14,7 @@ class GetSubscriptionsResponseBody
 {
     /**
      *
-     * @var GetSubscriptionsResource $resource
+     * @var \Juo\AdminAPI\Models\Operations\GetSubscriptionsResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\GetSubscriptionsResource')]
@@ -37,7 +37,7 @@ class GetSubscriptionsResponseBody
     /**
      * $data
      *
-     * @var array<Components\Subscription> $data
+     * @var array<\Juo\AdminAPI\Models\Components\Subscription> $data
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('data')]
     #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\Subscription>')]
@@ -58,10 +58,10 @@ class GetSubscriptionsResponseBody
     public ?string $startCursor;
 
     /**
-     * @param  GetSubscriptionsResource  $resource
+     * @param  \Juo\AdminAPI\Models\Operations\GetSubscriptionsResource  $resource
      * @param  bool  $hasNextPage
      * @param  bool  $hasPrevPage
-     * @param  array<Components\Subscription>  $data
+     * @param  array<\Juo\AdminAPI\Models\Components\Subscription>  $data
      * @param  ?string  $endCursor
      * @param  ?string  $startCursor
      * @phpstan-pure

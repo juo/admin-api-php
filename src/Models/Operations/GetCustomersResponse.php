@@ -35,7 +35,7 @@ class GetCustomersResponse
     /**
      * Default Response
      *
-     * @var ?GetCustomersResponseBody $object
+     * @var ?\Juo\AdminAPI\Models\Operations\GetCustomersResponseBody $object
      */
     public ?GetCustomersResponseBody $object = null;
 
@@ -47,7 +47,7 @@ class GetCustomersResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?GetCustomersResponseBody  $object
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetCustomersResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?GetCustomersResponseBody $object = null)

@@ -20,7 +20,7 @@ class Customer
 
     /**
      *
-     * @var CustomerResource $resource
+     * @var \Juo\AdminAPI\Models\Components\CustomerResource $resource
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('resource')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\CustomerResource')]
@@ -52,7 +52,7 @@ class Customer
 
     /**
      * @param  string  $id
-     * @param  CustomerResource  $resource
+     * @param  \Juo\AdminAPI\Models\Components\CustomerResource  $resource
      * @param  string  $displayName
      * @param  ?string  $email
      * @param  ?string  $phone

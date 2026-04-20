@@ -13,7 +13,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome
 {
     /**
      *
-     * @var PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome $type
+     * @var \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome')]
@@ -29,7 +29,7 @@ class PatchSubscriptionsSubscriptionIdDiscountsDiscountIdSelectorSome
     public array $lines;
 
     /**
-     * @param  PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdTypeSome  $type
      * @param  array<string>  $lines
      * @phpstan-pure
      */

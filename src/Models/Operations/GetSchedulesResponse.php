@@ -35,7 +35,7 @@ class GetSchedulesResponse
     /**
      * Default Response
      *
-     * @var ?GetSchedulesResponseBody $object
+     * @var ?\Juo\AdminAPI\Models\Operations\GetSchedulesResponseBody $object
      */
     public ?GetSchedulesResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class GetSchedulesResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?GetSchedulesResponseBody  $object
+     * @param  ?\Juo\AdminAPI\Models\Operations\GetSchedulesResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?GetSchedulesResponseBody $object = null)

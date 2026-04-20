@@ -35,7 +35,7 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdResponse
     /**
      * Default Response
      *
-     * @var ?Components\SubscriptionItem $subscriptionItem
+     * @var ?\Juo\AdminAPI\Models\Components\SubscriptionItem $subscriptionItem
      */
     public ?Components\SubscriptionItem $subscriptionItem = null;
 
@@ -43,7 +43,7 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?Components\SubscriptionItem  $subscriptionItem
+     * @param  ?\Juo\AdminAPI\Models\Components\SubscriptionItem  $subscriptionItem
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?Components\SubscriptionItem $subscriptionItem = null)

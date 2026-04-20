@@ -35,7 +35,7 @@ class DeleteSchedulesAdjustmentsAdjustmentIdResponse
     /**
      * Default Response
      *
-     * @var ?DeleteSchedulesAdjustmentsAdjustmentIdResponseBody $object
+     * @var ?\Juo\AdminAPI\Models\Operations\DeleteSchedulesAdjustmentsAdjustmentIdResponseBody $object
      */
     public ?DeleteSchedulesAdjustmentsAdjustmentIdResponseBody $object = null;
 
@@ -43,7 +43,7 @@ class DeleteSchedulesAdjustmentsAdjustmentIdResponse
      * @param  string  $contentType
      * @param  int  $statusCode
      * @param  \Psr\Http\Message\ResponseInterface  $rawResponse
-     * @param  ?DeleteSchedulesAdjustmentsAdjustmentIdResponseBody  $object
+     * @param  ?\Juo\AdminAPI\Models\Operations\DeleteSchedulesAdjustmentsAdjustmentIdResponseBody  $object
      * @phpstan-pure
      */
     public function __construct(string $contentType, int $statusCode, \Psr\Http\Message\ResponseInterface $rawResponse, ?DeleteSchedulesAdjustmentsAdjustmentIdResponseBody $object = null)

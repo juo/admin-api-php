@@ -13,7 +13,7 @@ class PostSubscriptionsSubscriptionIdDiscountsTargetLine
 {
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTypeLine $type
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeLine $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeLine')]
@@ -21,15 +21,15 @@ class PostSubscriptionsSubscriptionIdDiscountsTargetLine
 
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsSelectorAll|PostSubscriptionsSubscriptionIdDiscountsSelectorSome $selector
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome $selector
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('selector')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome')]
     public PostSubscriptionsSubscriptionIdDiscountsSelectorAll|PostSubscriptionsSubscriptionIdDiscountsSelectorSome $selector;
 
     /**
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTypeLine  $type
-     * @param  PostSubscriptionsSubscriptionIdDiscountsSelectorAll|PostSubscriptionsSubscriptionIdDiscountsSelectorSome  $selector
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypeLine  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorAll|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsSelectorSome  $selector
      * @phpstan-pure
      */
     public function __construct(PostSubscriptionsSubscriptionIdDiscountsTypeLine $type, PostSubscriptionsSubscriptionIdDiscountsSelectorAll|PostSubscriptionsSubscriptionIdDiscountsSelectorSome $selector)

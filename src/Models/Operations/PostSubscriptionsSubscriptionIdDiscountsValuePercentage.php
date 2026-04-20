@@ -20,7 +20,7 @@ class PostSubscriptionsSubscriptionIdDiscountsValuePercentage
 
     /**
      *
-     * @var PostSubscriptionsSubscriptionIdDiscountsTypePercentage $type
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypePercentage $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypePercentage')]
@@ -28,7 +28,7 @@ class PostSubscriptionsSubscriptionIdDiscountsValuePercentage
 
     /**
      * @param  float  $percentage
-     * @param  PostSubscriptionsSubscriptionIdDiscountsTypePercentage  $type
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsTypePercentage  $type
      * @phpstan-pure
      */
     public function __construct(float $percentage, PostSubscriptionsSubscriptionIdDiscountsTypePercentage $type)

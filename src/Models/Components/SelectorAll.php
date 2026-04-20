@@ -13,14 +13,14 @@ class SelectorAll
 {
     /**
      *
-     * @var TypeAll $type
+     * @var \Juo\AdminAPI\Models\Components\TypeAll $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeAll')]
     public TypeAll $type;
 
     /**
-     * @param  TypeAll  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeAll  $type
      * @phpstan-pure
      */
     public function __construct(TypeAll $type)

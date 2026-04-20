@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\EntitledItems1
+* @var \Juo\AdminAPI\Models\Components\EntitledItems1
 */
 Components\EntitledItems1 $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\EntitledItems1 $value = /* values here */
 
 ```php
 /**
-* @var Components\EntitledItems2
+* @var \Juo\AdminAPI\Models\Components\EntitledItems2
 */
 Components\EntitledItems2 $value = /* values here */
 ```

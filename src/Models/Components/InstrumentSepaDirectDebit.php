@@ -13,7 +13,7 @@ class InstrumentSepaDirectDebit
 {
     /**
      *
-     * @var TypeSepaDirectDebit $type
+     * @var \Juo\AdminAPI\Models\Components\TypeSepaDirectDebit $type
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('type')]
     #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\TypeSepaDirectDebit')]
@@ -44,7 +44,7 @@ class InstrumentSepaDirectDebit
     public string $maskedConsumerAccount;
 
     /**
-     * @param  TypeSepaDirectDebit  $type
+     * @param  \Juo\AdminAPI\Models\Components\TypeSepaDirectDebit  $type
      * @param  string  $consumerName
      * @param  string  $consumerBic
      * @param  string  $maskedConsumerAccount

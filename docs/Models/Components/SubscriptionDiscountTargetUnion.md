@@ -7,7 +7,7 @@
 
 ```php
 /**
-* @var Components\SubscriptionDiscountTargetShipping
+* @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetShipping
 */
 Components\SubscriptionDiscountTargetShipping $value = /* values here */
 ```
@@ -16,7 +16,7 @@ Components\SubscriptionDiscountTargetShipping $value = /* values here */
 
 ```php
 /**
-* @var Components\SubscriptionDiscountTargetLine
+* @var \Juo\AdminAPI\Models\Components\SubscriptionDiscountTargetLine
 */
 Components\SubscriptionDiscountTargetLine $value = /* values here */
 ```
