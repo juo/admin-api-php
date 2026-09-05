@@ -1,0 +1,9 @@
+# TriggerConditions
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `groups`                                                                                                         | array<[Components\TriggerGroup](../../Models/Components/TriggerGroup.md)>                                        | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `rootLogic`                                                                                                      | [Components\RootLogicTriggerAnd\|Components\RootLogicTriggerOr](../../Models/Components/TriggerRootLogicUnion.md) | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

@@ -2,18 +2,21 @@
 
 ## Overview
 
+Recurring billing agreements with customers. Manage lifecycle (pause, resume, cancel, reactivate), items, and discounts.
+
 ### Available Operations
 
-* [list](#list) - Lists subscriptions
-* [update](#update) - Updates a subscription
-* [pause](#pause) - Pauses an active subscription
-* [resume](#resume) - Resumes a paused subscription
-* [cancel](#cancel) - Cancels an active/paused subscription
-* [reactivate](#reactivate) - Reactivates a cancelled subscription
+* [list](#list) - List subscriptions
+* [create](#create) - Create a subscription
+* [update](#update) - Update a subscription
+* [pause](#pause) - Pause an active subscription
+* [resume](#resume) - Resume a paused subscription
+* [cancel](#cancel) - Cancel a subscription
+* [reactivate](#reactivate) - Reactivate a canceled subscription
 
 ## list
 
-Lists subscriptions
+Returns a paginated list of all subscriptions for the tenant. Use the `query` parameter to search by id, serial, status, dates, or customer. Supports cursor-based pagination via `after`/`before`. Optionally expand the `customer` relationship to include customer details inline.
 
 ### Example Usage
 
@@ -24,12 +27,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 use Juo\AdminAPI\Models\Operations;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -63,9 +69,86 @@ foreach ($responses as $response) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\APIException | 4XX, 5XX            | \*/\*               |
 
+## create
+
+Creates a new subscription for an existing customer. Requires a billing policy, next billing date, delivery address, at least one subscription item, and a payment method (by id or by provider details). If the customer does not yet exist locally, they are looked up in the e-commerce platform and registered automatically.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="post_/subscriptions" method="post" path="/subscriptions" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
+use Juo\AdminAPI\Models\Operations;
+use Juo\AdminAPI\Utils;
+
+$sdk = AdminAPI\Juo::builder()
+    ->setTenant('<value>')
+    ->setSecurity(
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
+    )
+    ->build();
+
+$requestBody = new Operations\PostSubscriptionsRequestBody(
+    customerId: '<id>',
+    nextBillingDate: Utils\Utils::parseDateTime('2024-04-04T12:01:04.403Z'),
+    billingPolicy: new Operations\PostSubscriptionsBillingPolicy(
+        interval: Operations\PostSubscriptionsIntervalBillingPolicyYear::Year,
+        intervalCount: 257469,
+    ),
+    paymentMethod: new Operations\PaymentMethod2(
+        provider: Operations\PostSubscriptionsProviderMollie::Mollie,
+        instrument: new Operations\PostSubscriptionsInstrumentBacs(
+            type: Operations\PaymentMethodTypeBacs::Bacs,
+            lastDigits: '<value>',
+        ),
+    ),
+    status: Operations\PostSubscriptionsStatus::Active,
+    currencyCode: Operations\CurrencyCode::Usd,
+    deliveryAddress: new Operations\PostSubscriptionsDeliveryAddress(),
+    items: [
+        new Operations\PostSubscriptionsItem(
+            variantId: '<id>',
+            quantity: 1,
+        ),
+    ],
+);
+
+$response = $sdk->subscriptions->create(
+    requestBody: $requestBody
+);
+
+if ($response->subscription !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `requestBody`                                                                                      | [Operations\PostSubscriptionsRequestBody](../../Models/Operations/PostSubscriptionsRequestBody.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `tenant`                                                                                           | *?string*                                                                                          | :heavy_minus_sign:                                                                                 | Unique identifier of the tenant in the system (usually a store identifier)                         |
+
+### Response
+
+**[?Operations\PostSubscriptionsResponse](../../Models/Operations/PostSubscriptionsResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\APIException | 4XX, 5XX            | \*/\*               |
+
 ## update
 
-Updates a subscription
+Updates mutable fields on an existing subscription using merge-patch semantics — only provided fields are changed. Supports changing the payment method, delivery address, delivery method, delivery price, and next billing date. These changes are permanent and affect all future billing cycles.
 
 ### Example Usage
 
@@ -76,11 +159,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -117,7 +203,7 @@ if ($response->subscription !== null) {
 
 ## pause
 
-Pauses an active subscription
+Pauses an active subscription, suspending future billing cycles until explicitly resumed. The subscription must currently be in `active` status. After pausing, the subscription status changes to `paused`.
 
 ### Example Usage
 
@@ -128,11 +214,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -166,7 +255,7 @@ if ($response->subscription !== null) {
 
 ## resume
 
-Resumes a paused subscription
+Resumes a paused subscription, restoring normal billing from the next scheduled billing date. The subscription must currently be in `paused` status.
 
 ### Example Usage
 
@@ -177,11 +266,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -215,7 +307,7 @@ if ($response->subscription !== null) {
 
 ## cancel
 
-Cancels an active/paused subscription
+Permanently cancels an active or paused subscription, stopping all future billing. Accepts an optional cancellation reason and a flag to notify the customer by email. Use `reactivate` to reverse a cancellation.
 
 ### Example Usage
 
@@ -226,12 +318,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 use Juo\AdminAPI\Models\Operations;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -270,7 +365,7 @@ if ($response->subscription !== null) {
 
 ## reactivate
 
-Reactivates a cancelled subscription
+Reactivates a previously canceled subscription, returning it to `active` status and resuming billing from the next scheduled date. The subscription must currently be in `canceled` status.
 
 ### Example Usage
 
@@ -281,11 +376,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
