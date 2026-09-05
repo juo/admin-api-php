@@ -1,0 +1,10 @@
+# PutWorkflowsIdExperimentConfig
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `variants`                                                                                  | array<[Operations\PutWorkflowsIdVariant](../../Models/Operations/PutWorkflowsIdVariant.md)> | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `settings`                                                                                  | [?Operations\PutWorkflowsIdSettings](../../Models/Operations/PutWorkflowsIdSettings.md)     | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `primaryMetricId`                                                                           | *?string*                                                                                   | :heavy_minus_sign:                                                                          | N/A                                                                                         |

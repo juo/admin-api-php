@@ -45,7 +45,9 @@ class Discounts
     }
 
     /**
-     * Deletes a subscription discount
+     * Remove a subscription discount
+     *
+     * Removes an existing discount from a subscription. This is a permanent change affecting all future billing cycles.
      *
      * @param  string  $subscriptionId
      * @param  string  $discountId
@@ -106,7 +108,7 @@ class Discounts
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -116,7 +118,9 @@ class Discounts
     }
 
     /**
-     * Updates a subscription discount
+     * Update a subscription discount
+     *
+     * Updates an existing discount on a subscription using merge-patch semantics. Can change the discount value and recurring cycle limit. The discount target type cannot be changed after creation.
      *
      * @param  string  $subscriptionId
      * @param  string  $discountId
@@ -183,7 +187,7 @@ class Discounts
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -193,15 +197,17 @@ class Discounts
     }
 
     /**
-     * Creates a subscription discount
+     * Add a discount to a subscription
+     *
+     * Applies a discount to a subscription. Accepts either a discount code (string) or a manual discount definition with a target (all items, specific item ids, or shipping) and value (percentage or fixed amount). Optionally limits the discount to a number of recurring cycles.
      *
      * @param  string  $subscriptionId
-     * @param  \Juo\AdminAPI\Models\Operations\RequestBody1|\Juo\AdminAPI\Models\Operations\RequestBody2|null  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null  $requestBody
      * @param  ?string  $tenant
      * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
-    public function create(string $subscriptionId, Operations\RequestBody1|Operations\RequestBody2|null $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
+    public function create(string $subscriptionId, Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1|Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null $requestBody = null, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsSubscriptionIdDiscountsResponse
     {
         $request = new Operations\PostSubscriptionsSubscriptionIdDiscountsRequest(
             subscriptionId: $subscriptionId,
@@ -258,7 +264,7 @@ class Discounts
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);

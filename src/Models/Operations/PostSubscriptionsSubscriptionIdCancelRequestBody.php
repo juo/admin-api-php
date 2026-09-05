@@ -29,13 +29,24 @@ class PostSubscriptionsSubscriptionIdCancelRequestBody
     public ?string $cancellationReason = null;
 
     /**
+     * Override the minimum billing-cycle commitment (e.g. a postpaid contract's `minCycles`) and cancel anyway. Defaults to false, in which case cancellation is rejected while a commitment is still outstanding.
+     *
+     * @var ?bool $force
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('force')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?bool $force = null;
+
+    /**
      * @param  bool  $notifyCustomer
      * @param  ?string  $cancellationReason
+     * @param  ?bool  $force
      * @phpstan-pure
      */
-    public function __construct(bool $notifyCustomer, ?string $cancellationReason = null)
+    public function __construct(bool $notifyCustomer, ?string $cancellationReason = null, ?bool $force = null)
     {
         $this->notifyCustomer = $notifyCustomer;
         $this->cancellationReason = $cancellationReason;
+        $this->force = $force;
     }
 }

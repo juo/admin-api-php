@@ -57,19 +57,31 @@ class Line
     public ?\DateTime $nextBillingDate = null;
 
     /**
+     * Custom attributes to merge onto the order item
+     *
+     * @var ?array<\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsCustomAttribute> $customAttributes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customAttributes')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsCustomAttribute>|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?array $customAttributes = null;
+
+    /**
      * @param  string  $lineId
      * @param  ?string  $variantId
      * @param  ?int  $quantity
      * @param  ?\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsInterval  $interval
      * @param  ?\DateTime  $nextBillingDate
+     * @param  ?array<\Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsCustomAttribute>  $customAttributes
      * @phpstan-pure
      */
-    public function __construct(string $lineId, ?string $variantId = null, ?int $quantity = null, ?PostSchedulesAdjustmentsInterval $interval = null, ?\DateTime $nextBillingDate = null)
+    public function __construct(string $lineId, ?string $variantId = null, ?int $quantity = null, ?PostSchedulesAdjustmentsInterval $interval = null, ?\DateTime $nextBillingDate = null, ?array $customAttributes = null)
     {
         $this->lineId = $lineId;
         $this->variantId = $variantId;
         $this->quantity = $quantity;
         $this->interval = $interval;
         $this->nextBillingDate = $nextBillingDate;
+        $this->customAttributes = $customAttributes;
     }
 }

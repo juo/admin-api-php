@@ -28,14 +28,6 @@ class InstrumentSepaDirectDebit
     public string $consumerName;
 
     /**
-     * BIC code.
-     *
-     * @var string $consumerBic
-     */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('consumerBic')]
-    public string $consumerBic;
-
-    /**
      * Masked IBAN.
      *
      * @var string $maskedConsumerAccount
@@ -44,17 +36,25 @@ class InstrumentSepaDirectDebit
     public string $maskedConsumerAccount;
 
     /**
+     * BIC code.
+     *
+     * @var ?string $consumerBic
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('consumerBic')]
+    public ?string $consumerBic;
+
+    /**
      * @param  \Juo\AdminAPI\Models\Components\TypeSepaDirectDebit  $type
      * @param  string  $consumerName
-     * @param  string  $consumerBic
      * @param  string  $maskedConsumerAccount
+     * @param  ?string  $consumerBic
      * @phpstan-pure
      */
-    public function __construct(TypeSepaDirectDebit $type, string $consumerName, string $consumerBic, string $maskedConsumerAccount)
+    public function __construct(TypeSepaDirectDebit $type, string $consumerName, string $maskedConsumerAccount, ?string $consumerBic = null)
     {
         $this->type = $type;
         $this->consumerName = $consumerName;
-        $this->consumerBic = $consumerBic;
         $this->maskedConsumerAccount = $maskedConsumerAccount;
+        $this->consumerBic = $consumerBic;
     }
 }

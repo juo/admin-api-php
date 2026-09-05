@@ -1,0 +1,9 @@
+# PostSubscriptionsDeliveryMethodShipping
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `type`                                                                                         | [Operations\DeliveryMethodTypeShipping](../../Models/Operations/DeliveryMethodTypeShipping.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `title`                                                                                        | *?string*                                                                                      | :heavy_minus_sign:                                                                             | N/A                                                                                            |
