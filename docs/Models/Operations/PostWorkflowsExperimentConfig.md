@@ -1,0 +1,10 @@
+# PostWorkflowsExperimentConfig
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `variants`                                                                                | array<[Operations\PostWorkflowsVariant](../../Models/Operations/PostWorkflowsVariant.md)> | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `settings`                                                                                | [?Operations\PostWorkflowsSettings](../../Models/Operations/PostWorkflowsSettings.md)     | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `primaryMetricId`                                                                         | *?string*                                                                                 | :heavy_minus_sign:                                                                        | N/A                                                                                       |

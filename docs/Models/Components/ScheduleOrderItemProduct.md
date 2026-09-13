@@ -1,6 +1,6 @@
 # ScheduleOrderItemProduct
 
-This field is expandable.
+Product `id` when not expanded, or the full `Product` object when the field name is included in the `expand` query parameter. Can be null.
 
 
 ## Supported Types

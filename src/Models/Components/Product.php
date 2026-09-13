@@ -26,6 +26,24 @@ class Product
     public string $title;
 
     /**
+     * $collections
+     *
+     * @var array<\Juo\AdminAPI\Models\Components\Collection> $collections
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('collections')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\Collection>')]
+    public array $collections;
+
+    /**
+     * Subscription plan group IDs associated with this product
+     *
+     * @var array<string> $planGroups
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('planGroups')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $planGroups;
+
+    /**
      *
      * @var ?\Juo\AdminAPI\Models\Components\ProductImage $image
      */
@@ -36,13 +54,17 @@ class Product
     /**
      * @param  string  $id
      * @param  string  $title
+     * @param  array<\Juo\AdminAPI\Models\Components\Collection>  $collections
+     * @param  array<string>  $planGroups
      * @param  ?\Juo\AdminAPI\Models\Components\ProductImage  $image
      * @phpstan-pure
      */
-    public function __construct(string $id, string $title, ?ProductImage $image = null)
+    public function __construct(string $id, string $title, array $collections, array $planGroups, ?ProductImage $image = null)
     {
         $this->id = $id;
         $this->title = $title;
+        $this->collections = $collections;
+        $this->planGroups = $planGroups;
         $this->image = $image;
     }
 }

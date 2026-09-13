@@ -29,18 +29,18 @@ class PostSubscriptionsSubscriptionIdDiscountsRequest
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Operations\RequestBody1|\Juo\AdminAPI\Models\Operations\RequestBody2|null $requestBody
+     * @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null $requestBody
      */
     #[SpeakeasyMetadata('request:mediaType=application/json')]
-    public RequestBody1|RequestBody2|null $requestBody = null;
+    public PostSubscriptionsSubscriptionIdDiscountsRequestBody1|PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null $requestBody = null;
 
     /**
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
-     * @param  \Juo\AdminAPI\Models\Operations\RequestBody1|\Juo\AdminAPI\Models\Operations\RequestBody2|null  $requestBody
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1|\Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null  $requestBody
      * @phpstan-pure
      */
-    public function __construct(string $subscriptionId, ?string $tenant = null, RequestBody1|RequestBody2|null $requestBody = null)
+    public function __construct(string $subscriptionId, ?string $tenant = null, PostSubscriptionsSubscriptionIdDiscountsRequestBody1|PostSubscriptionsSubscriptionIdDiscountsRequestBody2|null $requestBody = null)
     {
         $this->subscriptionId = $subscriptionId;
         $this->tenant = $tenant;

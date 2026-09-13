@@ -13,6 +13,7 @@ namespace Juo\AdminAPI\Models\Operations;
 class DeleteSubscriptionsSubscriptionIdItemsItemIdResponseBody
 {
     /**
+     * Unique subscription item identifier (UUID).
      *
      * @var string $id
      */

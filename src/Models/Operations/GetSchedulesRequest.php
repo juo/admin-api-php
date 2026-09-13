@@ -35,6 +35,21 @@ class GetSchedulesRequest
     public ?string $query = null;
 
     /**
+     * Specify which related resources to include in the response. Currently supports 'paymentMethod'.
+     *
+     * @var ?array<\Juo\AdminAPI\Models\Operations\GetSchedulesExpand> $expand
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=expand')]
+    public ?array $expand = null;
+
+    /**
+     *
+     * @var ?bool $excludeSkipped
+     */
+    #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=excludeSkipped')]
+    public ?bool $excludeSkipped = null;
+
+    /**
      * Unique identifier of the tenant in the system (usually a store identifier)
      *
      * @var ?string $tenant
@@ -46,14 +61,18 @@ class GetSchedulesRequest
      * @param  string  $customerId
      * @param  int  $count
      * @param  ?string  $query
+     * @param  ?array<\Juo\AdminAPI\Models\Operations\GetSchedulesExpand>  $expand
+     * @param  ?bool  $excludeSkipped
      * @param  ?string  $tenant
      * @phpstan-pure
      */
-    public function __construct(string $customerId, int $count, ?string $query = null, ?string $tenant = null)
+    public function __construct(string $customerId, int $count, ?string $query = null, ?array $expand = null, ?bool $excludeSkipped = null, ?string $tenant = null)
     {
         $this->customerId = $customerId;
         $this->count = $count;
         $this->query = $query;
+        $this->expand = $expand;
+        $this->excludeSkipped = $excludeSkipped;
         $this->tenant = $tenant;
     }
 }

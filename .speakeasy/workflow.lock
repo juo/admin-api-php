@@ -1,19 +1,19 @@
-speakeasyVersion: 1.761.8
+speakeasyVersion: 1.796.4
 sources:
     Juo-OAS:
         sourceNamespace: fastify-swagger
-        sourceRevisionDigest: sha256:9f31fa7f805ccbbc979ea7d70ea034204f6192b464bb495fe78f94e568e5da45
-        sourceBlobDigest: sha256:8b5ce2260ca59133d0eeb2389d7d5b7331d0c1effae32032b059d858cf8c6a3a
+        sourceRevisionDigest: sha256:b5444fac8aa45913129a1322210e3fdc9c82c536c12689440981e42e0667f0b0
+        sourceBlobDigest: sha256:f7d01494fc43359c34c3f1093af18b40eb036e90faf6ccd50fc44c87f4fae164
         tags:
             - latest
 targets:
     juo:
         source: Juo-OAS
         sourceNamespace: fastify-swagger
-        sourceRevisionDigest: sha256:9f31fa7f805ccbbc979ea7d70ea034204f6192b464bb495fe78f94e568e5da45
-        sourceBlobDigest: sha256:8b5ce2260ca59133d0eeb2389d7d5b7331d0c1effae32032b059d858cf8c6a3a
+        sourceRevisionDigest: sha256:b5444fac8aa45913129a1322210e3fdc9c82c536c12689440981e42e0667f0b0
+        sourceBlobDigest: sha256:f7d01494fc43359c34c3f1093af18b40eb036e90faf6ccd50fc44c87f4fae164
         codeSamplesNamespace: juo-oas-php-code-samples
-        codeSamplesRevisionDigest: sha256:4e5f141580da0287fd493a057b893769109ee55f03801efde966e6f65c083da3
+        codeSamplesRevisionDigest: sha256:8fa9fd9c74af58b17f9e0cb5403fdaa61a0027b1d48d36a2f3a7601c3505ba59
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -28,6 +28,10 @@ workflow:
         juo:
             target: php
             source: Juo-OAS
+            publish:
+                packagist:
+                    username: $packagist_username
+                    token: $packagist_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/juo/admin-api-8af/juo-oas-php-code-samples
