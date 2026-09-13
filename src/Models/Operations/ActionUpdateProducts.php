@@ -22,18 +22,18 @@ class ActionUpdateProducts
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Operations\ActionInput5 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput6 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput5')]
-    public ActionInput5 $input;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput6')]
+    public ActionInput6 $input;
 
     /**
      * @param  \Juo\AdminAPI\Models\Operations\TypeUpdateProducts  $type
-     * @param  \Juo\AdminAPI\Models\Operations\ActionInput5  $input
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput6  $input
      * @phpstan-pure
      */
-    public function __construct(TypeUpdateProducts $type, ActionInput5 $input)
+    public function __construct(TypeUpdateProducts $type, ActionInput6 $input)
     {
         $this->type = $type;
         $this->input = $input;

@@ -1,0 +1,10 @@
+# TriggerGroup
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                 | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `logic`                                                                                              | [Components\LogicTriggerAnd\|Components\LogicTriggerOr](../../Models/Components/TriggerLogicUnion.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `items`                                                                                              | array<[Components\TriggerItem](../../Models/Components/TriggerItem.md)>                              | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

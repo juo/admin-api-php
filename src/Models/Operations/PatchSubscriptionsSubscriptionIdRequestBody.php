@@ -30,21 +30,21 @@ class PatchSubscriptionsSubscriptionIdRequestBody
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryAddress $deliveryAddress
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryAddress $deliveryAddress
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryAddress')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryAddress|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryAddress|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DeliveryAddress $deliveryAddress = null;
+    public ?PatchSubscriptionsSubscriptionIdDeliveryAddress $deliveryAddress = null;
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryMethod $deliveryMethod
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryMethod $deliveryMethod
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryMethod')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryMethod|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryMethod|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DeliveryMethod $deliveryMethod = null;
+    public ?PatchSubscriptionsSubscriptionIdDeliveryMethod $deliveryMethod = null;
 
     /**
      *
@@ -57,12 +57,12 @@ class PatchSubscriptionsSubscriptionIdRequestBody
     /**
      * @param  ?float  $deliveryPrice
      * @param  ?string  $paymentMethod
-     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryAddress  $deliveryAddress
-     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryMethod  $deliveryMethod
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryAddress  $deliveryAddress
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdDeliveryMethod  $deliveryMethod
      * @param  ?\DateTime  $nextBillingDate
      * @phpstan-pure
      */
-    public function __construct(?float $deliveryPrice = null, ?string $paymentMethod = null, ?DeliveryAddress $deliveryAddress = null, ?DeliveryMethod $deliveryMethod = null, ?\DateTime $nextBillingDate = null)
+    public function __construct(?float $deliveryPrice = null, ?string $paymentMethod = null, ?PatchSubscriptionsSubscriptionIdDeliveryAddress $deliveryAddress = null, ?PatchSubscriptionsSubscriptionIdDeliveryMethod $deliveryMethod = null, ?\DateTime $nextBillingDate = null)
     {
         $this->deliveryPrice = $deliveryPrice;
         $this->paymentMethod = $paymentMethod;

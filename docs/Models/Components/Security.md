@@ -5,4 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `adminApiKey`      | *string*           | :heavy_check_mark: | N/A                |
+| `adminApiKey`      | *?string*          | :heavy_minus_sign: | N/A                |
+| `bearerToken`      | *?string*          | :heavy_minus_sign: | N/A                |
