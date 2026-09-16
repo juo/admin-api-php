@@ -12,19 +12,19 @@ namespace Juo\AdminAPI\Models\Operations;
 class ActionInput3
 {
     /**
+     * New date for the order (ISO 8601)
      *
-     * @var \Juo\AdminAPI\Models\Operations\Address $address
+     * @var \DateTime $newDate
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('address')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\Address')]
-    public Address $address;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('newDate')]
+    public \DateTime $newDate;
 
     /**
-     * @param  \Juo\AdminAPI\Models\Operations\Address  $address
+     * @param  \DateTime  $newDate
      * @phpstan-pure
      */
-    public function __construct(Address $address)
+    public function __construct(\DateTime $newDate)
     {
-        $this->address = $address;
+        $this->newDate = $newDate;
     }
 }

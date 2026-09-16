@@ -12,6 +12,7 @@ namespace Juo\AdminAPI\Models\Components;
 class SubscriptionItem
 {
     /**
+     * Unique subscription item identifier (UUID).
      *
      * @var string $id
      */
@@ -27,6 +28,7 @@ class SubscriptionItem
     public SubscriptionItemResource $resource;
 
     /**
+     * Product title.
      *
      * @var string $title
      */
@@ -34,6 +36,7 @@ class SubscriptionItem
     public string $title;
 
     /**
+     * Number of units ordered per billing cycle.
      *
      * @var int $quantity
      */
@@ -41,7 +44,7 @@ class SubscriptionItem
     public int $quantity;
 
     /**
-     * Final item price including all discounts and taxes
+     * Final item price per billing cycle including all applicable discounts.
      *
      * @var float $totalPrice
      */
@@ -49,7 +52,16 @@ class SubscriptionItem
     public float $totalPrice;
 
     /**
-     * Matches the variant title in most cases
+     * Arbitrary key-value pairs attached to this subscription item. In the Customer API, attributes whose key starts with `_` are hidden and excluded.
+     *
+     * @var array<\Juo\AdminAPI\Models\Components\SubscriptionItemCustomAttribute> $customAttributes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customAttributes')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\SubscriptionItemCustomAttribute>')]
+    public array $customAttributes;
+
+    /**
+     * Variant title. Matches the variant title in most cases.
      *
      * @var ?string $subtitle
      */
@@ -57,7 +69,7 @@ class SubscriptionItem
     public ?string $subtitle;
 
     /**
-     * The number of billing cycles for which this item will be applied. After the recurring cycle limit is met the item will be removed from the subscription.
+     * Maximum number of billing cycles this item remains on the subscription. The item is automatically removed once this limit is reached. Null means no limit.
      *
      * @var ?int $recurringCycleLimit
      */
@@ -74,22 +86,22 @@ class SubscriptionItem
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Components\BillingPolicy $billingPolicy
+     * @var ?\Juo\AdminAPI\Models\Components\SubscriptionItemBillingPolicy $billingPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billingPolicy')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\BillingPolicy|null')]
-    public ?BillingPolicy $billingPolicy;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionItemBillingPolicy|null')]
+    public ?SubscriptionItemBillingPolicy $billingPolicy;
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Components\DeliveryPolicy $deliveryPolicy
+     * @var ?\Juo\AdminAPI\Models\Components\SubscriptionItemDeliveryPolicy $deliveryPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryPolicy')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\DeliveryPolicy|null')]
-    public ?DeliveryPolicy $deliveryPolicy;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionItemDeliveryPolicy|null')]
+    public ?SubscriptionItemDeliveryPolicy $deliveryPolicy;
 
     /**
-     * This field is expandable.
+     * ProductVariant `id` when not expanded, or the full `ProductVariant` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\ProductVariant|null $variant
      */
@@ -98,7 +110,7 @@ class SubscriptionItem
     public string|ProductVariant|null $variant;
 
     /**
-     * This field is expandable.
+     * Product `id` when not expanded, or the full `Product` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Product|null $product
      */
@@ -112,22 +124,24 @@ class SubscriptionItem
      * @param  string  $title
      * @param  int  $quantity
      * @param  float  $totalPrice
+     * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionItemCustomAttribute>  $customAttributes
      * @param  ?string  $subtitle
      * @param  ?int  $recurringCycleLimit
      * @param  ?\DateTime  $canceledAt
-     * @param  ?\Juo\AdminAPI\Models\Components\BillingPolicy  $billingPolicy
-     * @param  ?\Juo\AdminAPI\Models\Components\DeliveryPolicy  $deliveryPolicy
+     * @param  ?\Juo\AdminAPI\Models\Components\SubscriptionItemBillingPolicy  $billingPolicy
+     * @param  ?\Juo\AdminAPI\Models\Components\SubscriptionItemDeliveryPolicy  $deliveryPolicy
      * @param  string|\Juo\AdminAPI\Models\Components\ProductVariant|null  $variant
      * @param  string|\Juo\AdminAPI\Models\Components\Product|null  $product
      * @phpstan-pure
      */
-    public function __construct(string $id, SubscriptionItemResource $resource, string $title, int $quantity, float $totalPrice, ?string $subtitle = null, ?int $recurringCycleLimit = null, ?\DateTime $canceledAt = null, ?BillingPolicy $billingPolicy = null, ?DeliveryPolicy $deliveryPolicy = null, string|ProductVariant|null $variant = null, string|Product|null $product = null)
+    public function __construct(string $id, SubscriptionItemResource $resource, string $title, int $quantity, float $totalPrice, array $customAttributes, ?string $subtitle = null, ?int $recurringCycleLimit = null, ?\DateTime $canceledAt = null, ?SubscriptionItemBillingPolicy $billingPolicy = null, ?SubscriptionItemDeliveryPolicy $deliveryPolicy = null, string|ProductVariant|null $variant = null, string|Product|null $product = null)
     {
         $this->id = $id;
         $this->resource = $resource;
         $this->title = $title;
         $this->quantity = $quantity;
         $this->totalPrice = $totalPrice;
+        $this->customAttributes = $customAttributes;
         $this->subtitle = $subtitle;
         $this->recurringCycleLimit = $recurringCycleLimit;
         $this->canceledAt = $canceledAt;
