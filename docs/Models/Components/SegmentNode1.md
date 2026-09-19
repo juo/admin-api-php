@@ -1,0 +1,9 @@
+# SegmentNode1
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `op`                                                                                                  | [Components\OpAnd\|Components\OpOr](../../Models/Components/Op.md)                                    | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `children`                                                                                            | array<[Components\SegmentNode1\|Components\SegmentNode2](../../Models/Components/SegmentNodeUnion.md)> | :heavy_check_mark:                                                                                    | N/A                                                                                                   |

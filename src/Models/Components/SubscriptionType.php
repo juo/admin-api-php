@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Juo\AdminAPI\Models\Components;
 
 
+/** Delivery method type. One of: `shipping`, `local-delivery`, `pickup`. */
 enum SubscriptionType: string
 {
     case Shipping = 'shipping';

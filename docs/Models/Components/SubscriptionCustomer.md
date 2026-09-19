@@ -1,6 +1,6 @@
 # SubscriptionCustomer
 
-This field is expandable.
+Customer `id` when not expanded, or the full `Customer` object when the field name is included in the `expand` query parameter. Can be null.
 
 
 ## Supported Types
