@@ -1,0 +1,10 @@
+# OrderDiscountValueFixedAmount
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `type`                                                                                             | [Components\OrderDiscountTypeFixedAmount](../../Models/Components/OrderDiscountTypeFixedAmount.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `amount`                                                                                           | *float*                                                                                            | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `appliesOnEachItem`                                                                                | *bool*                                                                                             | :heavy_check_mark:                                                                                 | N/A                                                                                                |

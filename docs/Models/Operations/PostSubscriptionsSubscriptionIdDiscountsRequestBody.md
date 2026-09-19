@@ -3,21 +3,21 @@
 
 ## Supported Types
 
-### `Operations\RequestBody1`
+### `Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1`
 
 ```php
 /**
-* @var \Juo\AdminAPI\Models\Operations\RequestBody1
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1
 */
-Operations\RequestBody1 $value = /* values here */
+Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1 $value = /* values here */
 ```
 
-### `Operations\RequestBody2`
+### `Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2`
 
 ```php
 /**
-* @var \Juo\AdminAPI\Models\Operations\RequestBody2
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2
 */
-Operations\RequestBody2 $value = /* values here */
+Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2 $value = /* values here */
 ```
 
