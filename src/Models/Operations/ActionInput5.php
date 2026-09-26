@@ -12,20 +12,19 @@ namespace Juo\AdminAPI\Models\Operations;
 class ActionInput5
 {
     /**
-     * $lines
+     * The payment method identifier to use for this order
      *
-     * @var array<\Juo\AdminAPI\Models\Operations\Line> $lines
+     * @var string $paymentMethodId
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('lines')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Operations\Line>')]
-    public array $lines;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentMethodId')]
+    public string $paymentMethodId;
 
     /**
-     * @param  array<\Juo\AdminAPI\Models\Operations\Line>  $lines
+     * @param  string  $paymentMethodId
      * @phpstan-pure
      */
-    public function __construct(array $lines)
+    public function __construct(string $paymentMethodId)
     {
-        $this->lines = $lines;
+        $this->paymentMethodId = $paymentMethodId;
     }
 }

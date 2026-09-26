@@ -1,0 +1,11 @@
+# TransitionAuto
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `targetStepId`                                                                        | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `type`                                                                                | [Components\TypeAuto](../../Models/Components/TypeAuto.md)                            | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `conditions`                                                                          | [?Components\TransitionConditions1](../../Models/Components/TransitionConditions1.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
