@@ -26,13 +26,38 @@ class ProductVariant
     public string $title;
 
     /**
-     * This field is expandable.
+     *
+     * @var float $price
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('price')]
+    public float $price;
+
+    /**
+     * $purchaseOptions
+     *
+     * @var array<\Juo\AdminAPI\Models\Components\PurchaseOption> $purchaseOptions
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('purchaseOptions')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\PurchaseOption>')]
+    public array $purchaseOptions;
+
+    /**
+     * Product `id` when not expanded, or the full `Product` object when the field name is included in the `expand` query parameter.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Product $product
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('product')]
     #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\Product')]
     public string|Product $product;
+
+    /**
+     * Subscription plan group IDs associated with this variant
+     *
+     * @var array<string> $planGroups
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('planGroups')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $planGroups;
 
     /**
      *
@@ -45,15 +70,21 @@ class ProductVariant
     /**
      * @param  string  $id
      * @param  string  $title
+     * @param  float  $price
+     * @param  array<\Juo\AdminAPI\Models\Components\PurchaseOption>  $purchaseOptions
      * @param  string|\Juo\AdminAPI\Models\Components\Product  $product
+     * @param  array<string>  $planGroups
      * @param  ?\Juo\AdminAPI\Models\Components\ProductVariantImage  $image
      * @phpstan-pure
      */
-    public function __construct(string $id, string $title, string|Product $product, ?ProductVariantImage $image = null)
+    public function __construct(string $id, string $title, float $price, array $purchaseOptions, string|Product $product, array $planGroups, ?ProductVariantImage $image = null)
     {
         $this->id = $id;
         $this->title = $title;
+        $this->price = $price;
+        $this->purchaseOptions = $purchaseOptions;
         $this->product = $product;
+        $this->planGroups = $planGroups;
         $this->image = $image;
     }
 }
