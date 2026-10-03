@@ -2,16 +2,18 @@
 
 ## Overview
 
+Read-only view of upcoming billing orders generated from subscription state, schedule adjustments, and workflows. Use schedule adjustments for targeted changes to upcoming orders (scoped by cycle number, date, or both) — they never alter the subscription itself. For permanent changes (billing frequency, items, payment method), update the subscription directly.
+
 ### Available Operations
 
-* [list](#list) - List schedule orders for a customer
-* [listAdjustments](#listadjustments) - List schedule adjustments for a customer
-* [postSchedulesAdjustments](#postschedulesadjustments) - Creates a schedule adjustment
-* [delete](#delete) - Deletes a schedule adjustment
+* [list](#list) - List schedule orders
+* [listAdjustments](#listadjustments) - List schedule adjustments
+* [create](#create) - Create a schedule adjustment
+* [delete](#delete) - Delete a schedule adjustment
 
 ## list
 
-List schedule orders for a customer
+Returns a projection of upcoming billing orders for a customer, derived from their subscription state, active schedule adjustments, and triggered workflows. Shows what orders will be generated and when. Use `count` to control how many upcoming orders to return. This is a read-only view — it does not modify subscriptions.
 
 ### Example Usage
 
@@ -22,20 +24,25 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
+use Juo\AdminAPI\Models\Operations;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
-
+$request = new Operations\GetSchedulesRequest(
+    customerId: '<id>',
+    count: 168523,
+);
 
 $response = $sdk->schedules->list(
-    customerId: '<id>',
-    count: 168523
-
+    request: $request
 );
 
 if ($response->object !== null) {
@@ -45,12 +52,9 @@ if ($response->object !== null) {
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                                                                                               | Type                                                                                                                                                                                                                                                                    | Required                                                                                                                                                                                                                                                                | Description                                                                                                                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `customerId`                                                                                                                                                                                                                                                            | *string*                                                                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                                      | The customer identifier                                                                                                                                                                                                                                                 |
-| `count`                                                                                                                                                                                                                                                                 | *int*                                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                                                     |
-| `query`                                                                                                                                                                                                                                                                 | *?string*                                                                                                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                                                      | The search query string. See [search query language](/docs/api-reference/admin/introduction#search-query-language) for information how to build the search query. Supported fields are listed [here](/docs/api-reference/admin/schedules/resource#search-query-fields). |
-| `tenant`                                                                                                                                                                                                                                                                | *?string*                                                                                                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                                                      | Unique identifier of the tenant in the system (usually a store identifier)                                                                                                                                                                                              |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `$request`                                                                       | [Operations\GetSchedulesRequest](../../Models/Operations/GetSchedulesRequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 ### Response
 
@@ -64,7 +68,7 @@ if ($response->object !== null) {
 
 ## listAdjustments
 
-List schedule adjustments for a customer
+Returns a paginated list of schedule adjustments. A schedule adjustment applies a targeted modification to upcoming orders matching the specified criteria (by cycle number, date, or both) — it never modifies the subscription itself. For permanent changes (billing frequency, items, payment method), update the subscription directly. Results are cursor-paginated.
 
 ### Example Usage
 
@@ -75,12 +79,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 use Juo\AdminAPI\Models\Operations;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -116,9 +123,9 @@ foreach ($responses as $response) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\APIException | 4XX, 5XX            | \*/\*               |
 
-## postSchedulesAdjustments
+## create
 
-Creates a schedule adjustment
+Creates a modification to upcoming orders matched by cycle number, date, or both. Adjustments can match a single order or a range of orders depending on the matcher criteria. This does NOT change the subscription — it only affects the matched upcoming order(s). Supported types: skip order, change date, update shipping address or method, change payment method, modify products (add/remove/change quantity), or apply a discount. For permanent changes, update the subscription directly.
 
 ### Example Usage
 
@@ -129,12 +136,15 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 use Juo\AdminAPI\Models\Operations;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -148,7 +158,7 @@ $requestBody = new Operations\PostSchedulesAdjustmentsRequestBody(
     ),
     action: new Operations\ActionUpdateProducts(
         type: Operations\TypeUpdateProducts::UpdateProducts,
-        input: new Operations\ActionInput5(
+        input: new Operations\ActionInput6(
             lines: [
                 new Operations\Line(
                     lineId: '<id>',
@@ -158,7 +168,7 @@ $requestBody = new Operations\PostSchedulesAdjustmentsRequestBody(
     ),
 );
 
-$response = $sdk->schedules->postSchedulesAdjustments(
+$response = $sdk->schedules->create(
     requestBody: $requestBody
 );
 
@@ -186,7 +196,7 @@ if ($response->scheduleAdjustment !== null) {
 
 ## delete
 
-Deletes a schedule adjustment
+Permanently deletes a pending schedule adjustment, reverting the affected upcoming order to its original configuration.
 
 ### Example Usage
 
@@ -197,11 +207,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 

@@ -1,0 +1,11 @@
+# Series
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `start`                                                                                   | *string*                                                                                  | :heavy_check_mark:                                                                        | Inclusive start of the time bucket as an ISO 8601 datetime string.                        |
+| `end`                                                                                     | *string*                                                                                  | :heavy_check_mark:                                                                        | Inclusive end of the time bucket as an ISO 8601 datetime string.                          |
+| `dimensions`                                                                              | array<string, *mixed*>                                                                    | :heavy_check_mark:                                                                        | Dimension key-value pairs for this data point, matching the requested `dimensions` array. |
+| `value`                                                                                   | *float*                                                                                   | :heavy_check_mark:                                                                        | Computed metric value for this bucket and dimension combination.                          |

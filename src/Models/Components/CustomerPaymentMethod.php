@@ -19,7 +19,7 @@ class CustomerPaymentMethod
     public string $id;
 
     /**
-     * This field is expandable.
+     * Customer `id` when not expanded, or the full `Customer` object when the field name is included in the `expand` query parameter.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Customer $customer
      */
@@ -29,23 +29,34 @@ class CustomerPaymentMethod
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null $instrument
+     * @var \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|\Juo\AdminAPI\Models\Components\InstrumentManual|null $instrument
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('instrument')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|\Juo\AdminAPI\Models\Components\InstrumentManual|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|null $instrument = null;
+    public InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|InstrumentManual|null $instrument = null;
+
+    /**
+     *
+     * @var ?\Juo\AdminAPI\Models\Components\BillingAddress $billingAddress
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billingAddress')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\BillingAddress|null')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?BillingAddress $billingAddress = null;
 
     /**
      * @param  string  $id
      * @param  string|\Juo\AdminAPI\Models\Components\Customer  $customer
-     * @param  \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|null  $instrument
+     * @param  \Juo\AdminAPI\Models\Components\InstrumentCreditCard|\Juo\AdminAPI\Models\Components\InstrumentPaypal|\Juo\AdminAPI\Models\Components\InstrumentShopPay|\Juo\AdminAPI\Models\Components\InstrumentSepaDirectDebit|\Juo\AdminAPI\Models\Components\InstrumentBlik|\Juo\AdminAPI\Models\Components\InstrumentMbway|\Juo\AdminAPI\Models\Components\InstrumentBacs|\Juo\AdminAPI\Models\Components\InstrumentManual|null  $instrument
+     * @param  ?\Juo\AdminAPI\Models\Components\BillingAddress  $billingAddress
      * @phpstan-pure
      */
-    public function __construct(string $id, string|Customer $customer, InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|null $instrument = null)
+    public function __construct(string $id, string|Customer $customer, InstrumentCreditCard|InstrumentPaypal|InstrumentShopPay|InstrumentSepaDirectDebit|InstrumentBlik|InstrumentMbway|InstrumentBacs|InstrumentManual|null $instrument = null, ?BillingAddress $billingAddress = null)
     {
         $this->id = $id;
         $this->customer = $customer;
         $this->instrument = $instrument;
+        $this->billingAddress = $billingAddress;
     }
 }
