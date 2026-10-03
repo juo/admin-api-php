@@ -1,0 +1,11 @@
+# PutWorkflowsIdTransitionTimeout
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `id`                                                                                         | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `targetStepId`                                                                               | *string*                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `type`                                                                                       | [Operations\PutWorkflowsIdTypeTimeout](../../Models/Operations/PutWorkflowsIdTypeTimeout.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `timeout`                                                                                    | *float*                                                                                      | :heavy_check_mark:                                                                           | N/A                                                                                          |

@@ -1,0 +1,10 @@
+# PurchaseOption
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `name`                                                                                 | *string*                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `price`                                                                                | *float*                                                                                | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `interval`                                                                             | [Components\ProductVariantInterval](../../Models/Components/ProductVariantInterval.md) | :heavy_check_mark:                                                                     | N/A                                                                                    |

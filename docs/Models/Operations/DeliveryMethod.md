@@ -1,10 +1,32 @@
 # DeliveryMethod
 
 
-## Fields
+## Supported Types
 
-| Field                                                                                                               | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `type`                                                                                                              | [?Operations\PatchSubscriptionsSubscriptionIdType](../../Models/Operations/PatchSubscriptionsSubscriptionIdType.md) | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
-| `title`                                                                                                             | *?string*                                                                                                           | :heavy_minus_sign:                                                                                                  | The title of the delivery method                                                                                    |
-| `description`                                                                                                       | *?string*                                                                                                           | :heavy_minus_sign:                                                                                                  | The description of the delivery method                                                                              |
+### `Operations\PostSubscriptionsDeliveryMethodShipping`
+
+```php
+/**
+* @var \Juo\AdminAPI\Models\Operations\PostSubscriptionsDeliveryMethodShipping
+*/
+Operations\PostSubscriptionsDeliveryMethodShipping $value = /* values here */
+```
+
+### `Operations\DeliveryMethodLocalDelivery`
+
+```php
+/**
+* @var \Juo\AdminAPI\Models\Operations\DeliveryMethodLocalDelivery
+*/
+Operations\DeliveryMethodLocalDelivery $value = /* values here */
+```
+
+### `Operations\DeliveryMethodPickup`
+
+```php
+/**
+* @var \Juo\AdminAPI\Models\Operations\DeliveryMethodPickup
+*/
+Operations\DeliveryMethodPickup $value = /* values here */
+```
+

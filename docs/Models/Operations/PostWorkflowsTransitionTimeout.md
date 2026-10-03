@@ -1,0 +1,11 @@
+# PostWorkflowsTransitionTimeout
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `id`                                                                                       | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `targetStepId`                                                                             | *string*                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `type`                                                                                     | [Operations\PostWorkflowsTypeTimeout](../../Models/Operations/PostWorkflowsTypeTimeout.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `timeout`                                                                                  | *float*                                                                                    | :heavy_check_mark:                                                                         | N/A                                                                                        |

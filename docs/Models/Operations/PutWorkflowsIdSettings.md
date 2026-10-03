@@ -1,0 +1,9 @@
+# PutWorkflowsIdSettings
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `statisticalMethod`                                                                                      | [Operations\PutWorkflowsIdStatisticalMethod](../../Models/Operations/PutWorkflowsIdStatisticalMethod.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `significanceLevel`                                                                                      | *float*                                                                                                  | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
