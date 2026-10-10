@@ -29,19 +29,19 @@ class PostSchedulesAdjustmentsRequestBody
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts $action
+     * @var \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionSkipItem|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts|\Juo\AdminAPI\Models\Operations\ActionApplyDiscount $action
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('action')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts')]
-    public ActionSkipOrder|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts $action;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionSkipItem|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts|\Juo\AdminAPI\Models\Operations\ActionApplyDiscount')]
+    public ActionSkipOrder|ActionSkipItem|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts|ActionApplyDiscount $action;
 
     /**
      * @param  string  $customerId
      * @param  \Juo\AdminAPI\Models\Operations\MatcherCycle|\Juo\AdminAPI\Models\Operations\MatcherDate|\Juo\AdminAPI\Models\Operations\MatcherCycleAndDate  $matcher
-     * @param  \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts  $action
+     * @param  \Juo\AdminAPI\Models\Operations\ActionSkipOrder|\Juo\AdminAPI\Models\Operations\ActionSkipItem|\Juo\AdminAPI\Models\Operations\ActionChangeDate|\Juo\AdminAPI\Models\Operations\ActionUpdateShipping|\Juo\AdminAPI\Models\Operations\ActionUpdatePaymentMethod|\Juo\AdminAPI\Models\Operations\ActionUpdateProducts|\Juo\AdminAPI\Models\Operations\ActionApplyDiscount  $action
      * @phpstan-pure
      */
-    public function __construct(string $customerId, MatcherCycle|MatcherDate|MatcherCycleAndDate $matcher, ActionSkipOrder|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts $action)
+    public function __construct(string $customerId, MatcherCycle|MatcherDate|MatcherCycleAndDate $matcher, ActionSkipOrder|ActionSkipItem|ActionChangeDate|ActionUpdateShipping|ActionUpdatePaymentMethod|ActionUpdateProducts|ActionApplyDiscount $action)
     {
         $this->customerId = $customerId;
         $this->matcher = $matcher;

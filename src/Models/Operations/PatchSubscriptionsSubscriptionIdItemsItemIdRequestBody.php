@@ -12,6 +12,7 @@ namespace Juo\AdminAPI\Models\Operations;
 class PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody
 {
     /**
+     * Number of units ordered per billing cycle.
      *
      * @var ?int $quantity
      */
@@ -21,29 +22,29 @@ class PatchSubscriptionsSubscriptionIdItemsItemIdRequestBody
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Operations\BillingPolicy $billingPolicy
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdBillingPolicy $billingPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('billingPolicy')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\BillingPolicy|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdBillingPolicy|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?BillingPolicy $billingPolicy = null;
+    public ?PatchSubscriptionsSubscriptionIdItemsItemIdBillingPolicy $billingPolicy = null;
 
     /**
      *
-     * @var ?\Juo\AdminAPI\Models\Operations\DeliveryPolicy $deliveryPolicy
+     * @var ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdDeliveryPolicy $deliveryPolicy
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryPolicy')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\DeliveryPolicy|null')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdDeliveryPolicy|null')]
     #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
-    public ?DeliveryPolicy $deliveryPolicy = null;
+    public ?PatchSubscriptionsSubscriptionIdItemsItemIdDeliveryPolicy $deliveryPolicy = null;
 
     /**
      * @param  ?int  $quantity
-     * @param  ?\Juo\AdminAPI\Models\Operations\BillingPolicy  $billingPolicy
-     * @param  ?\Juo\AdminAPI\Models\Operations\DeliveryPolicy  $deliveryPolicy
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdBillingPolicy  $billingPolicy
+     * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdItemsItemIdDeliveryPolicy  $deliveryPolicy
      * @phpstan-pure
      */
-    public function __construct(?int $quantity = null, ?BillingPolicy $billingPolicy = null, ?DeliveryPolicy $deliveryPolicy = null)
+    public function __construct(?int $quantity = null, ?PatchSubscriptionsSubscriptionIdItemsItemIdBillingPolicy $billingPolicy = null, ?PatchSubscriptionsSubscriptionIdItemsItemIdDeliveryPolicy $deliveryPolicy = null)
     {
         $this->quantity = $quantity;
         $this->billingPolicy = $billingPolicy;

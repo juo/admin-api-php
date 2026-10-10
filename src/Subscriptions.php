@@ -16,6 +16,8 @@ use Speakeasy\Serializer\DeserializationContext;
 class Subscriptions
 {
     private SDKConfiguration $sdkConfiguration;
+    public CustomAttributes $customAttributes;
+
     public Discounts $discounts;
 
     public Items $items;
@@ -26,6 +28,7 @@ class Subscriptions
     public function __construct(public SDKConfiguration $sdkConfig)
     {
         $this->sdkConfiguration = $sdkConfig;
+        $this->customAttributes = new CustomAttributes($this->sdkConfiguration);
         $this->discounts = new Discounts($this->sdkConfiguration);
         $this->items = new Items($this->sdkConfiguration);
     }
@@ -51,7 +54,9 @@ class Subscriptions
     }
 
     /**
-     * Lists subscriptions
+     * List subscriptions
+     *
+     * Returns a paginated list of all subscriptions for the tenant. Use the `query` parameter to search by id, serial, status, dates, or customer. Supports cursor-based pagination via `after`/`before`. Optionally expand the `customer` relationship to include customer details inline.
      *
      * @param  ?\Juo\AdminAPI\Models\Operations\GetSubscriptionsRequest  $request
      * @return \Juo\AdminAPI\Models\Operations\GetSubscriptionsResponse
@@ -136,7 +141,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -145,7 +150,9 @@ class Subscriptions
         }
     }
     /**
-     * Lists subscriptions
+     * List subscriptions
+     *
+     * Returns a paginated list of all subscriptions for the tenant. Use the `query` parameter to search by id, serial, status, dates, or customer. Supports cursor-based pagination via `after`/`before`. Optionally expand the `customer` relationship to include customer details inline.
      *
      * @param  ?\Juo\AdminAPI\Models\Operations\GetSubscriptionsRequest  $request
      * @return \Generator<\Juo\AdminAPI\Models\Operations\GetSubscriptionsResponse>
@@ -161,7 +168,9 @@ class Subscriptions
     }
 
     /**
-     * Updates a subscription
+     * Update a subscription
+     *
+     * Updates mutable fields on an existing subscription using merge-patch semantics — only provided fields are changed. Supports changing the payment method, delivery address, delivery method, delivery price, and next billing date. These changes are permanent and affect all future billing cycles.
      *
      * @param  string  $subscriptionId
      * @param  ?\Juo\AdminAPI\Models\Operations\PatchSubscriptionsSubscriptionIdRequestBody  $requestBody
@@ -226,7 +235,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -236,7 +245,85 @@ class Subscriptions
     }
 
     /**
-     * Cancels an active/paused subscription
+     * Create a subscription
+     *
+     * Creates a new subscription for an existing customer. Requires a billing policy, next billing date, delivery address, at least one subscription item, and a payment method (by id or by provider details). If the customer does not yet exist locally, they are looked up in the e-commerce platform and registered automatically.
+     *
+     * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsRequestBody  $requestBody
+     * @param  ?string  $tenant
+     * @return \Juo\AdminAPI\Models\Operations\PostSubscriptionsResponse
+     * @throws \Juo\AdminAPI\Models\Errors\APIException
+     */
+    public function create(Operations\PostSubscriptionsRequestBody $requestBody, ?string $tenant = null, ?Options $options = null): Operations\PostSubscriptionsResponse
+    {
+        $request = new Operations\PostSubscriptionsRequest(
+            requestBody: $requestBody,
+            tenant: $tenant,
+        );
+        $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/subscriptions');
+        $urlOverride = null;
+        $httpOptions = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, 'requestBody', 'json');
+        if ($body === null) {
+            throw new \Exception('Request body is required');
+        }
+        $httpOptions = array_merge_recursive($httpOptions, $body);
+        $httpOptions = array_merge_recursive($httpOptions, Utils\Utils::getHeaders($request, $this->sdkConfiguration->globals));
+        if (! array_key_exists('headers', $httpOptions)) {
+            $httpOptions['headers'] = [];
+        }
+        $httpOptions['headers']['Accept'] = 'application/json';
+        $httpOptions['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        $httpRequest = new \GuzzleHttp\Psr7\Request('POST', $url);
+        $hookContext = new HookContext($this->sdkConfiguration, $baseUrl, 'post_/subscriptions', null, $this->sdkConfiguration->securitySource);
+        $httpRequest = $this->sdkConfiguration->hooks->beforeRequest(new Hooks\BeforeRequestContext($hookContext), $httpRequest);
+        $httpOptions = Utils\Utils::convertHeadersToOptions($httpRequest, $httpOptions);
+        $httpRequest = Utils\Utils::removeHeaders($httpRequest);
+        try {
+            $httpResponse = $this->sdkConfiguration->client->send($httpRequest, $httpOptions);
+        } catch (\GuzzleHttp\Exception\GuzzleException $error) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), null, $error);
+            $httpResponse = $res;
+        }
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        if (Utils\Utils::matchStatusCodes($httpResponse->getStatusCode(), ['4XX', '5XX'])) {
+            $res = $this->sdkConfiguration->hooks->afterError(new Hooks\AfterErrorContext($hookContext), $httpResponse, null);
+            $httpResponse = $res;
+        }
+
+        $statusCode = $httpResponse->getStatusCode();
+        if (Utils\Utils::matchStatusCodes($statusCode, ['201'])) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $httpResponse = $this->sdkConfiguration->hooks->afterSuccess(new Hooks\AfterSuccessContext($hookContext), $httpResponse);
+
+                $serializer = Utils\JSON::createSerializer();
+                $responseData = (string) $httpResponse->getBody();
+                $obj = $serializer->deserialize($responseData, '\Juo\AdminAPI\Models\Components\Subscription', 'json', DeserializationContext::create()->setRequireAllRequiredProperties(true));
+                $response = new Operations\PostSubscriptionsResponse(
+                    statusCode: $statusCode,
+                    contentType: $contentType,
+                    rawResponse: $httpResponse,
+                    subscription: $obj);
+
+                return $response;
+            } else {
+                throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+            }
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
+            throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
+            throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        } else {
+            throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown status code received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
+        }
+    }
+
+    /**
+     * Cancel a subscription
+     *
+     * Permanently cancels an active or paused subscription, stopping all future billing. Accepts an optional cancellation reason and a flag to notify the customer by email. Use `reactivate` to reverse a cancellation.
      *
      * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdCancelRequestBody  $requestBody
      * @param  string  $subscriptionId
@@ -302,7 +389,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -312,7 +399,9 @@ class Subscriptions
     }
 
     /**
-     * Pauses an active subscription
+     * Pause an active subscription
+     *
+     * Pauses an active subscription, suspending future billing cycles until explicitly resumed. The subscription must currently be in `active` status. After pausing, the subscription status changes to `paused`.
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
@@ -371,7 +460,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -381,7 +470,9 @@ class Subscriptions
     }
 
     /**
-     * Reactivates a cancelled subscription
+     * Reactivate a canceled subscription
+     *
+     * Reactivates a previously canceled subscription, returning it to `active` status and resuming billing from the next scheduled date. The subscription must currently be in `canceled` status.
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
@@ -440,7 +531,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -450,7 +541,9 @@ class Subscriptions
     }
 
     /**
-     * Resumes a paused subscription
+     * Resume a paused subscription
+     *
+     * Resumes a paused subscription, restoring normal billing from the next scheduled billing date. The subscription must currently be in `paused` status.
      *
      * @param  string  $subscriptionId
      * @param  ?string  $tenant
@@ -509,7 +602,7 @@ class Subscriptions
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);

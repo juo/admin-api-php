@@ -36,15 +36,55 @@ class InstrumentCreditCard
     public string $maskedNumber;
 
     /**
+     * Last digits of the card number.
+     *
+     * @var string $lastDigits
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lastDigits')]
+    public string $lastDigits;
+
+    /**
+     *
+     * @var ?int $expiryMonth
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiryMonth')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $expiryMonth = null;
+
+    /**
+     *
+     * @var ?int $expiryYear
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiryYear')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $expiryYear = null;
+
+    /**
+     *
+     * @var ?string $cardholderName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cardholderName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $cardholderName = null;
+
+    /**
      * @param  \Juo\AdminAPI\Models\Components\TypeCreditCard  $type
      * @param  string  $brand
      * @param  string  $maskedNumber
+     * @param  string  $lastDigits
+     * @param  ?int  $expiryMonth
+     * @param  ?int  $expiryYear
+     * @param  ?string  $cardholderName
      * @phpstan-pure
      */
-    public function __construct(TypeCreditCard $type, string $brand, string $maskedNumber)
+    public function __construct(TypeCreditCard $type, string $brand, string $maskedNumber, string $lastDigits, ?int $expiryMonth = null, ?int $expiryYear = null, ?string $cardholderName = null)
     {
         $this->type = $type;
         $this->brand = $brand;
         $this->maskedNumber = $maskedNumber;
+        $this->lastDigits = $lastDigits;
+        $this->expiryMonth = $expiryMonth;
+        $this->expiryYear = $expiryYear;
+        $this->cardholderName = $cardholderName;
     }
 }

@@ -13,17 +13,26 @@ class Security
 {
     /**
      *
-     * @var string $adminApiKey
+     * @var ?string $adminApiKey
      */
     #[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=X-Juo-Admin-Api-Key')]
-    public string $adminApiKey;
+    public ?string $adminApiKey = null;
 
     /**
-     * @param  string  $adminApiKey
+     *
+     * @var ?string $bearerToken
+     */
+    #[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
+    public ?string $bearerToken = null;
+
+    /**
+     * @param  ?string  $adminApiKey
+     * @param  ?string  $bearerToken
      * @phpstan-pure
      */
-    public function __construct(string $adminApiKey)
+    public function __construct(?string $adminApiKey = null, ?string $bearerToken = null)
     {
         $this->adminApiKey = $adminApiKey;
+        $this->bearerToken = $bearerToken;
     }
 }
