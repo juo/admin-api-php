@@ -1,5 +1,7 @@
 # SubscriptionType
 
+Delivery method type. One of: `shipping`, `local-delivery`, `pickup`.
+
 
 ## Values
 

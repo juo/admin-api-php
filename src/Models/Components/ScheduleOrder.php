@@ -101,6 +101,15 @@ class ScheduleOrder
     public ?string $paymentMethodId;
 
     /**
+     * CustomerPaymentMethod `id` when not expanded, or the full `CustomerPaymentMethod` object when the field name is included in the `expand` query parameter. Can be null.
+     *
+     * @var string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null $paymentMethod
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('paymentMethod')]
+    #[\Speakeasy\Serializer\Annotation\Type('string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null')]
+    public string|CustomerPaymentMethod|null $paymentMethod;
+
+    /**
      * @param  string  $id
      * @param  string  $customerId
      * @param  string  $currencyCode
@@ -113,9 +122,10 @@ class ScheduleOrder
      * @param  array<\Juo\AdminAPI\Models\Components\ScheduleOrderDiscount>  $discounts
      * @param  ?\Juo\AdminAPI\Models\Components\DeliveryAddress  $deliveryAddress
      * @param  ?string  $paymentMethodId
+     * @param  string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null  $paymentMethod
      * @phpstan-pure
      */
-    public function __construct(string $id, string $customerId, string $currencyCode, bool $skipped, \DateTime $date, int $cycleIndex, float $subtotal, float $deliveryPrice, array $items, array $discounts, ?DeliveryAddress $deliveryAddress = null, ?string $paymentMethodId = null)
+    public function __construct(string $id, string $customerId, string $currencyCode, bool $skipped, \DateTime $date, int $cycleIndex, float $subtotal, float $deliveryPrice, array $items, array $discounts, ?DeliveryAddress $deliveryAddress = null, ?string $paymentMethodId = null, string|CustomerPaymentMethod|null $paymentMethod = null)
     {
         $this->id = $id;
         $this->customerId = $customerId;
@@ -129,5 +139,6 @@ class ScheduleOrder
         $this->discounts = $discounts;
         $this->deliveryAddress = $deliveryAddress;
         $this->paymentMethodId = $paymentMethodId;
+        $this->paymentMethod = $paymentMethod;
     }
 }
