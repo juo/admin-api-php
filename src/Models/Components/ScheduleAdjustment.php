@@ -45,11 +45,11 @@ class ScheduleAdjustment
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Components\Action $action
+     * @var \Juo\AdminAPI\Models\Components\ScheduleAdjustmentAction $action
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('action')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Action')]
-    public Action $action;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\ScheduleAdjustmentAction')]
+    public ScheduleAdjustmentAction $action;
 
     /**
      *
@@ -80,13 +80,13 @@ class ScheduleAdjustment
      * @param  \Juo\AdminAPI\Models\Components\ScheduleAdjustmentResource  $resource
      * @param  string  $customer
      * @param  \Juo\AdminAPI\Models\Components\Matcher  $matcher
-     * @param  \Juo\AdminAPI\Models\Components\Action  $action
+     * @param  \Juo\AdminAPI\Models\Components\ScheduleAdjustmentAction  $action
      * @param  \Juo\AdminAPI\Models\Components\Actor  $actor
      * @param  \DateTime  $createdAt
      * @param  \DateTime  $updatedAt
      * @phpstan-pure
      */
-    public function __construct(string $id, ScheduleAdjustmentResource $resource, string $customer, Matcher $matcher, Action $action, Actor $actor, \DateTime $createdAt, \DateTime $updatedAt)
+    public function __construct(string $id, ScheduleAdjustmentResource $resource, string $customer, Matcher $matcher, ScheduleAdjustmentAction $action, Actor $actor, \DateTime $createdAt, \DateTime $updatedAt)
     {
         $this->id = $id;
         $this->resource = $resource;

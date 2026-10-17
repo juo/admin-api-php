@@ -45,7 +45,9 @@ class Schedules
     }
 
     /**
-     * Deletes a schedule adjustment
+     * Delete a schedule adjustment
+     *
+     * Permanently deletes a pending schedule adjustment, reverting the affected upcoming order to its original configuration.
      *
      * @param  string  $adjustmentId
      * @param  ?string  $tenant
@@ -104,7 +106,7 @@ class Schedules
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -114,23 +116,16 @@ class Schedules
     }
 
     /**
-     * List schedule orders for a customer
+     * List schedule orders
      *
-     * @param  string  $customerId
-     * @param  int  $count
-     * @param  ?string  $query
-     * @param  ?string  $tenant
+     * Returns a projection of upcoming billing orders for a customer, derived from their subscription state, active schedule adjustments, and triggered workflows. Shows what orders will be generated and when. Use `count` to control how many upcoming orders to return. This is a read-only view — it does not modify subscriptions.
+     *
+     * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesRequest  $request
      * @return \Juo\AdminAPI\Models\Operations\GetSchedulesResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
-    public function list(string $customerId, int $count, ?string $query = null, ?string $tenant = null, ?Options $options = null): Operations\GetSchedulesResponse
+    public function list(Operations\GetSchedulesRequest $request, ?Options $options = null): Operations\GetSchedulesResponse
     {
-        $request = new Operations\GetSchedulesRequest(
-            customerId: $customerId,
-            count: $count,
-            query: $query,
-            tenant: $tenant,
-        );
         $baseUrl = $this->sdkConfiguration->getTemplatedServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/schedules/');
         $urlOverride = null;
@@ -180,7 +175,7 @@ class Schedules
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -190,7 +185,9 @@ class Schedules
     }
 
     /**
-     * List schedule adjustments for a customer
+     * List schedule adjustments
+     *
+     * Returns a paginated list of schedule adjustments. A schedule adjustment applies a targeted modification to upcoming orders matching the specified criteria (by cycle number, date, or both) — it never modifies the subscription itself. For permanent changes (billing frequency, items, payment method), update the subscription directly. Results are cursor-paginated.
      *
      * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsRequest  $request
      * @return \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResponse
@@ -273,7 +270,7 @@ class Schedules
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -282,7 +279,9 @@ class Schedules
         }
     }
     /**
-     * List schedule adjustments for a customer
+     * List schedule adjustments
+     *
+     * Returns a paginated list of schedule adjustments. A schedule adjustment applies a targeted modification to upcoming orders matching the specified criteria (by cycle number, date, or both) — it never modifies the subscription itself. For permanent changes (billing frequency, items, payment method), update the subscription directly. Results are cursor-paginated.
      *
      * @param  \Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsRequest  $request
      * @return \Generator<\Juo\AdminAPI\Models\Operations\GetSchedulesAdjustmentsResponse>
@@ -298,14 +297,16 @@ class Schedules
     }
 
     /**
-     * Creates a schedule adjustment
+     * Create a schedule adjustment
+     *
+     * Creates a modification to upcoming orders matched by cycle number, date, or both. Adjustments can match a single order or a range of orders depending on the matcher criteria. This does NOT change the subscription — it only affects the matched upcoming order(s). Supported types: skip order, change date, update shipping address or method, change payment method, modify products (add/remove/change quantity), or apply a discount. For permanent changes, update the subscription directly.
      *
      * @param  \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsRequestBody  $requestBody
      * @param  ?string  $tenant
      * @return \Juo\AdminAPI\Models\Operations\PostSchedulesAdjustmentsResponse
      * @throws \Juo\AdminAPI\Models\Errors\APIException
      */
-    public function postSchedulesAdjustments(Operations\PostSchedulesAdjustmentsRequestBody $requestBody, ?string $tenant = null, ?Options $options = null): Operations\PostSchedulesAdjustmentsResponse
+    public function create(Operations\PostSchedulesAdjustmentsRequestBody $requestBody, ?string $tenant = null, ?Options $options = null): Operations\PostSchedulesAdjustmentsResponse
     {
         $request = new Operations\PostSchedulesAdjustmentsRequest(
             requestBody: $requestBody,
@@ -362,7 +363,7 @@ class Schedules
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);

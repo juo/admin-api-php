@@ -22,18 +22,18 @@ class ActionUpdateShipping
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Operations\ActionInput3 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput4 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput3')]
-    public ActionInput3 $input;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput4')]
+    public ActionInput4 $input;
 
     /**
      * @param  \Juo\AdminAPI\Models\Operations\TypeUpdateShipping  $type
-     * @param  \Juo\AdminAPI\Models\Operations\ActionInput3  $input
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput4  $input
      * @phpstan-pure
      */
-    public function __construct(TypeUpdateShipping $type, ActionInput3 $input)
+    public function __construct(TypeUpdateShipping $type, ActionInput4 $input)
     {
         $this->type = $type;
         $this->input = $input;
