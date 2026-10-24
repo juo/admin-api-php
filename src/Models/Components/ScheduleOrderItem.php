@@ -47,12 +47,19 @@ class ScheduleOrderItem
     public float $totalPrice;
 
     /**
+     *
+     * @var bool $skipped
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('skipped')]
+    public bool $skipped;
+
+    /**
      * $customAttributes
      *
-     * @var array<\Juo\AdminAPI\Models\Components\CustomAttribute> $customAttributes
+     * @var array<\Juo\AdminAPI\Models\Components\ScheduleOrderItemCustomAttribute> $customAttributes
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('customAttributes')]
-    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\CustomAttribute>')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\ScheduleOrderItemCustomAttribute>')]
     public array $customAttributes;
 
     /**
@@ -63,7 +70,7 @@ class ScheduleOrderItem
     public ?string $subtitle;
 
     /**
-     * This field is expandable.
+     * ProductVariant `id` when not expanded, or the full `ProductVariant` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\ProductVariant|null $variant
      */
@@ -72,7 +79,7 @@ class ScheduleOrderItem
     public string|ProductVariant|null $variant;
 
     /**
-     * This field is expandable.
+     * Product `id` when not expanded, or the full `Product` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Product|null $product
      */
@@ -81,7 +88,7 @@ class ScheduleOrderItem
     public string|Product|null $product;
 
     /**
-     * This field is expandable.
+     * Subscription `id` when not expanded, or the full `Subscription` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Subscription|null $subscription
      */
@@ -90,7 +97,7 @@ class ScheduleOrderItem
     public string|Subscription|null $subscription;
 
     /**
-     * This field is expandable.
+     * SubscriptionItem `id` when not expanded, or the full `SubscriptionItem` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\SubscriptionItem|null $subscriptionItem
      */
@@ -118,7 +125,8 @@ class ScheduleOrderItem
      * @param  int  $quantity
      * @param  float  $price
      * @param  float  $totalPrice
-     * @param  array<\Juo\AdminAPI\Models\Components\CustomAttribute>  $customAttributes
+     * @param  bool  $skipped
+     * @param  array<\Juo\AdminAPI\Models\Components\ScheduleOrderItemCustomAttribute>  $customAttributes
      * @param  ?string  $subtitle
      * @param  string|\Juo\AdminAPI\Models\Components\ProductVariant|null  $variant
      * @param  string|\Juo\AdminAPI\Models\Components\Product|null  $product
@@ -128,13 +136,14 @@ class ScheduleOrderItem
      * @param  ?string  $parentLineId
      * @phpstan-pure
      */
-    public function __construct(string $id, string $title, int $quantity, float $price, float $totalPrice, array $customAttributes, ?string $subtitle = null, string|ProductVariant|null $variant = null, string|Product|null $product = null, string|Subscription|null $subscription = null, string|SubscriptionItem|null $subscriptionItem = null, ?string $parentProductId = null, ?string $parentLineId = null)
+    public function __construct(string $id, string $title, int $quantity, float $price, float $totalPrice, bool $skipped, array $customAttributes, ?string $subtitle = null, string|ProductVariant|null $variant = null, string|Product|null $product = null, string|Subscription|null $subscription = null, string|SubscriptionItem|null $subscriptionItem = null, ?string $parentProductId = null, ?string $parentLineId = null)
     {
         $this->id = $id;
         $this->title = $title;
         $this->quantity = $quantity;
         $this->price = $price;
         $this->totalPrice = $totalPrice;
+        $this->skipped = $skipped;
         $this->customAttributes = $customAttributes;
         $this->subtitle = $subtitle;
         $this->variant = $variant;
