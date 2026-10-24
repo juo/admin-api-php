@@ -12,6 +12,7 @@ namespace Juo\AdminAPI\Models\Components;
 class Customer
 {
     /**
+     * Customer ID (numeric string).
      *
      * @var string $id
      */
@@ -43,7 +44,7 @@ class Customer
     public ?string $email;
 
     /**
-     * Customer's contact phone.
+     * Customer's contact phone number in E.164 format.
      *
      * @var ?string $phone
      */

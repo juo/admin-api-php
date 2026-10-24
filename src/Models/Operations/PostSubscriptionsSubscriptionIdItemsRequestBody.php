@@ -19,6 +19,7 @@ class PostSubscriptionsSubscriptionIdItemsRequestBody
     public string $variant;
 
     /**
+     * Number of units ordered per billing cycle.
      *
      * @var int $quantity
      */
@@ -35,7 +36,7 @@ class PostSubscriptionsSubscriptionIdItemsRequestBody
     public ?float $price = null;
 
     /**
-     * The number of billing cycles for which this item will be applied. After the recurring cycle limit is met the item will be removed from the subscription.
+     * Maximum number of billing cycles this item remains on the subscription. The item is automatically removed once this limit is reached. Null means no limit.
      *
      * @var ?int $recurringCycleLimit
      */
