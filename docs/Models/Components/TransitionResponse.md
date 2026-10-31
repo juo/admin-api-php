@@ -1,0 +1,12 @@
+# TransitionResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `id`                                                                                  | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `targetStepId`                                                                        | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `type`                                                                                | [Components\TypeResponse](../../Models/Components/TypeResponse.md)                    | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `responseType`                                                                        | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `conditions`                                                                          | [?Components\TransitionConditions2](../../Models/Components/TransitionConditions2.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

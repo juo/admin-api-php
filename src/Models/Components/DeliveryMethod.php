@@ -12,6 +12,7 @@ namespace Juo\AdminAPI\Models\Components;
 class DeliveryMethod
 {
     /**
+     * Delivery method type. One of: `shipping`, `local-delivery`, `pickup`.
      *
      * @var \Juo\AdminAPI\Models\Components\SubscriptionType $type
      */
