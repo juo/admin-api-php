@@ -1,0 +1,9 @@
+# PostWorkflowsSettings
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `statisticalMethod`                                                                                    | [Operations\PostWorkflowsStatisticalMethod](../../Models/Operations/PostWorkflowsStatisticalMethod.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `significanceLevel`                                                                                    | *float*                                                                                                | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
