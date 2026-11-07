@@ -66,3 +66,12 @@ Components\InstrumentMbway $value = /* values here */
 Components\InstrumentBacs $value = /* values here */
 ```
 
+### `Components\InstrumentManual`
+
+```php
+/**
+* @var \Juo\AdminAPI\Models\Components\InstrumentManual
+*/
+Components\InstrumentManual $value = /* values here */
+```
+
