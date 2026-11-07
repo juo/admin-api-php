@@ -10,18 +10,73 @@ namespace Juo\AdminAPI;
 
 
 
-/** Juo */
+/**
+ * Juo - Juo Admin API: Programmatic access to subscription management for merchants.
+ *
+ *
+ * ## Core Resources
+ *
+ * - **Subscriptions** — the central entity. Belongs to a Customer, contains Items (product variants) and Discounts. Lifecycle: `active` → `paused` or `cancelled`; `paused` → `active` or `cancelled`; `cancelled` → `active` (via reactivate).
+ * - **Items** — subscription items (product variants) (quantity, price, billing/delivery policies).
+ * - **Discounts** — applied to subscriptions by discount code or manually (percentage or fixed amount, targeting subscription items or shipping).
+ * - **Customers** — customers who own subscriptions and payment methods.
+ * - **Products / Variants** — catalog products and variants that can be assigned to subscription plans.
+ * - **Schedules** — a read-only projection of upcoming billing orders, derived from subscription state, active schedule adjustments, and triggered workflows. **Schedule adjustments never modify the subscription** — they apply changes to upcoming orders matching the specified criteria (by cycle, date, or both), which may cover one or more orders. For permanent changes (billing frequency, items, payment method, delivery address), update the subscription directly.
+ * - **Workflows** — interactive customer-facing flows (retention, dunning, onboarding). Contain Steps connected by Transitions and produce Runs on each execution. Supports A/B experiment steps.
+ *
+ * ## Authentication
+ *
+ * Every request requires:
+ * - `X-Juo-Admin-Api-Key` header — the merchant's Admin API key.
+ * - `X-Tenant-ID` header — the store identifier (myshopify domain, e.g. `my-store.myshopify.com`).
+ */
 class Juo
 {
     public const SERVERS = [
         'https://api.juo.io/admin/v1',
     ];
 
+    /**
+     * Time-series metrics over subscriptions, customers and orders. Read the metric catalog first: it states what each metric means, the approximations it carries, and which filters and group-by dimensions the metric will honour — an unsupported filter is a 400, not an empty result.
+     *
+     * @var Analytics $$analytics
+     */
+    public Analytics $analytics;
+
+    /**
+     * Customers who own subscriptions. Create and update customer records.
+     *
+     * @var Customers $$customers
+     */
     public Customers $customers;
 
+    /**
+     * Products and variants linked to subscription plans. Manage catalog and plan assignments.
+     *
+     * @var Products $$products
+     */
+    public Products $products;
+
+    /**
+     * Read-only view of upcoming billing orders generated from subscription state, schedule adjustments, and workflows. Use schedule adjustments for targeted changes to upcoming orders (scoped by cycle number, date, or both) — they never alter the subscription itself. For permanent changes (billing frequency, items, payment method), update the subscription directly.
+     *
+     * @var Schedules $$schedules
+     */
+    public Schedules $schedules;
+
+    /**
+     * Recurring billing agreements with customers. Manage lifecycle (pause, resume, cancel, reactivate), items, and discounts.
+     *
+     * @var Subscriptions $$subscriptions
+     */
     public Subscriptions $subscriptions;
 
-    public Schedules $schedules;
+    /**
+     * Interactive customer-facing flows for retention, dunning, and onboarding. Define steps, publish, and track execution runs and experiments.
+     *
+     * @var Workflows $$workflows
+     */
+    public Workflows $workflows;
 
     /**
      * Returns a new instance of the SDK builder used to configure and create the SDK instance.
@@ -39,9 +94,12 @@ class Juo
     public function __construct(
         public SDKConfiguration $sdkConfiguration,
     ) {
+        $this->analytics = new Analytics($this->sdkConfiguration);
         $this->customers = new Customers($this->sdkConfiguration);
-        $this->subscriptions = new Subscriptions($this->sdkConfiguration);
+        $this->products = new Products($this->sdkConfiguration);
         $this->schedules = new Schedules($this->sdkConfiguration);
+        $this->subscriptions = new Subscriptions($this->sdkConfiguration);
+        $this->workflows = new Workflows($this->sdkConfiguration);
         $this->initHooks();
 
     }
