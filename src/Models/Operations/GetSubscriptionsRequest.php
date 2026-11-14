@@ -36,9 +36,9 @@ class GetSubscriptionsRequest
     public ?string $before = null;
 
     /**
-     * Specify which related resources to include in the response. Currently supports 'customer'.
+     * Specify which related resources to include in the response. Supports 'customer' and 'paymentMethod'.
      *
-     * @var ?array<\Juo\AdminAPI\Models\Operations\Expand> $expand
+     * @var ?array<\Juo\AdminAPI\Models\Operations\ExpandCustomer|\Juo\AdminAPI\Models\Operations\GetSubscriptionsExpandPaymentMethod> $expand
      */
     #[SpeakeasyMetadata('queryParam:style=form,explode=true,name=expand')]
     public ?array $expand = null;
@@ -81,7 +81,7 @@ class GetSubscriptionsRequest
      * @param  ?string  $after
      * @param  ?string  $before
      * @param  ?string  $sort
-     * @param  ?array<\Juo\AdminAPI\Models\Operations\Expand>  $expand
+     * @param  ?array<\Juo\AdminAPI\Models\Operations\ExpandCustomer|\Juo\AdminAPI\Models\Operations\GetSubscriptionsExpandPaymentMethod>  $expand
      * @param  ?bool  $includeCanceledItems
      * @param  ?string  $tenant
      * @phpstan-pure

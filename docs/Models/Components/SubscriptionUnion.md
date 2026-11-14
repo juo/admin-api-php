@@ -1,6 +1,6 @@
 # SubscriptionUnion
 
-This field is expandable.
+Subscription `id` when not expanded, or the full `Subscription` object when the field name is included in the `expand` query parameter. Can be null.
 
 
 ## Supported Types

@@ -12,19 +12,31 @@ namespace Juo\AdminAPI\Models\Operations;
 class ActionInput2
 {
     /**
-     * New date for the order (ISO 8601)
+     * Subscription line IDs to skip from the order
      *
-     * @var \DateTime $newDate
+     * @var array<string> $lineIds
      */
-    #[\Speakeasy\Serializer\Annotation\SerializedName('newDate')]
-    public \DateTime $newDate;
+    #[\Speakeasy\Serializer\Annotation\SerializedName('lineIds')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<string>')]
+    public array $lineIds;
 
     /**
-     * @param  \DateTime  $newDate
+     * Reason for skipping the item(s)
+     *
+     * @var ?string $reason
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('reason')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $reason = null;
+
+    /**
+     * @param  array<string>  $lineIds
+     * @param  ?string  $reason
      * @phpstan-pure
      */
-    public function __construct(\DateTime $newDate)
+    public function __construct(array $lineIds, ?string $reason = null)
     {
-        $this->newDate = $newDate;
+        $this->lineIds = $lineIds;
+        $this->reason = $reason;
     }
 }

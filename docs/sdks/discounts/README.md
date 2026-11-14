@@ -4,13 +4,13 @@
 
 ### Available Operations
 
-* [create](#create) - Creates a subscription discount
-* [delete](#delete) - Deletes a subscription discount
-* [update](#update) - Updates a subscription discount
+* [create](#create) - Add a discount to a subscription
+* [update](#update) - Update a subscription discount
+* [delete](#delete) - Remove a subscription discount
 
 ## create
 
-Creates a subscription discount
+Applies a discount to a subscription. Accepts either a discount code (string) or a manual discount definition with a target (all items, specific item ids, or shipping) and value (percentage or fixed amount). Optionally limits the discount to a number of recurring cycles.
 
 ### Example Usage
 
@@ -21,11 +21,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -42,11 +45,11 @@ if ($response->subscriptionDiscount !== null) {
 
 ### Parameters
 
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `subscriptionId`                                                                                                                       | *string*                                                                                                                               | :heavy_check_mark:                                                                                                                     | The subscription identifier                                                                                                            |
-| `tenant`                                                                                                                               | *?string*                                                                                                                              | :heavy_minus_sign:                                                                                                                     | Unique identifier of the tenant in the system (usually a store identifier)                                                             |
-| `requestBody`                                                                                                                          | [Operations\RequestBody1\|Operations\RequestBody2\|null](../../Models/Operations/PostSubscriptionsSubscriptionIdDiscountsRequestBody.md) | :heavy_minus_sign:                                                                                                                     | N/A                                                                                                                                    |
+| Parameter                                                                                                                                                                                                              | Type                                                                                                                                                                                                                   | Required                                                                                                                                                                                                               | Description                                                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `subscriptionId`                                                                                                                                                                                                       | *string*                                                                                                                                                                                                               | :heavy_check_mark:                                                                                                                                                                                                     | The subscription identifier                                                                                                                                                                                            |
+| `tenant`                                                                                                                                                                                                               | *?string*                                                                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                                     | Unique identifier of the tenant in the system (usually a store identifier)                                                                                                                                             |
+| `requestBody`                                                                                                                                                                                                          | [Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody1\|Operations\PostSubscriptionsSubscriptionIdDiscountsRequestBody2\|null](../../Models/Operations/PostSubscriptionsSubscriptionIdDiscountsRequestBody.md) | :heavy_minus_sign:                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                    |
 
 ### Response
 
@@ -58,61 +61,9 @@ if ($response->subscriptionDiscount !== null) {
 | ------------------- | ------------------- | ------------------- |
 | Errors\APIException | 4XX, 5XX            | \*/\*               |
 
-## delete
-
-Deletes a subscription discount
-
-### Example Usage
-
-<!-- UsageSnippet language="php" operationID="delete_/subscriptions/{subscriptionId}/discounts/{discountId}" method="delete" path="/subscriptions/{subscriptionId}/discounts/{discountId}" -->
-```php
-declare(strict_types=1);
-
-require 'vendor/autoload.php';
-
-use Juo\AdminAPI;
-
-$sdk = AdminAPI\Juo::builder()
-    ->setTenant('<value>')
-    ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
-    )
-    ->build();
-
-
-
-$response = $sdk->subscriptions->discounts->delete(
-    subscriptionId: 'ac6dd669-8cde-409f-a4e1-085aeeaf246a',
-    discountId: '47ba2170-98b0-4a13-9e2e-7f9e2228a739'
-
-);
-
-if ($response->object !== null) {
-    // handle response
-}
-```
-
-### Parameters
-
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `subscriptionId`                                                           | *string*                                                                   | :heavy_check_mark:                                                         | The subscription identifier                                                |
-| `discountId`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | The subscription discount identifier                                       |
-| `tenant`                                                                   | *?string*                                                                  | :heavy_minus_sign:                                                         | Unique identifier of the tenant in the system (usually a store identifier) |
-
-### Response
-
-**[?Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse](../../Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.md)**
-
-### Errors
-
-| Error Type          | Status Code         | Content Type        |
-| ------------------- | ------------------- | ------------------- |
-| Errors\APIException | 4XX, 5XX            | \*/\*               |
-
 ## update
 
-Updates a subscription discount
+Updates an existing discount on a subscription using merge-patch semantics. Can change the discount value and recurring cycle limit. The discount target type cannot be changed after creation.
 
 ### Example Usage
 
@@ -123,11 +74,14 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
 
 $sdk = AdminAPI\Juo::builder()
     ->setTenant('<value>')
     ->setSecurity(
-        '<YOUR_API_KEY_HERE>'
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
     )
     ->build();
 
@@ -157,6 +111,61 @@ if ($response->subscriptionDiscount !== null) {
 ### Response
 
 **[?Operations\PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse](../../Models/Operations/PatchSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.md)**
+
+### Errors
+
+| Error Type          | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| Errors\APIException | 4XX, 5XX            | \*/\*               |
+
+## delete
+
+Removes an existing discount from a subscription. This is a permanent change affecting all future billing cycles.
+
+### Example Usage
+
+<!-- UsageSnippet language="php" operationID="delete_/subscriptions/{subscriptionId}/discounts/{discountId}" method="delete" path="/subscriptions/{subscriptionId}/discounts/{discountId}" -->
+```php
+declare(strict_types=1);
+
+require 'vendor/autoload.php';
+
+use Juo\AdminAPI;
+use Juo\AdminAPI\Models\Components;
+
+$sdk = AdminAPI\Juo::builder()
+    ->setTenant('<value>')
+    ->setSecurity(
+        new Components\Security(
+            adminApiKey: '<YOUR_API_KEY_HERE>',
+        )
+    )
+    ->build();
+
+
+
+$response = $sdk->subscriptions->discounts->delete(
+    subscriptionId: 'ac6dd669-8cde-409f-a4e1-085aeeaf246a',
+    discountId: '47ba2170-98b0-4a13-9e2e-7f9e2228a739'
+
+);
+
+if ($response->object !== null) {
+    // handle response
+}
+```
+
+### Parameters
+
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `subscriptionId`                                                           | *string*                                                                   | :heavy_check_mark:                                                         | The subscription identifier                                                |
+| `discountId`                                                               | *string*                                                                   | :heavy_check_mark:                                                         | The subscription discount identifier                                       |
+| `tenant`                                                                   | *?string*                                                                  | :heavy_minus_sign:                                                         | Unique identifier of the tenant in the system (usually a store identifier) |
+
+### Response
+
+**[?Operations\DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse](../../Models/Operations/DeleteSubscriptionsSubscriptionIdDiscountsDiscountIdResponse.md)**
 
 ### Errors
 

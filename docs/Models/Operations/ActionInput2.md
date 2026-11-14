@@ -3,6 +3,7 @@
 
 ## Fields
 
-| Field                                                         | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `newDate`                                                     | [\DateTime](https://www.php.net/manual/en/class.datetime.php) | :heavy_check_mark:                                            | New date for the order (ISO 8601)                             |
+| Field                                        | Type                                         | Required                                     | Description                                  |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| `lineIds`                                    | array<*string*>                              | :heavy_check_mark:                           | Subscription line IDs to skip from the order |
+| `reason`                                     | *?string*                                    | :heavy_minus_sign:                           | Reason for skipping the item(s)              |
