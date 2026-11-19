@@ -3,21 +3,21 @@
 
 ## Supported Types
 
-### `Components\TargetLineEnum`
+### `Components\ScheduleOrderDiscountTargetLine`
 
 ```php
 /**
-* @var \Juo\AdminAPI\Models\Components\TargetLineEnum
+* @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTargetLine
 */
-Components\TargetLineEnum $value = /* values here */
+Components\ScheduleOrderDiscountTargetLine $value = /* values here */
 ```
 
-### `Components\TargetShippingEnum`
+### `Components\ScheduleOrderDiscountTargetShipping`
 
 ```php
 /**
-* @var \Juo\AdminAPI\Models\Components\TargetShippingEnum
+* @var \Juo\AdminAPI\Models\Components\ScheduleOrderDiscountTargetShipping
 */
-Components\TargetShippingEnum $value = /* values here */
+Components\ScheduleOrderDiscountTargetShipping $value = /* values here */
 ```
 

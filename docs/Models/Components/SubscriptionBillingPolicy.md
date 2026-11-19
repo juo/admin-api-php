@@ -1,0 +1,11 @@
+# SubscriptionBillingPolicy
+
+How often and when the subscription is billed.
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `interval`                                                                                                   | [Components\SubscriptionBillingPolicyInterval](../../Models/Components/SubscriptionBillingPolicyInterval.md) | :heavy_check_mark:                                                                                           | Billing frequency unit. One of: `WEEK`, `MONTH`, `YEAR`, `DAY`.                                              | MONTH                                                                                                        |
+| `intervalCount`                                                                                              | *int*                                                                                                        | :heavy_check_mark:                                                                                           | Number of interval units between billing cycles.                                                             | 1                                                                                                            |

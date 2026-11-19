@@ -12,6 +12,7 @@ namespace Juo\AdminAPI\Models\Components;
 class Subscription
 {
     /**
+     * Unique subscription identifier (UUID).
      *
      * @var string $id
      */
@@ -35,12 +36,13 @@ class Subscription
     public string $serial;
 
     /**
+     * Subscription lifecycle status. `active`: billing runs on schedule; `paused`: billing suspended until resumed; `canceled`: permanently stopped (can be reactivated); `failed`: latest billing attempt failed; `expired`: reached configured end date; `merged`: consolidated into another subscription.
      *
-     * @var \Juo\AdminAPI\Models\Components\Status $status
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionStatus $status
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('status')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\Status')]
-    public Status $status;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionStatus')]
+    public SubscriptionStatus $status;
 
     /**
      * Purchase date of the subscription.
@@ -59,7 +61,7 @@ class Subscription
     public \DateTime $updatedAt;
 
     /**
-     * The subscription's billing cycle count. It starts at 0 (before the first billing is completed), changes to 1 (after one billing is completed), and increases by 1 with each subsequent billing.
+     * The subscription's billing cycle count. Starts at 0 before the first billing completes, increments by 1 with each successful billing.
      *
      * @var int $currentCycle
      */
@@ -67,12 +69,39 @@ class Subscription
     public int $currentCycle;
 
     /**
-     * The currency that applies to both item prices and delivery price.
+     * ISO 4217 currency code that applies to both item prices and delivery price.
      *
      * @var string $currencyCode
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('currencyCode')]
     public string $currencyCode;
+
+    /**
+     * How often and when the subscription is billed.
+     *
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionBillingPolicy $billingPolicy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('billingPolicy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionBillingPolicy')]
+    public SubscriptionBillingPolicy $billingPolicy;
+
+    /**
+     * How often shipments are dispatched. Usually matches the billing policy.
+     *
+     * @var \Juo\AdminAPI\Models\Components\SubscriptionDeliveryPolicy $deliveryPolicy
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('deliveryPolicy')]
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Components\SubscriptionDeliveryPolicy')]
+    public SubscriptionDeliveryPolicy $deliveryPolicy;
+
+    /**
+     * Arbitrary key-value pairs attached to this subscription. In the Customer API, attributes whose key starts with `_` are hidden and excluded.
+     *
+     * @var array<\Juo\AdminAPI\Models\Components\SubscriptionCustomAttribute> $customAttributes
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('customAttributes')]
+    #[\Speakeasy\Serializer\Annotation\Type('array<\Juo\AdminAPI\Models\Components\SubscriptionCustomAttribute>')]
+    public array $customAttributes;
 
     /**
      * $items
@@ -125,7 +154,7 @@ class Subscription
     public ?DeliveryMethod $deliveryMethod;
 
     /**
-     * This field is expandable.
+     * Customer `id` when not expanded, or the full `Customer` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\Customer|null $customer
      */
@@ -134,7 +163,7 @@ class Subscription
     public string|Customer|null $customer;
 
     /**
-     * This field is expandable.
+     * CustomerPaymentMethod `id` when not expanded, or the full `CustomerPaymentMethod` object when the field name is included in the `expand` query parameter. Can be null.
      *
      * @var string|\Juo\AdminAPI\Models\Components\CustomerPaymentMethod|null $paymentMethod
      */
@@ -154,11 +183,14 @@ class Subscription
      * @param  string  $id
      * @param  \Juo\AdminAPI\Models\Components\SubscriptionResource  $resource
      * @param  string  $serial
-     * @param  \Juo\AdminAPI\Models\Components\Status  $status
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionStatus  $status
      * @param  \DateTime  $createdAt
      * @param  \DateTime  $updatedAt
      * @param  int  $currentCycle
      * @param  string  $currencyCode
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionBillingPolicy  $billingPolicy
+     * @param  \Juo\AdminAPI\Models\Components\SubscriptionDeliveryPolicy  $deliveryPolicy
+     * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionCustomAttribute>  $customAttributes
      * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionItem>  $items
      * @param  array<\Juo\AdminAPI\Models\Components\SubscriptionDiscount>  $discounts
      * @param  float  $deliveryPrice
@@ -170,7 +202,7 @@ class Subscription
      * @param  ?\Juo\AdminAPI\Models\Components\Address  $deliveryAddress
      * @phpstan-pure
      */
-    public function __construct(string $id, SubscriptionResource $resource, string $serial, Status $status, \DateTime $createdAt, \DateTime $updatedAt, int $currentCycle, string $currencyCode, array $items, array $discounts, float $deliveryPrice, ?\DateTime $canceledAt = null, ?\DateTime $nextBillingDate = null, ?DeliveryMethod $deliveryMethod = null, string|Customer|null $customer = null, string|CustomerPaymentMethod|null $paymentMethod = null, ?Address $deliveryAddress = null)
+    public function __construct(string $id, SubscriptionResource $resource, string $serial, SubscriptionStatus $status, \DateTime $createdAt, \DateTime $updatedAt, int $currentCycle, string $currencyCode, SubscriptionBillingPolicy $billingPolicy, SubscriptionDeliveryPolicy $deliveryPolicy, array $customAttributes, array $items, array $discounts, float $deliveryPrice, ?\DateTime $canceledAt = null, ?\DateTime $nextBillingDate = null, ?DeliveryMethod $deliveryMethod = null, string|Customer|null $customer = null, string|CustomerPaymentMethod|null $paymentMethod = null, ?Address $deliveryAddress = null)
     {
         $this->id = $id;
         $this->resource = $resource;
@@ -180,6 +212,9 @@ class Subscription
         $this->updatedAt = $updatedAt;
         $this->currentCycle = $currentCycle;
         $this->currencyCode = $currencyCode;
+        $this->billingPolicy = $billingPolicy;
+        $this->deliveryPolicy = $deliveryPolicy;
+        $this->customAttributes = $customAttributes;
         $this->items = $items;
         $this->discounts = $discounts;
         $this->deliveryPrice = $deliveryPrice;
