@@ -45,7 +45,9 @@ class Items
     }
 
     /**
-     * Deletes a subscription item
+     * Remove a subscription item
+     *
+     * Removes an item from a subscription. The subscription must retain at least one item after removal. This is a permanent change affecting all future billing cycles.
      *
      * @param  string  $subscriptionId
      * @param  string  $itemId
@@ -106,7 +108,7 @@ class Items
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -116,7 +118,9 @@ class Items
     }
 
     /**
-     * Updates a subscription item
+     * Update a subscription item
+     *
+     * Updates a specific subscription item using merge-patch semantics. Can change the quantity, billing policy, or delivery policy for that item independently of subscription-level policies.
      *
      * @param  string  $subscriptionId
      * @param  string  $itemId
@@ -183,7 +187,7 @@ class Items
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
@@ -193,7 +197,9 @@ class Items
     }
 
     /**
-     * Creates a subscription item
+     * Add an item to a subscription
+     *
+     * Adds a new subscription item (product variant) to a subscription. Optionally set a custom base price (applied before subscription discounts), quantity, and a recurring cycle limit (how many billing cycles the item appears). The variant must be part of a subscription plan.
      *
      * @param  \Juo\AdminAPI\Models\Operations\PostSubscriptionsSubscriptionIdItemsRequestBody  $requestBody
      * @param  string  $subscriptionId
@@ -259,7 +265,7 @@ class Items
             } else {
                 throw new \Juo\AdminAPI\Models\Errors\APIException('Unknown content type received', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
             }
-        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['4XX'])) {
+        } elseif (Utils\Utils::matchStatusCodes($statusCode, ['400', '401', '403', '404', '422', '4XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);
         } elseif (Utils\Utils::matchStatusCodes($statusCode, ['5XX'])) {
             throw new \Juo\AdminAPI\Models\Errors\APIException('API error occurred', $statusCode, $httpResponse->getBody()->getContents(), $httpResponse);

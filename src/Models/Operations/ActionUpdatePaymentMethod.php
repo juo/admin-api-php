@@ -22,18 +22,18 @@ class ActionUpdatePaymentMethod
 
     /**
      *
-     * @var \Juo\AdminAPI\Models\Operations\ActionInput4 $input
+     * @var \Juo\AdminAPI\Models\Operations\ActionInput5 $input
      */
     #[\Speakeasy\Serializer\Annotation\SerializedName('input')]
-    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput4')]
-    public ActionInput4 $input;
+    #[\Speakeasy\Serializer\Annotation\Type('\Juo\AdminAPI\Models\Operations\ActionInput5')]
+    public ActionInput5 $input;
 
     /**
      * @param  \Juo\AdminAPI\Models\Operations\TypeUpdatePaymentMethod  $type
-     * @param  \Juo\AdminAPI\Models\Operations\ActionInput4  $input
+     * @param  \Juo\AdminAPI\Models\Operations\ActionInput5  $input
      * @phpstan-pure
      */
-    public function __construct(TypeUpdatePaymentMethod $type, ActionInput4 $input)
+    public function __construct(TypeUpdatePaymentMethod $type, ActionInput5 $input)
     {
         $this->type = $type;
         $this->input = $input;
