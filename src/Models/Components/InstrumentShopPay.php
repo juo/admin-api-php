@@ -28,13 +28,43 @@ class InstrumentShopPay
     public string $maskedNumber;
 
     /**
+     *
+     * @var ?int $expiryMonth
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiryMonth')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $expiryMonth = null;
+
+    /**
+     *
+     * @var ?int $expiryYear
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('expiryYear')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?int $expiryYear = null;
+
+    /**
+     *
+     * @var ?string $cardholderName
+     */
+    #[\Speakeasy\Serializer\Annotation\SerializedName('cardholderName')]
+    #[\Speakeasy\Serializer\Annotation\SkipWhenNull]
+    public ?string $cardholderName = null;
+
+    /**
      * @param  \Juo\AdminAPI\Models\Components\TypeShopPay  $type
      * @param  string  $maskedNumber
+     * @param  ?int  $expiryMonth
+     * @param  ?int  $expiryYear
+     * @param  ?string  $cardholderName
      * @phpstan-pure
      */
-    public function __construct(TypeShopPay $type, string $maskedNumber)
+    public function __construct(TypeShopPay $type, string $maskedNumber, ?int $expiryMonth = null, ?int $expiryYear = null, ?string $cardholderName = null)
     {
         $this->type = $type;
         $this->maskedNumber = $maskedNumber;
+        $this->expiryMonth = $expiryMonth;
+        $this->expiryYear = $expiryYear;
+        $this->cardholderName = $cardholderName;
     }
 }

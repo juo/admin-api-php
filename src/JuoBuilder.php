@@ -36,14 +36,11 @@ class JuoBuilder
     /**
      * setSecurity is used to configure the security required for the SDK.
      *
-     * @param  string  $adminApiKey
+     * @param  Models\Components\Security  $security
      * @return JuoBuilder
      */
-    public function setSecurity(string $adminApiKey): JuoBuilder
+    public function setSecurity(Models\Components\Security $security): JuoBuilder
     {
-        $security = new Models\Components\Security(
-            adminApiKey: $adminApiKey
-        );
         $this->sdkConfig->securitySource = fn () => $security;
 
         return $this;
@@ -53,12 +50,12 @@ class JuoBuilder
      * setSecuritySource is usd to configure the security required for the SDK.
      * unlike setSecurity, setSecuritySource accepts a closure that will be called to retrieve the security information.
      *
-     * @param  pure-Closure(): string  $securitySource
+     * @param  pure-Closure(): Models\Components\Security  $securitySource
      * @return JuoBuilder
      */
     public function setSecuritySource(\Closure $securitySource): JuoBuilder
     {
-        $this->sdkConfig->securitySource = fn () => new Models\Components\Security(adminApiKey: $securitySource());
+        $this->sdkConfig->securitySource = $securitySource;
 
         return $this;
     }
